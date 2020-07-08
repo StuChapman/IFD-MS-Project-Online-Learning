@@ -1,0 +1,78 @@
+
+/*------------------- General Styling */
+
+/* credit to https://css-tricks.com/books/fundamental-css-tactics/scale-typography-screen-size/ 
+    and https://www.madebymike.com.au/writing/fluid-type-calc-examples/ 
+        for font-size: calc(10px + (48 - 10) * ((100vw - 300px) / (1800 - 300)));*/
+
+.align-vertically { /* credit to https://webdevblog.com/css-vertical-align/ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*------------------- Navbar Styling */
+
+nav {
+    padding: 1vh;
+    background-color: #657486;
+    font-family: 'Cairo', sans-serif;
+    font-size: 3vh;
+    height: 10vh;
+}
+
+#brandimage {
+    height: 8vh;
+}
+
+.helpbtn {
+    background-color: #657486;
+    border: none;
+    color: #ffffff;
+    height: 8vh;
+}
+
+/* ------------------- Text Section Styling */
+
+#textsection {
+    background-color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    height: 80vh;
+}
+
+#textsection h1{
+    padding: 5vh;
+    margin: 0;
+    font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
+    color: #CC613A;
+    font-weight: bold;
+}
+
+#textsection p{
+    padding: 0 2.5vh 2.5vh;
+    margin: 0;
+    font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
+    color: #101828;
+}
+
+#textsection button {
+    margin-top: 2.5vh;
+    background-color: #657486;
+    border: none;
+    font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
+}
+
+/* ------------------- Footer Styling */
+
+#footer {
+    background-color: #EFEFEF;
+    font-family: 'Cairo', sans-serif;
+    font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
+    color: #101828;
+    height: 10vh;
+}
+
+#footer i {
+    color: #657486;
+}
