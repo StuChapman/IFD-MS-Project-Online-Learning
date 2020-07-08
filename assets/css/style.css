@@ -38,7 +38,15 @@ nav {
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
     text-align: center;
-    height: 80vh;
+    height: 82.5vh;
+}
+
+#topper {
+    background-color: #EFEFEF;
+    font-family: 'Cairo', sans-serif;
+    font-size: calc(2vh + (5 - 2) * ((100vw - 300px) / 1620));
+    color: #101828;
+    height: 4vh;
 }
 
 #textsection h1{
@@ -63,6 +71,33 @@ nav {
     font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
 }
 
+#textsection a {
+    color: #ffffff;
+}
+
+/* ------------------- Modal Styling */
+
+#homeModal .btn {
+    width: 85px;
+    font-size: 14px;    
+}
+
+#homeModal .btn-primary {
+    background-color: #CC613A;
+    border-color: rgb(187, 96, 63);
+}
+
+#homeModal a {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#homeModal .btn-primary:hover,
+#homeModal a:hover {
+    background-color: rgb(187, 96, 63);
+    text-decoration: none;
+}
+
 /* ------------------- Footer Styling */
 
 #footer {
@@ -70,7 +105,7 @@ nav {
     font-family: 'Cairo', sans-serif;
     font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
     color: #101828;
-    height: 10vh;
+    height: 7.5vh;
 }
 
 #footer i {
