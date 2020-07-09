@@ -24,7 +24,7 @@
                     data-toggle="modal" data-target="#homeModal">
         </div>
         <!-- Help Modal -->
-        <button type="button" class="helpbtn ml-auto mr-0 d-inline float-right align-vertically" data-toggle="modal" data-target="#helpModal">
+        <button type="button" id="helpbtn" class="btn ml-auto mr-0 d-inline float-right align-vertically" data-toggle="modal" data-target="#helpModal">
             help <i class="far fa-question-circle"></i>
         </button>
     </nav>
@@ -40,7 +40,7 @@
         <p>Following the content, there is a test, made up of 10 questions to check your learning. The pass 
             mark is 70% (7 out of 10).</p>
         <p>Good Luck!</p>
-        <button type="button" class="btn btn-primary"><a href="lean.html">
+        <button type="button" class="btn"><a href="lean.html">
             Click to Begin
             </a>
         </button>
@@ -61,8 +61,8 @@
                 You are about to leave this site for the Continuous Engagement home page. Are you sure?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-                <button type="button" class="btn btn-primary">
+                <button type="button" class="btn btn-blue" data-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-orange">
                     <a href="https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html">
                         Continue
                     </a>
@@ -112,13 +112,17 @@
             <span class="pr-4 ml-auto">next <i class="fas fa-forward"></i></span>
         </div>
     </footer>
-
-    <!--Bootstrap scripts-->    
+ 
+    <!-- jQuery script -->   
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
+    <!-- Bootstrap scripts --> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script> 
+    <!-- Emailjs script -->   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js">
     </script>
 </body>
 </html>
