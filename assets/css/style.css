@@ -63,6 +63,7 @@ nav {
     border: none;
     height: 8vh;
     color: #ffffff;
+    font-size: calc(14px + (22 - 14) * ((100vw - 300px) / 1620));
 }
 
 /* ------------------- Text Section Styling */
@@ -142,4 +143,12 @@ nav {
 
 #footer i {
     color: #657486;
+}
+
+/* ------------------- Media Screen responsiveness */
+
+@media screen and (min-width: 768px) {
+    #helpbtn {
+        font-size: calc(2.5vh + (5 - 2.5) * ((100vw - 768px) / 300));
+    }
 }
