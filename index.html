@@ -14,7 +14,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     <!--css stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-</head>
+
+    <!--emailjs scripts-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("user_37585cYmkMNZRiOobd27i");
+    })();
+    </script>
+</head> 
 <body>
     <!--navbar-->
     <nav class="sticky-top">
@@ -46,7 +54,7 @@
         </button>
     </section>
 
-<!-- Modals -->
+<!-- Bootstrap Modals -->
     <!-- Home Modal -->
         <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -83,24 +91,20 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <p>
-                                <label class="float-left" for="name">Name * </label><br>
-                                <input type="text" id="name" placeholder="Firstname Lastname" required>
-                            </p>
-                            <p>
-                                <label class="float-left" for="emailinput">Email address *</label><br>
-                                <input type="email" id="emailinput" placeholder="name@example.com" required>
-                            </p>
-                            <p>
-                                <label class="float-left" for="question">Type your question here... *</label><br>
+                        <form onsubmit="return sendEmail(this);">
+                            <div class="modal-body">
+                                <label class="mr-auto" for="name">Name * </label><br>
+                                <input type="text" id="name" placeholder="Firstname Lastname" required><br>
+                                <label class="mr-auto" for="emailinput">Email address *</label><br>
+                                <input type="email" id="emailinput" placeholder="name@example.com" required><br>
+                                <label class="mr-auto" for="question">Type your question here... *</label><br>
                                 <textarea id="question" rows="2" required></textarea>
-                            </p>    
-                        </div>
-                        <div class="modal-footer">
-                            <label class="float-left" for="submit">You will receive am email from continuousengagement@outlook.com</label><br>
-                            <input type="submit" class="btn btn-primary">
-                        </div>
+                            </div>
+                            <div class="modal-footer">
+                                <label class="mr-auto" for="submit">You will receive an email from continuousengagement@outlook.com</label><br>
+                                <button type="submit" class="btn btn-blue">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </form>
             </div>
@@ -121,8 +125,11 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
-    <!-- Emailjs script -->   
+    <!-- Emailjs scripts -->   
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js">
+    </script>
+    <!-- Credit: Code Institute -->
+    <script src="assets/js/sendEmail.js">
     </script>
 </body>
 </html>

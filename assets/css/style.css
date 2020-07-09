@@ -28,11 +28,20 @@ a  {
     color: #ffffff;
 }
 
+label {
+    margin: 0;
+}
+
 /*------------------- Hover Styling */
 
 a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     color: rgb(255, 255, 255, .5);
     text-decoration: none;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: none;
 }
 
 /*------------------- Navbar Styling */
@@ -96,9 +105,29 @@ nav {
 
 /* ------------------- Modal Styling */
 
-#homeModal .btn {
+#homeModal .btn, #helpModal .btn {
     width: 85px;
     font-size: 14px;    
+}
+
+.modal-header {
+    color: #CC613A;
+    font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
+}
+
+.modal-body {
+    color: #101828;
+    font-size: calc(10px + (18 - 10) * ((100vw - 300px) / 1620));
+}
+
+.modal-footer {
+    color: #101828;
+    font-size: calc(10px + (18 - 10) * ((100vw - 300px) / 1620));
+}
+
+#name, #emailinput, #question {
+    width: 100%;
+    margin-bottom: 2vh;
 }
 
 /* ------------------- Footer Styling */
