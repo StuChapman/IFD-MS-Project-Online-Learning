@@ -54,6 +54,11 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     box-shadow: none;
 }
 
+.arrowtext:hover {
+    cursor: pointer;
+    color: rgb(204, 97, 58, .5);;
+}
+
 /*------------------- Navbar Styling */
 
 nav {
@@ -131,13 +136,20 @@ nav {
 
 /* ------------------- Arrow Styling */
 
-#arrowvalue {
+#arrowvalue, #arrowwaste {
     position: absolute;
     top: 37.5vh;
     background-color: #CC613A;
     height: 20vh;
-    width: 20vw;
-    visibility: hidden;
+    width: 30vw;
+}
+
+#arrowvalue {
+    left:0;
+}
+
+#arrowwaste {
+    left: 70vw;
 }
 
 /* ------------------- Modal Styling */

@@ -1,3 +1,6 @@
+//Clear arrows //
+    $("#arrowvalue").hide();
+    $("#arrowwaste").hide();
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -33,5 +36,12 @@ function sendEmail() {
 //Function: reveal the definition for Value by clicking to word value on definition.html //
 function revealValue() {
     console.log('Value');
-    $("#arrowvalue").css('visibility', 'visible');
+    $("#arrowwaste").hide(1000);
+    $("#arrowvalue").show(1000);
+}
+
+function revealWaste() {
+    console.log('Waste');
+    $("#arrowvalue").hide(1000);
+    $("#arrowwaste").show(1000);
 }
