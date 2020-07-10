@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Learning - Intro</title>
+    <title>Online Learning - Looking for Waste</title>
     <!--Bootstrap stylesheet-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!--Google Fonts stylesheet-->
@@ -42,13 +42,12 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1>Looking for Waste...</h1>
-        <p class="paralarge">Marc A. Onetto, formerly Senior Vice President-Worldwide Operations at Amazon.com, Inc., 
-            talks about his experience of Waste as Vice President-Operations of GE Europe GmbH.</p>
-        <p class="paramedium">Good Luck!</p>
-        <button type="button" class="btn">
-            play
-        </button>
+        <p class="paralarge pt-5">Work done can be put into 2 categories:</p>
+        <h1 onclick="return revealValue();">Value</h1>
+        <p class="paralarge">and</p>
+        <h1>Waste</h1>
+        <p class="paralarge pt-5">Tap on each of them to see the definition ...</p>
+        <div id="arrowvalue"></div>
     </section>
 
 <!-- Bootstrap Modals -->
@@ -109,10 +108,10 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-                <a  class="pl-4 mr-auto" href="background.html">
+                <a  class="pl-4 mr-auto" href="looking.html">
                     <span><i class="fas fa-backward"></i> prev</span>
                 </a>
-                <a class="pr-4 ml-auto" href="definition.html">
+                <a class="pr-4 ml-auto" href="value.html">
                     <span>next <i class="fas fa-forward"></i></span>
                 </a>
         </div>
