@@ -3,14 +3,16 @@ function sendEmail() {
     console.log(this.sendername.value);
     console.log(this.emailinput.value);
     console.log(this.question.value);
+    console.log(document.title);
 
     emailjs.init("user_37585cYmkMNZRiOobd27i")
 
+    var thispage = document.title;
     var template_params = {
     "from_name": this.sendername.value,
     "from_email": this.emailinput.value,
-    "question": this.question.value
-    }
+    "question": thispage + ": " + this.question.value
+    };
 
     var service_id = "continuous_engagement";
     var template_id = "template_6DMLrcJu";
