@@ -32,6 +32,14 @@ label {
     margin: 0;
 }
 
+
+/*------------------- Bootstrap Overrules */
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 /*------------------- Hover Styling */
 
 a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
@@ -93,8 +101,16 @@ nav {
 #textsection p{
     padding: 0 2.5vh 2.5vh;
     margin: 0;
+}
+
+#textsection .paralarge{
     font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
     color: #101828;
+}
+
+#textsection .paramedium{
+    font-size: calc(2vh + (15 - 2) * ((100vw - 300px) / 1620));
+    color: #000000;
 }
 
 #textsection button {
@@ -103,6 +119,14 @@ nav {
     border: none;
     font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
 }
+
+/* ------------------- Image Styling */
+
+#ohnoimage {
+    height: 20vh;
+    padding-bottom: 2.5vh;
+}
+
 
 /* ------------------- Modal Styling */
 
@@ -137,7 +161,6 @@ nav {
     background-color: #EFEFEF;
     font-family: 'Cairo', sans-serif;
     font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
-    color: #101828;
     height: 7.5vh;
 }
 
@@ -145,10 +168,20 @@ nav {
     color: #657486;
 }
 
+#footer a {
+    color: #101828;
+}
+
 /* ------------------- Media Screen responsiveness */
 
 @media screen and (min-width: 768px) {
     #helpbtn {
         font-size: calc(2.5vh + (5 - 2.5) * ((100vw - 768px) / 300));
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #ohnoimage {
+        height: 40vh;
     }
 }
