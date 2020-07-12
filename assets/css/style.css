@@ -56,7 +56,7 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
 
 .arrowtext:hover {
     cursor: pointer;
-    color: rgb(204, 97, 58, .5);;
+    font-weight: bold; 
 }
 
 /*------------------- Navbar Styling */
@@ -136,20 +136,36 @@ nav {
 
 /* ------------------- Arrow Styling */
 
-#arrowvalue, #arrowwaste {
+.arrowtext {
+    font-weight: normal;
+}
+
+#arrowvalue, #arrowwaste, #arrowmask {
     position: absolute;
     top: 37.5vh;
-    background-color: #CC613A;
+    overflow: hidden;
     height: 20vh;
-    width: 30vw;
+    border: none;
+}
+
+#arrowvalue, #arrowwaste {
+    background-color: #CC613A;
+}
+
+#arrowmask {
+    background-color: #ffffff;
 }
 
 #arrowvalue {
     left:0;
+    float:left;
+    width: 0;
 }
 
-#arrowwaste {
+#arrowwaste, #arrowmask {
     left: 70vw;
+    float:right;
+    width: 30vw;
 }
 
 /* ------------------- Modal Styling */

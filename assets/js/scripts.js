@@ -1,6 +1,3 @@
-//Clear arrows //
-    $("#arrowvalue").hide();
-    $("#arrowwaste").hide();
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -34,14 +31,22 @@ function sendEmail() {
 }
 
 //Function: reveal the definition for Value by clicking to word value on definition.html //
-function revealValue() {
+function revealValue() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
     console.log('Value');
-    $("#arrowwaste").hide(1000);
-    $("#arrowvalue").show(1000);
+    $("#arrowmask").animate({
+                width: '30vw'
+            });
+    $("#arrowvalue").animate({
+                width: '30vw'
+            });
 }
 
-function revealWaste() {
+function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
     console.log('Waste');
-    $("#arrowvalue").hide(1000);
-    $("#arrowwaste").show(1000);
+    $("#arrowvalue").animate({
+                width: 0
+            });
+    $("#arrowmask").animate({
+                width: 0
+            });
 }
