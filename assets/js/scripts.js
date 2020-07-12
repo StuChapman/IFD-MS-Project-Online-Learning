@@ -50,3 +50,25 @@ function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?
                 width: 0
             });
 }
+
+//Function: using the play button to play the Mark Onetto video on looking.html /
+function playVid() { //Credit: https://www.w3schools.com/tags/av_met_play.asp
+
+    var buttonText = $("#playbutton").text();
+    var playText = $.trim(buttonText);
+    console.log (playText);
+    var vid = document.getElementById("onettovideo");
+
+    switch(playText) {
+        case "play":
+            vid.play();
+            $("#playbutton").text("pause");
+            break;
+        case "pause":
+            vid.pause();
+            $("#playbutton").text("play");
+            break;
+        default:
+            break;
+    }
+}

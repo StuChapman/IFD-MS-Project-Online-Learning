@@ -168,6 +168,18 @@ nav {
     width: 30vw;
 }
 
+/* ------------------- Video Styling */
+
+#onettovideo {
+    max-height: 30vh;
+    max-width: 80vw;
+}
+
+#playbutton {
+    width: 100px;
+    color: #ffffff;
+}
+
 /* ------------------- Modal Styling */
 
 #homeModal .btn, #helpModal .btn {
