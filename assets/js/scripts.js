@@ -40,11 +40,11 @@ function revealValue() { //Credit: https://www.tutorialrepublic.com/codelab.php?
     console.log('Value');
     nextRevealValue++;
     revealNext();
-    $("#arrowmask").animate({
-                width: '30vw'
+    $("#arrowmaskwaste").animate({
+                width: '33vw'
             });
-    $("#arrowvalue").animate({
-                width: '30vw'
+    $("#arrowmaskvalue").animate({
+                width: 0
             });
 }
 
@@ -52,10 +52,10 @@ function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?
     console.log('Waste');
     nextRevealWaste++
     revealNext();
-    $("#arrowvalue").animate({
-                width: 0
+    $("#arrowmaskvalue").animate({
+                width: '33vw'
             });
-    $("#arrowmask").animate({
+    $("#arrowmaskwaste").animate({
                 width: 0
             });
 }

@@ -157,10 +157,9 @@ nav {
     font-weight: normal;
 }
 
-#arrowvalue, #arrowwaste, #arrowmask {
+#arrowvalue, #arrowwaste, #arrowmaskvalue, #arrowmaskwaste {
     position: absolute;
     top: 26.5vh;
-    overflow: hidden;
     height: 33vh;
     border: none;
 }
@@ -169,20 +168,27 @@ nav {
     background-color: #CC613A;
 }
 
-#arrowmask {
+#arrowmaskvalue, #arrowmaskwaste {
     background-color: #ffffff;
 }
 
 #arrowvalue {
     left:0;
-    float:left;
-    width: 0;
+    width: 33vw;
+    color: #ffffff;
+    font-size: calc(2vh + (10 - 2) * ((100vw - 300px) / 1620));
 }
 
-#arrowwaste, #arrowmask {
-    left: 70vw;
-    float:right;
-    width: 30vw;
+#arrowmaskvalue {
+    right: 67vw;
+    width: 33vw;
+}
+
+#arrowwaste, #arrowmaskwaste {
+    left: 67vw;
+    width: 33vw;
+    color: #ffffff;
+    font-size: calc(2vh + (10 - 2) * ((100vw - 300px) / 1620));
 }
 
 /* ------------------- Video Styling */
