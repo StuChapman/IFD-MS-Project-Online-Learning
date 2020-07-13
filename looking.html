@@ -114,7 +114,7 @@
                 <a class="pl-4 mr-auto" href="background.html">
                     <span><i class="fas fa-backward"></i> prev</span>
                 </a>
-                <a class="pr-4 ml-auto" href="definition.html">
+                <a id="nextLink" class="pr-4 ml-auto hidden" href="definition.html">
                     <span>next <i class="fas fa-forward"></i></span>
                 </a>
         </div>
@@ -137,7 +137,8 @@
           videoId: '5M0aUOudbx0',
           allowfullscreen: 'false',
           events: {
-            'onReady': onPlayerReady
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
           }
         });
       }
@@ -154,6 +155,18 @@
       function pauseVideo() {
         player.pauseVideo();
       }
+
+  function getPlayerStatus(playerStatus) {
+    if  (playerStatus == 0) {
+      console.log("ended");
+      revealNext();
+      }
+  }
+
+  function onPlayerStateChange(event) {
+    getPlayerStatus(event.data);
+  }
+
     </script>
 
     <!-- Bootstrap scripts --> 

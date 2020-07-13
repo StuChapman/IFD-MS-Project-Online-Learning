@@ -40,7 +40,11 @@ function sendEmail() {
 function revealValue() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
     console.log('Value');
     nextRevealValue++;
+    nextReveal = nextRevealValue * nextRevealWaste;
+    console.log(nextReveal);
+    if (nextReveal > 0) {
     revealNext();
+    }
     $("#arrowmaskwaste").animate({
                 width: '33vw'
             });
@@ -52,7 +56,11 @@ function revealValue() { //Credit: https://www.tutorialrepublic.com/codelab.php?
 function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
     console.log('Waste');
     nextRevealWaste++
+    nextReveal = nextRevealValue * nextRevealWaste;
+    console.log(nextReveal);
+    if (nextReveal > 0) {
     revealNext();
+    }
     $("#arrowmaskvalue").animate({
                 width: '33vw'
             });
@@ -63,16 +71,12 @@ function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?
 
 //Function: revealing the nextLink after content has been interacted with //
 function revealNext() {
-    nextReveal = nextRevealValue * nextRevealWaste;
-    console.log(nextReveal);
-    if (nextReveal > 0) {
-         var el = document.getElementById("nextLink");
-            el.classList.remove("hidden");
-            el.classList.add("unhidden");
-    }
+    var el = document.getElementById("nextLink");
+    el.classList.remove("hidden");
+    el.classList.add("unhidden");
 }
 
-//Function: using the play button to play the Mark Onetto video on looking.html//
+//Function: using the play button to play and pause the Mark Onetto video on looking.html//
 function playVid() { 
 
     var buttonText = $("#playbutton").text();
