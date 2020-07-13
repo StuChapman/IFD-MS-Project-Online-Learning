@@ -3,6 +3,7 @@
 var nextReveal = 0;
 var nextRevealValue = 0;
 var nextRevealWaste = 0;
+var player;
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -72,20 +73,19 @@ function revealNext() {
 }
 
 //Function: using the play button to play the Mark Onetto video on looking.html//
-function playVid() { //Credit: https://www.w3schools.com/tags/av_met_play.asp
+function playVid() { 
 
     var buttonText = $("#playbutton").text();
     var playText = $.trim(buttonText);
     console.log (playText);
-    var vid = document.getElementById("onettovideo");
 
     switch(playText) {
         case "play":
-            vid.play();
+            player.playVideo()
             $("#playbutton").text("pause");
             break;
         case "pause":
-            vid.pause();
+            player.pauseVideo();
             $("#playbutton").text("play");
             break;
         default:

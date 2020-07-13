@@ -166,6 +166,7 @@ nav {
 
 #arrowvalue, #arrowwaste {
     background-color: #CC613A;
+    padding: 2vw;
 }
 
 #arrowmaskvalue, #arrowmaskwaste {
@@ -266,6 +267,11 @@ nav {
         
     #textsection .extrapadding {
         padding-top: 10vh;
+    }
+
+    #onettovideo {
+        max-height: 30vh;
+        max-width: 25vw;
     }
 
 }

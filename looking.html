@@ -44,10 +44,9 @@
         </div>
         <h1>Looking for Waste...</h1>
         <p class="paramedium">Marc A. Onetto, formerly Senior Vice President-Worldwide Operations at Amazon.com, Inc., 
-            talks about his experience of Waste as Vice President-Operations of GE Europe GmbH.</p>
+            talks about his experience of Waste at Amazon.</p>
         <div type="d-block">
-            <iframe id="onettovideo" src="https://www.youtube.com/embed/5M0aUOudbx0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+            <div id="onettovideo"></div>
         </div>
         <button id="playbutton" type="button" class="btn" onclick="return playVid();">
             play
@@ -121,6 +120,42 @@
         </div>
     </footer>
  
+    <!-- YouTube scripts --> 
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('onettovideo', {
+          videoId: '5M0aUOudbx0',
+          allowfullscreen: 'false',
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.pauseVideo();
+      }
+
+      function playVideo() {
+        player.playVideo();
+      }
+
+      function pauseVideo() {
+        player.pauseVideo();
+      }
+    </script>
+
     <!-- Bootstrap scripts --> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
