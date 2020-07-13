@@ -96,3 +96,8 @@ function playVid() {
             break;
     }
 }
+
+function resetPlay() {
+    $("#playbutton").text("play");
+}
+

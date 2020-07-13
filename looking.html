@@ -136,6 +136,7 @@
         player = new YT.Player('onettovideo', {
           videoId: '5M0aUOudbx0',
           allowfullscreen: 'false',
+          playsinline: 'true',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -160,6 +161,7 @@
     if  (playerStatus == 0) {
       console.log("ended");
       revealNext();
+      resetPlay();
       }
   }
 
