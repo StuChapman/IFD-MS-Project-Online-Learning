@@ -7,6 +7,7 @@ var player;
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
+    // log to Console to test Functionality //
     console.log(this.sendername.value);
     console.log(this.emailinput.value);
     console.log(this.question.value);
@@ -26,6 +27,7 @@ function sendEmail() {
 
     emailjs.send(service_id, template_id, template_params)
     //Credit: Code Institute//
+    // log to Console to test Functionality //
     .then(
         function(response) {
             console.log("success", response);
@@ -36,35 +38,40 @@ function sendEmail() {
     return false;
 }
 
-//Function: reveal the definition for Value by clicking to word value on definition.html //
-function revealValue() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
+//Function: reveal the definition for Value by clicking the word value on definition.html //
+function revealValue() {
+    // log to Console to test Functionality //
     console.log('Value');
     nextRevealValue++;
     nextReveal = nextRevealValue * nextRevealWaste;
+    // log to Console to test Functionality //
     console.log(nextReveal);
     if (nextReveal > 0) {
     revealNext();
     }
-    $("#arrowmaskwaste").animate({
+    $("#arrowmaskwaste").animate({ //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
                 width: '33vw'
             });
-    $("#arrowmaskvalue").animate({
+    $("#arrowmaskvalue").animate({ //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
                 width: 0
             });
 }
 
-function revealWaste() { //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
+//Function: reveal the definition for Waste by clicking the word waste on definition.html //
+function revealWaste() { 
+    // log to Console to test Functionality //
     console.log('Waste');
     nextRevealWaste++
     nextReveal = nextRevealValue * nextRevealWaste;
+    // log to Console to test Functionality //
     console.log(nextReveal);
     if (nextReveal > 0) {
     revealNext();
     }
-    $("#arrowmaskvalue").animate({
+    $("#arrowmaskvalue").animate({ //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
                 width: '33vw'
             });
-    $("#arrowmaskwaste").animate({
+    $("#arrowmaskwaste").animate({ //Credit: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect
                 width: 0
             });
 }
@@ -76,11 +83,12 @@ function revealNext() {
     el.classList.add("unhidden");
 }
 
-//Function: using the play button to play and pause the Mark Onetto video on looking.html//
+//Function: using the play button to play and pause the Mark Onetto video on looking.html //
 function playVid() { 
 
     var buttonText = $("#playbutton").text();
     var playText = $.trim(buttonText);
+    // log to Console to test Functionality //
     console.log (playText);
 
     switch(playText) {
@@ -97,6 +105,7 @@ function playVid() {
     }
 }
 
+//Function: reset button from pause to play when the video finishes on looking.html//
 function resetPlay() {
     $("#playbutton").text("play");
 }

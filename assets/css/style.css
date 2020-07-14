@@ -59,6 +59,10 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     box-shadow: none;
 }
 
+#brandimage:hover {
+    cursor: pointer;
+}
+
 .arrowtext:hover {
     cursor: pointer;
     font-weight: bold; 
@@ -127,6 +131,12 @@ nav {
     padding-top: 10vh;
 }
 
+#textsection .paraxlarge{
+    font-size: calc(4vh + (26 - 4) * ((100vw - 300px) / 1620));
+    color: #101828;
+    padding: 0 20vw 0 20vw;
+}
+
 #textsection .paralarge{
     font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
     color: #101828;
@@ -149,6 +159,11 @@ nav {
 #ohnoimage {
     height: 20vh;
     padding-bottom: 2.5vh;
+}
+
+#valueimage {
+    height: 25vh;
+    margin-bottom: 5vh;
 }
 
 /* ------------------- Arrow Styling */
@@ -190,6 +205,26 @@ nav {
     width: 33vw;
     color: #ffffff;
     font-size: calc(2vh + (10 - 2) * ((100vw - 300px) / 1620));
+}
+
+.carouselarrowright, .carouselarrowleft, .carouselarrowhidden {
+    font-size: 7.5vh;
+}
+
+.carouselarrowleft, .carouselarrowhidden {
+    padding: 0 10vw 0 0;
+}
+
+.carouselarrowright {
+    padding: 0 0 0 10vw;
+}
+
+.carouselarrowright, .carouselarrowleft {
+    color: #657486;
+}
+
+.carouselarrowhidden {
+    color: #eeeeee;
 }
 
 /* ------------------- Video Styling */
