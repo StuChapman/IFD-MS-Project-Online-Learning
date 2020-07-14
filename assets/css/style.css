@@ -68,6 +68,10 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     font-weight: bold; 
 }
 
+#leftcarouselarrow:hover, #rightcarouselarrow:hover {
+    cursor: pointer;
+}
+
 /*------------------- Navbar Styling */
 
 nav {
@@ -162,7 +166,7 @@ nav {
 }
 
 #valueimage {
-    height: calc(20vh + (70 - 20) * ((100vw - 300px) / 1620));
+    width: calc(20vh + (70 - 20) * ((100vw - 300px) / 1620));
     margin-bottom: 5vh;
 }
 

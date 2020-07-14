@@ -149,7 +149,7 @@ function populateImage() {
     switch(imageCount) {
         case 0:
             $("#leftcarouselarrow").css('color', '#eeeeee');
-            return;
+            break;
         case 1:
             $("#leftcarouselarrow").css('color', '#657486');
             break;
@@ -158,7 +158,8 @@ function populateImage() {
             break;
         case 4:
             $("#rightcarouselarrow").css('color', '#eeeeee');
-            return;
+            revealNext()
+            break;
         default:
             break;
     }
