@@ -44,11 +44,15 @@
         </div>
         <h1>Some examples of Value...</h1>
         <div class="d-inline">
-            <span class="carouselarrowhidden"><i class="fas fa-chevron-left"></i></span>
-            <img id="valueimage" src="assets/images/cash.jpg" alt="a pile of cash" >
-            <span class="carouselarrowright"><i class="fas fa-chevron-right"></i></span>
+            <span id="leftcarouselarrow">
+                <i class="fas fa-chevron-left" onclick="return prevImage();"></i>
+            </span>
+            <img id="valueimage" src="assets/images/cash.jpg" alt="value image" >
+            <span id="rightcarouselarrow">
+                <i class="fas fa-chevron-right" onclick="return nextImage();"></i>
+            </span>
         </div>
-        <p class="paraxlarge">Crediting a loan into a Customer’s bank account</p>
+        <p id="imagetext">Crediting a loan into a Customer’s bank account</p>
     </section>
 
 <!-- Bootstrap Modals -->

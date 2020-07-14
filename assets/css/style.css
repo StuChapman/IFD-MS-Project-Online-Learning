@@ -114,7 +114,7 @@ nav {
     height: 4vh;
 }
 
-#textsection h1{
+#textsection h1 {
     padding: 5vh;
     margin: 0;
     font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
@@ -122,7 +122,7 @@ nav {
     font-weight: bold;
 }
 
-#textsection p{
+#textsection p {
     padding: 0 2.5vh 2.5vh;
     margin: 0;
 }
@@ -131,18 +131,12 @@ nav {
     padding-top: 10vh;
 }
 
-#textsection .paraxlarge{
-    font-size: calc(4vh + (26 - 4) * ((100vw - 300px) / 1620));
-    color: #101828;
-    padding: 0 20vw 0 20vw;
-}
-
-#textsection .paralarge{
+#textsection .paralarge {
     font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
     color: #101828;
 }
 
-#textsection .paramedium{
+#textsection .paramedium {
     font-size: calc(2vh + (15 - 2) * ((100vw - 300px) / 1620));
     color: #000000;
 }
@@ -154,6 +148,12 @@ nav {
     font-size: calc(2.5vh + (10 - 2.5) * ((100vw - 300px) / 1620));
 }
 
+#textsection #imagetext {
+    font-size: calc(4vh + (26 - 4) * ((100vw - 300px) / 1620));
+    color: #101828;
+    padding: 0 20vw 0 20vw;
+}
+
 /* ------------------- Image Styling */
 
 #ohnoimage {
@@ -162,7 +162,7 @@ nav {
 }
 
 #valueimage {
-    height: 25vh;
+    height: calc(20vh + (70 - 20) * ((100vw - 300px) / 1620));
     margin-bottom: 5vh;
 }
 
@@ -207,24 +207,18 @@ nav {
     font-size: calc(2vh + (10 - 2) * ((100vw - 300px) / 1620));
 }
 
-.carouselarrowright, .carouselarrowleft, .carouselarrowhidden {
+#leftcarouselarrow, #rightcarouselarrow {
     font-size: 7.5vh;
 }
 
-.carouselarrowleft, .carouselarrowhidden {
+#leftcarouselarrow {    
+    color: #eeeeee;
     padding: 0 10vw 0 0;
 }
 
-.carouselarrowright {
-    padding: 0 0 0 10vw;
-}
-
-.carouselarrowright, .carouselarrowleft {
+#rightcarouselarrow {
     color: #657486;
-}
-
-.carouselarrowhidden {
-    color: #eeeeee;
+    padding: 0 0 0 10vw;
 }
 
 /* ------------------- Video Styling */

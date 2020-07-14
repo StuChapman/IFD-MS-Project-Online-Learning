@@ -4,6 +4,7 @@ var nextReveal = 0;
 var nextRevealValue = 0;
 var nextRevealWaste = 0;
 var player;
+var imageCount = 0;
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -105,8 +106,60 @@ function playVid() {
     }
 }
 
-//Function: reset button from pause to play when the video finishes on looking.html//
+//Function: reset button from pause to play when the video finishes on looking.html //
 function resetPlay() {
     $("#playbutton").text("play");
 }
 
+//Function: scroll to next image on value.html //
+function nextImage() {
+    if (imageCount == 4) {
+          imageCount == 4;
+        } else {
+          imageCount++;
+        }
+    populateImage();
+}
+
+//Function: scroll to previous image on value.html //
+function prevImage() {
+    if (imageCount == 0) {
+          imageCount == 0;
+        } else {
+          imageCount--;
+        }
+    populateImage();
+}
+
+//Function: set the image and text on value.html //
+function populateImage() {
+    let imageArray = 
+        [
+            ['cash', 'Crediting a loan into a Customer’s bank account'],
+            ['window', 'Cleaning the windows on a building'],
+            ['meal', 'Serving a meal to a Customer'],
+            ['tyre', 'Replacing a flat tyre on a car'],
+            ['sale', 'Selling a new insurance policy to a Customer']
+        ];
+
+    console.log('imageCount: ' + imageCount + ' ' + imageArray[imageCount]);
+    $("#valueimage").attr('src', 'assets/images/' + imageArray[imageCount][0] + '.jpg'); //Credit: https://www.juniordevelopercentral.com/jquery-change-image-src/#:~:text=jQuery%20change%20image%20src%20-%20How%20To%20Change,as%20simple%20as%20using%20the%20attr%20%2Afunction.%20 //
+    $("#imagetext").text(imageArray[imageCount][1]);
+
+    switch(imageCount) {
+        case 0:
+            $("#leftcarouselarrow").css('color', '#eeeeee');
+            return;
+        case 1:
+            $("#leftcarouselarrow").css('color', '#657486');
+            break;
+        case 3:
+            $("#rightcarouselarrow").css('color', '#657486');
+            break;
+        case 4:
+            $("#rightcarouselarrow").css('color', '#eeeeee');
+            return;
+        default:
+            break;
+    }
+}
