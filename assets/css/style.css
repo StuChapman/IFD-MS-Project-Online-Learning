@@ -47,6 +47,10 @@ label {
     margin-left: 0;
 }
 
+#textsection .col-6, .col-sm-3 {
+    padding: 0;
+}
+
 /*------------------- Hover Styling */
 
 a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
@@ -290,6 +294,56 @@ nav {
 }
 
 /* ------------------- Media Screen responsiveness */
+
+/* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
+
+@media screen and (orientation: portrait) {
+    #transportation, 
+    #inventory,
+    #motion,
+    #waiting,
+    #overproduction,
+    #overprocessing,
+    #defects,
+    #skills {
+        height: 15vh;
+        padding: .5vh;
+    }
+    
+    .wastecontainer {
+        width: 30vh;
+    }
+
+    .wasteimagecontainer {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}
+
+@media screen and (orientation: landscape){
+    #transportation, 
+    #inventory,
+    #motion,
+    #waiting,
+    #overproduction,
+    #overprocessing,
+    #defects,
+    #skills {
+        height: 25vh;
+        padding: .5vh;
+    }
+    
+    .wastecontainer {
+        width: 100vh;
+    }
+
+    .wasteimagecontainer {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+}
 
 @media screen and (min-width: 768px) {
     #helpbtn {

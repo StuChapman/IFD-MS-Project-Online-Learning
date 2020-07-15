@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Learning - The 8 wastes</title>
+    <!--Bootstrap stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!--Google Fonts stylesheet-->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <!--Font Awesome stylesheet-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <!--css stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <!--emailjs scripts-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("user_37585cYmkMNZRiOobd27i");
+    })();
+    </script>
+</head> 
+<body>
+    <!--navbar-->
+    <nav class="sticky-top">
+        <!-- Home Modal -->
+        <div class="mr-auto ml-0 d-inline">
+                <img id="brandimage" src="assets/images/brand.jpg" alt="continuous engagement brand image" 
+                    data-toggle="modal" data-target="#homeModal">
+        </div>
+        <!-- Help Modal -->
+        <button type="button" id="helpbtn" class="btn ml-auto mr-0 d-inline float-right align-vertically" data-toggle="modal" data-target="#helpModal">
+            help <i class="far fa-question-circle"></i>
+        </button>
+    </nav>
+
+    <!--Text Section-->
+    <section id="textsection">
+        <div id="topper" class="d-block align-vertically">
+            Continuous Engagement Ltd – online learning
+        </div>
+        <h1 class="pt-1 pb-1">The 8 Wastes</h1>
+        <p class="paralarge">tap on each image for more...</p>
+        <div class="row wastecontainer ml-auto mr-auto">
+            <div class="wasteimagecontainer">
+                <img id="transportation" class="float-right float-sm-none" src="assets/images/Transportation.jpg" alt="transportation image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="inventory"  class="float-left float-sm-none" src="assets/images/Inventory.jpg" alt="transportation image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="motion" class="float-right float-sm-none" src="assets/images/Motion.jpg" alt="motion image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="waiting"  class="float-left float-sm-none" src="assets/images/Waiting.jpg" alt="waiting image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="overproduction" class="float-right float-sm-none" src="assets/images/Overproduction.jpg" alt="overproduction image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="overprocessing"  class="float-left float-sm-none" src="assets/images/Overprocessing.jpg" alt="overprocessing image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="defects" class="float-right float-sm-none" src="assets/images/Defects.jpg" alt="defects image">
+            </div>
+            <div class="wasteimagecontainer">
+                <img id="skills"  class="float-left float-sm-none" src="assets/images/Skills.jpg" alt="skills image">
+            </div>
+        </div>
+    </section>
+
+<!-- Bootstrap Modals -->
+    <!-- Home Modal -->
+        <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Warning <i class="fas fa-exclamation-triangle"></i></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You are about to leave this site for the Continuous Engagement home page. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-blue" data-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-orange">
+                    <a href="https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html">
+                        Continue
+                    </a>
+                </button>
+            </div>
+            </div>
+        </div>
+        </div>
+
+    <!-- Help Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="helpModalLabel">Submit your question...</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <label class="mr-auto" for="sendername">Name * </label><br>
+                                <input type="text" id="sendername" placeholder="Firstname Lastname" required><br>
+                                <label class="mr-auto" for="emailinput">Email address *</label><br>
+                                <input type="email" id="emailinput" placeholder="name@example.com" required><br>
+                                <label class="mr-auto" for="question">Type your question here... *</label><br>
+                                <textarea id="question" rows="2" required></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <label class="mr-auto" for="submit">You will receive an email from continuousengagement@outlook.com</label><br>
+                                <button type="submit" class="btn btn-blue" onclick="return sendEmail(this);" data-dismiss="modal">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <footer>
+        <div id="footer" class="align-vertically">
+            <a class="pl-4 mr-auto" href="waste.html">
+                <span><i class="fas fa-backward"></i> prev</span>
+            </a>
+            <a id="nextLink" class="pr-4 ml-auto hidden" href="eightwastes.html">
+                <span>next <i class="fas fa-forward"></i></span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap scripts --> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script> 
+    <!-- Emailjs scripts -->   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js">
+    </script> 
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <!-- scripts -->
+    <script src="assets/js/scripts.js">
+    </script>
+</body>
+</html>
