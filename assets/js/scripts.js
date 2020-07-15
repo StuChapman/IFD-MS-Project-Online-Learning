@@ -79,9 +79,8 @@ function revealWaste() {
 
 //Function: revealing the nextLink after content has been interacted with //
 function revealNext() {
-    var el = document.getElementById("nextLink");
-    el.classList.remove("hidden");
-    el.classList.add("unhidden");
+    $("#nextLink").removeClass("hidden");
+    $("#nextLink").addClass("unhidden");
 }
 
 //Function: using the play button to play and pause the Mark Onetto video on looking.html //
@@ -133,14 +132,34 @@ function prevImage() {
 
 //Function: set the image and text on value.html //
 function populateImage() {
-    let imageArray = 
-        [
-            ['cash', 'Crediting a loan into a Customer’s bank account'],
-            ['window', 'Cleaning the windows on a building'],
-            ['meal', 'Serving a meal to a Customer'],
-            ['tyre', 'Replacing a flat tyre on a car'],
-            ['sale', 'Selling a new insurance policy to a Customer']
-        ];
+    var getpage = document.title
+    // log to Console to test Functionality //
+    console.log (getpage);
+
+    switch(getpage) {
+        case "Online Learning - Value":
+            imageArray = 
+                [
+                    ['cash', 'Crediting a loan into a Customer’s bank account'],
+                    ['window', 'Cleaning the windows on a building'],
+                    ['meal', 'Serving a meal to a Customer'],
+                    ['tyre', 'Replacing a flat tyre on a car'],
+                    ['sale', 'Selling a new insurance policy to a Customer']
+                ];
+            break;
+        case "Online Learning - Waste":
+            imageArray = 
+                [
+                    ['headache', 'Going past the agreed date for the loan to be credited'],
+                    ['dirty', 'Removing smears left on a window after cleaning'],
+                    ['overeat', 'Serving a meal to a Customer while they are still eating the previous course'],
+                    ['flat', 'Not inflating the tyre to the correct pressure'],
+                    ['phone', 'Telling the telephone Customer they have to go online to buy the policy']
+                ];
+            break;
+        default:
+            break;
+    }
 
     console.log('imageCount: ' + imageCount + ' ' + imageArray[imageCount]);
     $("#valueimage").attr('src', 'assets/images/' + imageArray[imageCount][0] + '.jpg'); //Credit: https://www.juniordevelopercentral.com/jquery-change-image-src/#:~:text=jQuery%20change%20image%20src%20-%20How%20To%20Change,as%20simple%20as%20using%20the%20attr%20%2Afunction.%20 //

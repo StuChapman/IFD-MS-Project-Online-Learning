@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Learning - Definitions</title>
+    <title>Online Learning - Waste</title>
     <!--Bootstrap stylesheet-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!--Google Fonts stylesheet-->
@@ -28,8 +28,8 @@
     <nav class="sticky-top">
         <!-- Home Modal -->
         <div class="mr-auto ml-0 d-inline">
-                <img id="brandimage" src="assets/images/brand.jpg" alt="continuous engagement brand image" 
-                    data-toggle="modal" data-target="#homeModal">
+            <img id="brandimage" src="assets/images/brand.jpg" alt="continuous engagement brand image" 
+                data-toggle="modal" data-target="#homeModal">
         </div>
         <!-- Help Modal -->
         <button type="button" id="helpbtn" class="btn ml-auto mr-0 d-inline float-right align-vertically" data-toggle="modal" data-target="#helpModal">
@@ -42,19 +42,17 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <p class="paralarge extrapadding">Work done can be put into 2 categories:</p>
-        <h1 onclick="return revealValue();"><span class="arrowtext">Value</span></h1>
-        <p class="paralarge">and</p>
-        <h1 onclick="return revealWaste();"><span class="arrowtext">Waste</span></h1>
-        <p class="paralarge extrapadding">Tap on each of them to see the definition ...</p>
-        <div id="arrowvalue" class="extramargin align-vertically">
-            “Value” is defined as work that directly contributes to what the Customer is paying for.
+        <h1>Some examples of Waste...</h1>
+        <div class="d-inline">
+            <span id="leftcarouselarrow">
+                <i class="fas fa-chevron-left" onclick="return prevImage();"></i>
+            </span>
+            <img id="valueimage" src="assets/images/headache.jpg" alt="waste image" >
+            <span id="rightcarouselarrow">
+                <i class="fas fa-chevron-right" onclick="return nextImage();"></i>
+            </span>
         </div>
-        <div id="arrowwaste" class="extramargin align-vertically">
-            “Waste” is defined as work that if it was removed, the Customer would receive the same quality.
-        </div>
-        <div id="arrowmaskvalue" class="extramargin"></div>
-        <div id="arrowmaskwaste" class="extramargin"></div>
+        <p id="imagetext">Going past the agreed date for the loan to be credited</p>
     </section>
 
 <!-- Bootstrap Modals -->
@@ -115,15 +113,15 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-            <a class="pl-4 mr-auto" href="looking.html">
+            <a class="pl-4 mr-auto" href="value.html">
                 <span><i class="fas fa-backward"></i> prev</span>
             </a>
-            <a id="nextLink" class="pr-4 ml-auto hidden" href="value.html">
+            <a id="nextLink" class="pr-4 ml-auto hidden" href="nonvalueadd.html">
                 <span>next <i class="fas fa-forward"></i></span>
             </a>
         </div>
     </footer>
-
+ 
     <!-- Bootstrap scripts --> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

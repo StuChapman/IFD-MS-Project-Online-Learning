@@ -153,7 +153,7 @@ nav {
 }
 
 #textsection #imagetext {
-    font-size: calc(4vh + (26 - 4) * ((100vw - 300px) / 1620));
+    font-size: calc(3.5vh + (26 - 3.5) * ((100vw - 300px) / 1620));
     color: #101828;
     padding: 0 20vw 0 20vw;
 }
