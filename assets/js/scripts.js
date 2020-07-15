@@ -183,3 +183,16 @@ function populateImage() {
             break;
     }
 }
+
+//Function: reveal the additional text on nonvalueadd.html //
+function scrollDown() {
+    $('#scrollone').css('display', 'none');
+    $('#scrolltwo').css('display', 'block');
+    revealNext();
+}
+
+//Function: hide the additional text on nonvalueadd.html //
+function scrollUp() {
+    $('#scrollone').css('display', 'block');
+    $('#scrolltwo').css('display', 'none');
+}

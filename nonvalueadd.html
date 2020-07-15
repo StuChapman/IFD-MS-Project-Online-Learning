@@ -42,19 +42,31 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <p class="paralarge extrapadding">Work done can be put into 2 categories:</p>
-        <h1 onclick="return revealValue();"><span class="arrowtext">Value</span></h1>
-        <p class="paralarge">and</p>
-        <h1 onclick="return revealWaste();"><span class="arrowtext">Waste</span></h1>
-        <p class="paralarge extrapadding">Tap on each of them to see the definition ...</p>
-        <div id="arrowvalue" class="extramargin align-vertically">
-            “Value” is defined as work that directly contributes to what the Customer is paying for.
+        <div id="scrollone">
+            <h1>Necessary Non-Value-Add</h1>
+            <p class="paralarge">Sometimes, there is work that adds no Value to the Customer, but if it 
+                wasn’t carried out, there could be issues.</p>
+            <br>
+            <p class="paralarge">An example might be; running Credit Checks on a Customer before agreeing a loan.</p>
+            <p class="paralarge">It’s done to mitigate the risk of the loan not being paid, but doesn’t 
+                add an actual Value to the Customer.</p>
+            <div id="downarrow">
+                <i class="fas fa-chevron-down" onclick="return scrollDown();"></i>
+            </div>
         </div>
-        <div id="arrowwaste" class="extramargin align-vertically">
-            “Waste” is defined as work that if it was removed, the Customer would receive the same quality.
+        <div id="scrolltwo">
+            <div id="uparrow">
+                <i class="fas fa-chevron-up pt-3" onclick="return scrollUp();"></i>
+            </div>
+            <h1 class="pt-0 pb-0">Another way to look at it is...</h1>
+            <br>
+            <p class="paralarge">- for every Customer who DID pay the loan back, the Credit Check was Waste.</p>
+            <p class="paralarge">- for every Customer who WOULDN’T HAVE paid the loan back, it added Value.</p>
+            <br>
+            <p class="paramedium">Therefore, we should keep Necessary Non-Value-Add to the minimum, and where we 
+                accept it, we should keep the cost and effort to a minimum..</p>
+            <p class="paramedium">(no point spending a million dollers to avoid a half-million-dollar risk!)</p>
         </div>
-        <div id="arrowmaskvalue" class="extramargin"></div>
-        <div id="arrowmaskwaste" class="extramargin"></div>
     </section>
 
 <!-- Bootstrap Modals -->
