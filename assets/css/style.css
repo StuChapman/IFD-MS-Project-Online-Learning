@@ -178,6 +178,15 @@ nav {
     margin-bottom: 5vh;
 }
 
+.wastepopupimagecontainer {
+    align-content: center;
+    padding-bottom: 2.5vh;
+}
+
+#wastepopupimage {
+    height: 17.5vh;
+}
+
 /* ------------------- Arrow Styling */
 
 .arrowtext {
@@ -278,6 +287,19 @@ nav {
 #name, #emailinput, #question {
     width: 100%;
     margin-bottom: 2vh;
+}
+
+/* ------------------- Waste pop-up Styling */
+
+#wastepopup {
+    position: absolute;
+    top: 15vh;
+    left: 1vw;
+    height: 76.5vh;
+    width: 98vw;
+    background-color: #ffffff;
+    border: 1px solid #657486;
+    visibility: hidden;
 }
 
 /* ------------------- Footer Styling */

@@ -207,7 +207,7 @@ function scrollUp() {
 }
 
 
-//Function: reveal the detailed description of each waste on eightwastes.html //
+//Function: handle the images on eightwastes.html ready for the popup //
 function revealWaste(imagetag) {
     // log to Console to test Functionality //
     console.log(imagetag);
@@ -248,7 +248,14 @@ function revealWaste(imagetag) {
     }
 
     // as this is a product, clickCount is only 1 once all images are clicked //
-    var clickCount = (transportationFlag * inventoryFlag * motionFlag * waitingFlag * overproductionFlag * overprocessingFlag * defectsFlag * skillsFlag);
+    var clickCount = (transportationFlag 
+                        * inventoryFlag 
+                        * motionFlag 
+                        * waitingFlag 
+                        * overproductionFlag 
+                        * overprocessingFlag 
+                        * defectsFlag 
+                        * skillsFlag);
     // log to Console to test Functionality //
     console.log(clickCount);    
 
@@ -258,4 +265,87 @@ function revealWaste(imagetag) {
 
     // change opacity of clicked image to show status as clicked //
     $(imagetag).css('opacity', .25); //Credit: https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js
+
+    popupWaste(imagetag);
+}
+
+//Function: reveal and populate the detailed description of each waste on eightwastes.html //
+function popupWaste(imagetag) {
+    // log to Console to test Functionality //
+    console.log(imagetag);
+
+    var indexString = imagetag.substr(1);
+    // log to Console to test Functionality //
+    console.log(indexString);
+    var wasteIndex =0;
+
+    popupArray = 
+                [
+                    ['Transportation', 'Moving product or work around for no reason.', 
+                        'In a restaurant, this might be; carrying all the meat downstairs to the cellar, only to have to carry it all back upstairs again to cook it.', 
+                            '...or a Customer being transferred from one department to another.'],
+                    ['Inventory', 'Keeping excessive stocks of product.', 
+                        'In our restaurant, this might be filling the freezer with a years worth of sausages', 
+                            '...or batching up change requests for approval.'],
+                    ['Motion', 'Moving the worker around.', 
+                        'The chef in our restaurant might have to walk to one cupboard to get the oil, then walk to the other side of the kitchen to get the salt.', 
+                            '...or navigating through a number of screens of a website.'],
+                    ['Waiting', 'Work or product standing still.', 
+                        'Our restaurant Customers do not like spending 30 minutes waiting for thier food.', 
+                            '...or this could be a queue to speak to an advisor on the phone.'],
+                    ['Overproduction', 'Producing work or product ahead of schedule.', 
+                        'The waiter could take out the first course before the Customer has finished thier starter.', 
+                            '...or printing a batch of books before you have received orders.'],
+                    ['Overprocessing', 'Work or product that is too complicated', 
+                        'The chef arranging the sausages and mash into the shape of a steam locomotive!', 
+                            '...or quality checks and approvals throughout a process.'],
+                    ['Defects', 'Work or product that has to be repaired or discarded.', 
+                        'Burning the sausages!', 
+                            '...or a Customer losing patience with a website, and exiting before buying.'],
+                    ['Skills', 'Using the wrong people at the wrong time.', 
+                        'Asking the waiter to cook the food.', 
+                            '...or asking a manager to decide how a craftsperson uses thier tools.'],
+                ];
+    
+    switch(indexString) {
+        case 'transportation':
+            wasteIndex = 0;
+            break;
+        case 'inventory':
+            wasteIndex = 1;
+            break;
+        case 'motion':
+            wasteIndex = 2;
+            break;
+        case 'waiting':
+            wasteIndex = 3;
+            break;
+        case 'overproduction':
+            wasteIndex = 4;
+            break;
+        case 'overprocessing':
+            wasteIndex = 5;
+            break;
+        case 'defects':
+            wasteIndex = 6;
+            break;
+        case 'skills':
+            wasteIndex = 7;
+            break;
+        default:
+            console.log('did not work');
+            break;
+    }
+
+    $('#pophead').text(popupArray[wasteIndex][0]);
+    $('#poppone').text(popupArray[wasteIndex][1]);
+    $('#popptwo').text(popupArray[wasteIndex][2]);
+    $('#wastepopupimage').attr('src','assets/images/' + indexString + '.jpg')
+    $('#poppthree').text(popupArray[wasteIndex][3]);
+    $('#wastepopup').css('visibility', 'visible');
+}
+
+//Function: reveal the detailed description of each waste on eightwastes.html //
+function popDownWaste() {
+    $('#wastepopup').css('visibility', 'hidden');
 }
