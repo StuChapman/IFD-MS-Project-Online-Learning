@@ -196,3 +196,10 @@ function scrollUp() {
     $('#scrollone').css('display', 'block');
     $('#scrolltwo').css('display', 'none');
 }
+
+
+//Function: reveal the detailed description of each waste on eightwastes.html //
+function revealWaste(imagetag) {
+    $(imagetag).css('opacity', .25); //Credit: https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js
+}
+

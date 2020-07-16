@@ -162,6 +162,10 @@ nav {
     padding: 0 20vw 0 20vw;
 }
 
+#textsection .imagefooter {
+    font-size: calc(1.5vh + (12 - 1.5) * ((100vw - 300px) / 1620));
+}
+
 /* ------------------- Image Styling */
 
 #ohnoimage {
@@ -295,9 +299,7 @@ nav {
 
 /* ------------------- Media Screen responsiveness */
 
-/* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
-
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait) { /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
     #transportation, 
     #inventory,
     #motion,
@@ -306,12 +308,12 @@ nav {
     #overprocessing,
     #defects,
     #skills {
-        height: 15vh;
-        padding: .5vh;
+        height: 13vh;
+        padding: .5vh .5vh 0 .5vh;
     }
     
     .wastecontainer {
-        width: 30vh;
+        width: 26vh;
     }
 
     .wasteimagecontainer {
@@ -321,7 +323,7 @@ nav {
 
 }
 
-@media screen and (orientation: landscape){
+@media screen and (orientation: landscape){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
     #transportation, 
     #inventory,
     #motion,
@@ -330,8 +332,8 @@ nav {
     #overprocessing,
     #defects,
     #skills {
-        height: 25vh;
-        padding: .5vh;
+        height: 24.5vh;
+        padding: .5vh .5vh 0 .5vh;
     }
     
     .wastecontainer {

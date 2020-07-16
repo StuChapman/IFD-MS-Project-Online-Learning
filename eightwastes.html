@@ -46,28 +46,44 @@
         <p class="paralarge">tap on each image for more...</p>
         <div class="row wastecontainer ml-auto mr-auto">
             <div class="wasteimagecontainer">
-                <img id="transportation" class="float-right float-sm-none" src="assets/images/Transportation.jpg" alt="transportation image">
+                <img id="transportation" onclick="return revealWaste(transportation);" 
+                    src="assets/images/Transportation.jpg" alt="transportation image">
+                <div class="imagefooter">Transportation</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="inventory"  class="float-left float-sm-none" src="assets/images/Inventory.jpg" alt="transportation image">
+                <img id="inventory" onclick="return revealWaste(inventory);" 
+                    src="assets/images/Inventory.jpg" alt="transportation image">
+                <div class="imagefooter">Inventory</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="motion" class="float-right float-sm-none" src="assets/images/Motion.jpg" alt="motion image">
+                <img id="motion" onclick="return revealWaste(motion);" 
+                    src="assets/images/Motion.jpg" alt="motion image">
+                <div class="imagefooter">Motion</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="waiting"  class="float-left float-sm-none" src="assets/images/Waiting.jpg" alt="waiting image">
+                <img id="waiting" onclick="return revealWaste(waiting);" 
+                    src="assets/images/Waiting.jpg" alt="waiting image">
+                <div class="imagefooter">Waiting</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="overproduction" class="float-right float-sm-none" src="assets/images/Overproduction.jpg" alt="overproduction image">
+                <img id="overproduction" onclick="return revealWaste(overproduction);" 
+                    src="assets/images/Overproduction.jpg" alt="overproduction image">
+                <div class="imagefooter">Overproduction</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="overprocessing"  class="float-left float-sm-none" src="assets/images/Overprocessing.jpg" alt="overprocessing image">
+                <img id="overprocessing" onclick="return revealWaste(overprocessing);" 
+                    src="assets/images/Overprocessing.jpg" alt="overprocessing image">
+                <div class="imagefooter">Overprocessing</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="defects" class="float-right float-sm-none" src="assets/images/Defects.jpg" alt="defects image">
+                <img id="defects" onclick="return revealWaste(defects);" 
+                    src="assets/images/Defects.jpg" alt="defects image">
+                <div class="imagefooter">Defects</div>
             </div>
             <div class="wasteimagecontainer">
-                <img id="skills"  class="float-left float-sm-none" src="assets/images/Skills.jpg" alt="skills image">
+                <img id="skills" onclick="return revealWaste(skills);" 
+                    src="assets/images/Skills.jpg" alt="skills image">
+                <div class="imagefooter">Skills</div>
             </div>
         </div>
     </section>
@@ -120,7 +136,7 @@
                             </div>
                             <div class="modal-footer">
                                 <label class="mr-auto" for="submit">You will receive an email from continuousengagement@outlook.com</label><br>
-                                <button type="submit" class="btn btn-blue" onclick="return sendEmail(this);" data-dismiss="modal">Submit</button>
+                                <button type="submit" class="btn btn-blue" onclick="return sendEmail(this);" >Submit</button>
                             </div>
                         </form>
                     </div>
