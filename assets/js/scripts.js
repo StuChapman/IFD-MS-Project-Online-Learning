@@ -1,10 +1,19 @@
 //Set global variables //
-
 var nextReveal = 0;
 var nextRevealValue = 0;
 var nextRevealWaste = 0;
 var player;
 var imageCount = 0;
+
+//Set global variables - flags to ensure all 8 images have been clicked before navigating from eightwastes.html //
+var transportationFlag = 0;
+var inventoryFlag = 0;
+var motionFlag = 0;
+var waitingFlag = 0;
+var overproductionFlag = 0;
+var overprocessingFlag = 0;
+var defectsFlag = 0;
+var skillsFlag = 0;
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -89,7 +98,7 @@ function playVid() {
     var buttonText = $("#playbutton").text();
     var playText = $.trim(buttonText);
     // log to Console to test Functionality //
-    console.log (playText);
+    console.log(playText);
 
     switch(playText) {
         case "play":
@@ -134,7 +143,7 @@ function prevImage() {
 function populateImage() {
     var getpage = document.title
     // log to Console to test Functionality //
-    console.log (getpage);
+    console.log(getpage);
 
     switch(getpage) {
         case "Online Learning - Value":
@@ -200,6 +209,53 @@ function scrollUp() {
 
 //Function: reveal the detailed description of each waste on eightwastes.html //
 function revealWaste(imagetag) {
+    // log to Console to test Functionality //
+    console.log(imagetag);
+
+    var imageString = imagetag.substr(1) + 'Flag'; //Credit: https://stackoverflow.com/questions/4564414/delete-first-character-of-a-string-in-javascript
+    // log to Console to test Functionality //
+    console.log(imageString);    
+
+    // as each image is clicked, populate its variable to 1 //
+    switch(imageString) {
+        case 'transportationFlag':
+            transportationFlag = 1;
+            break;
+        case 'inventoryFlag':
+            inventoryFlag = 1;
+            break;
+        case 'motionFlag':
+            motionFlag = 1;
+            break;
+        case 'waitingFlag':
+            waitingFlag = 1;
+            break;
+        case 'overproductionFlag':
+            overproductionFlag = 1;
+            break;
+        case 'overprocessingFlag':
+            overprocessingFlag = 1;
+            break;
+        case 'defectsFlag':
+            defectsFlag = 1;
+            break;
+        case 'skillsFlag':
+            skillsFlag = 1;
+            break;
+        default:
+            console.log('did not work');
+            break;
+    }
+
+    // as this is a product, clickCount is only 1 once all images are clicked //
+    var clickCount = (transportationFlag * inventoryFlag * motionFlag * waitingFlag * overproductionFlag * overprocessingFlag * defectsFlag * skillsFlag);
+    // log to Console to test Functionality //
+    console.log(clickCount);    
+
+    if (clickCount == 1) {
+    revealNext();
+    }
+
+    // change opacity of clicked image to show status as clicked //
     $(imagetag).css('opacity', .25); //Credit: https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js
 }
-
