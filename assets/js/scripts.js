@@ -208,7 +208,7 @@ function scrollUp() {
 
 
 //Function: handle the images on eightwastes.html ready for the popup //
-function revealWaste(imagetag) {
+function handleWaste(imagetag) {
     // log to Console to test Functionality //
     console.log(imagetag);
 
