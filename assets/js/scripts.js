@@ -361,3 +361,35 @@ function popupWaste(imagetag) {
 function popDownWaste() {
     $('#wastepopup').css('visibility', 'hidden');
 }
+
+//Function: check the answers against desired for each question-xxx.html //
+function checkQuestionRadio() {
+    const rbs = document.querySelectorAll('input[name="question"]'); //Credit: https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/ //
+    let selectedValue;
+    for (const rb of rbs) {
+        if (rb.checked) {
+            selectedValue = rb.id;
+            break;
+        }
+    }
+    // log to Console to test Functionality //
+    console.log(selectedValue);
+
+    var thisquestion = document.title;
+
+    // answers to radio button style questions //
+    switch(thisquestion) {
+        case 'Online Learning - Question 1':
+            if (selectedValue == 'optionfour') {
+                answerFlagOne = 1;
+            }
+            break;
+        default:
+            console.log('did not work');
+            break;
+    }
+
+    // log to Console to test Functionality //
+    console.log(answerFlagOne);
+
+}

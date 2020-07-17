@@ -172,8 +172,14 @@ nav {
     padding-top: 10vh;
     width: 40vw;
     height: 50vh;
+    font-size: calc(3vh + (18 - 3) * ((100vw - 300px) / 1620));
 }
 
+#optionform input[type=radio] {
+    border: 0px;
+    width: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
+    height: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
+}
 /* ------------------- Image Styling */
 
 #ohnoimage {
