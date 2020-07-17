@@ -107,8 +107,8 @@ function revealNext() {
 //Function: using the play button to play and pause the Mark Onetto video on looking.html //
 function playVid() { 
 
-    var buttonText = $("#playbutton").text();
-    var playText = $.trim(buttonText);
+    let buttonText = $("#playbutton").text();
+    let playText = $.trim(buttonText);
     // log to Console to test Functionality //
     console.log(playText);
 
@@ -153,7 +153,7 @@ function prevImage() {
 
 //Function: set the image and text on value.html //
 function populateImage() {
-    var getpage = document.title
+    let getpage = document.title
     // log to Console to test Functionality //
     console.log(getpage);
 
@@ -224,7 +224,7 @@ function handleWaste(imagetag) {
     // log to Console to test Functionality //
     console.log(imagetag);
 
-    var imageString = imagetag.substr(1) + 'Flag'; //Credit: https://stackoverflow.com/questions/4564414/delete-first-character-of-a-string-in-javascript
+    let imageString = imagetag.substr(1) + 'Flag'; //Credit: https://stackoverflow.com/questions/4564414/delete-first-character-of-a-string-in-javascript
     // log to Console to test Functionality //
     console.log(imageString);    
 
@@ -260,7 +260,7 @@ function handleWaste(imagetag) {
     }
 
     // as this is a product, clickCount is only 1 once all images are clicked //
-    var clickCount = (transportationFlag 
+    let clickCount = (transportationFlag 
                         * inventoryFlag 
                         * motionFlag 
                         * waitingFlag 
@@ -286,10 +286,10 @@ function popupWaste(imagetag) {
     // log to Console to test Functionality //
     console.log(imagetag);
 
-    var indexString = imagetag.substr(1);
+    let indexString = imagetag.substr(1);
     // log to Console to test Functionality //
     console.log(indexString);
-    var wasteIndex =0;
+    let wasteIndex =0;
 
     popupArray = 
                 [
@@ -375,7 +375,7 @@ function checkQuestionRadio() {
     // log to Console to test Functionality //
     console.log(selectedValue);
 
-    var thisquestion = document.title;
+    let thisquestion = document.title;
 
     // answers to radio button style questions //
     switch(thisquestion) {
@@ -408,6 +408,6 @@ function checkQuestionRadio() {
     // log to Console to test Functionality //
     console.log('answerFlagOne: ' + answerFlagOne);
     console.log('answerFlagThree: ' + answerFlagThree);
-    console.log('answerFlagThree: ' + answerFlagEight);
+    console.log('answerFlagEight: ' + answerFlagEight);
 
 }
