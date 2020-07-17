@@ -382,6 +382,22 @@ function checkQuestionRadio() {
         case 'Online Learning - Question 1':
             if (selectedValue == 'optionfour') {
                 answerFlagOne = 1;
+            } else {
+                answerFlagOne = 0;
+            }
+            break;
+        case 'Online Learning - Question 3':
+            if (selectedValue == 'optiontwo') {
+                answerFlagThree = 1;
+            } else {
+                answerFlagThree = 0;
+            }
+            break;
+        case 'Online Learning - Question 8':
+            if (selectedValue == 'optionthree') {
+                answerFlagEight = 1;
+            } else {
+                answerFlagEight = 0;
             }
             break;
         default:
@@ -390,6 +406,8 @@ function checkQuestionRadio() {
     }
 
     // log to Console to test Functionality //
-    console.log(answerFlagOne);
+    console.log('answerFlagOne: ' + answerFlagOne);
+    console.log('answerFlagThree: ' + answerFlagThree);
+    console.log('answerFlagThree: ' + answerFlagEight);
 
 }
