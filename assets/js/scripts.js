@@ -15,6 +15,18 @@ var overprocessingFlag = 0;
 var defectsFlag = 0;
 var skillsFlag = 0;
 
+//Set global variables - flags for each of the questions in the test, 0 = incorrect/incomplete, 1 = correct  //
+var answerFlagOne = 0;
+var answerFlagTwo = 0;
+var answerFlagThree = 0;
+var answerFlagFour = 0;
+var answerFlagFive = 0;
+var answerFlagSix = 0;
+var answerFlagSeven = 0;
+var answerFlagEight = 0;
+var answerFlagNine = 0;
+var answerFlagTen = 0;
+
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
     // log to Console to test Functionality //

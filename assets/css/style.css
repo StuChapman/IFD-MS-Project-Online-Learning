@@ -166,6 +166,14 @@ nav {
     font-size: calc(1.5vh + (12 - 1.5) * ((100vw - 300px) / 1620));
 }
 
+/* ------------------- Option Form Styling */
+
+#optionform {
+    padding-top: 10vh;
+    width: 40vw;
+    height: 50vh;
+}
+
 /* ------------------- Image Styling */
 
 #ohnoimage {
