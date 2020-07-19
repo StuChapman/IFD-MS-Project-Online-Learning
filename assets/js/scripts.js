@@ -4,6 +4,7 @@ var nextRevealValue = 0;
 var nextRevealWaste = 0;
 var player;
 var imageCount = 0;
+var letterCount = 0;
 
 //Set global variables - flags to ensure all 8 images have been clicked before navigating from eightwastes.html //
 var transportationFlag = 0;
@@ -407,7 +408,78 @@ function checkQuestionRadio() {
 
     // log to Console to test Functionality //
     console.log('answerFlagOne: ' + answerFlagOne);
+    console.log('answerFlagTwo: ' + answerFlagTwo);
     console.log('answerFlagThree: ' + answerFlagThree);
     console.log('answerFlagEight: ' + answerFlagEight);
 
+}
+
+//Function: check the answer against desired for question-two.html //
+function populateMuda(letterpick) {
+
+    // log to Console to test Functionality //
+    console.log(letterpick);
+
+    let letterString = "#letterpick-" + letterpick;
+    console.log($(letterString).css('color'));
+    if($(letterString).css('color') == 'rgb(128, 128, 128)'){
+        console.log('letter used');
+        return;
+    }
+
+    $(letterString).css('color', 'gray');
+
+    if($.trim($('#square-one').text())==''){ // Credit: https://stackoverflow.com/questions/6813227/how-do-i-check-if-an-html-element-is-empty-using-jquery //
+        $('#square-one').text(letterpick);
+    } else {
+        if($.trim($('#square-two').text())==''){
+            $('#square-two').text(letterpick);
+        } else {
+            if($.trim($('#square-three').text())==''){
+                $('#square-three').text(letterpick);
+            } else {
+                if($.trim($('#square-four').text())==''){
+                    $('#square-four').text(letterpick);
+                }
+            }
+        }
+    }
+
+    // log to Console to test Functionality //
+    console.log($.trim($('#square-one').text()));
+    console.log($.trim($('#square-two').text()));
+    console.log($.trim($('#square-three').text())); 
+    console.log($.trim($('#square-four').text()));
+
+    if (($.trim($('#square-one').text()) == 'M') 
+        && ($.trim($('#square-two').text()) == 'U') 
+            && ($.trim($('#square-three').text()) == 'D') 
+                && ($.trim($('#square-four').text()) == 'A')){
+                    console.log('yes');
+                    answerFlagTwo = 1;
+                } else {
+                    answerFlagTwo = 0;
+                    console.log('no');
+                }
+
+    // log to Console to test Functionality //
+    console.log('answerFlagOne: ' + answerFlagOne);
+    console.log('answerFlagTwo: ' + answerFlagTwo);
+    console.log('answerFlagThree: ' + answerFlagThree);
+    console.log('answerFlagEight: ' + answerFlagEight);
+
+    letterCount = ++letterCount;
+    if (letterCount == 4)  {
+        revealNext();
+        return;
+    }
+
+}
+//Function: allow the user to reset if they want to change thier answer on question-two.html //
+function resetMuda() {
+    $('#square-one').text('');
+    $('#square-two').text('');
+    $('#square-three').text('');
+    $('#square-four').text('');
+    $('.letterpickbox div').css('color', 'black');
 }

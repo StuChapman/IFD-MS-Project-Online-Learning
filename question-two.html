@@ -46,38 +46,42 @@
         <p class="paralarge">What is the Japanese word for ‘Waste’?</p>
         <div id="lettersquarebox" class="row ml-auto mr-auto">
             <div class="lettersquare col-3 ml-auto">
+                <span id="square-one"></span>
             </div>
-            <div class="lettersquare col-3">
+            <div  id="square-two" class="lettersquare col-3">
             </div>
-            <div class="lettersquare col-3">
+            <div  id="square-three" class="lettersquare col-3">
             </div>
-            <div class="lettersquare col-3 mr-auto">
-            </div>
-        </div>
-        <div class="letterpickbox row ml-auto mr-auto">
-            <div id="letterpick-m" class="letterpick col-2 ml-auto" onclick="return populateMuda(m);">M
-            </div>
-            <div id="letterpick-r" class="letterpick col-2">R
-            </div>
-            <div id="letterpick-s" class="letterpick col-2">S
-            </div>
-            <div id="letterpick-d" class="letterpick col-2">D
-            </div>
-            <div id="letterpick-f" class="letterpick col-2 mr-auto">F
+            <div id="square-four" class="lettersquare col-3 mr-auto">
             </div>
         </div>
         <div class="letterpickbox row ml-auto mr-auto">
-            <div id="letterpick-o" class="letterpick col-2 ml-auto">O
+            <div id="letterpick-M" class="letterpick col-2 ml-auto" onclick="return populateMuda('M');">M
             </div>
-            <div id="letterpick-n" class="letterpick col-2">N
+            <div id="letterpick-R" class="letterpick col-2" onclick="return populateMuda('R');">R
             </div>
-            <div id="letterpick-a" class="letterpick col-2">A
+            <div id="letterpick-S" class="letterpick col-2" onclick="return populateMuda('S');">S
             </div>
-            <div id="letterpick-y" class="letterpick col-2">Y
+            <div id="letterpick-D" class="letterpick col-2" onclick="return populateMuda('D');">D
             </div>
-            <div id="letterpick-u" class="letterpick col-2 mr-auto">U
+            <div id="letterpick-F" class="letterpick col-2 mr-auto" onclick="return populateMuda('F');">F
             </div>
         </div>
+        <div class="letterpickbox row ml-auto mr-auto">
+            <div id="letterpick-O" class="letterpick col-2 ml-auto" onclick="return populateMuda('O');">O
+            </div>
+            <div id="letterpick-N" class="letterpick col-2" onclick="return populateMuda('N');">N
+            </div>
+            <div id="letterpick-A" class="letterpick col-2" onclick="return populateMuda('A');">A
+            </div>
+            <div id="letterpick-Y" class="letterpick col-2" onclick="return populateMuda('Y');">Y
+            </div>
+            <div id="letterpick-U" class="letterpick col-2 mr-auto" onclick="return populateMuda('U');">U
+            </div>
+        </div>
+        <button id="resetbutton" type="button" class="btn btn-blue" onclick="return resetMuda();">
+            reset
+        </button>
     </section>
 
 <!-- Bootstrap Modals -->
