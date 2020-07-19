@@ -13,9 +13,11 @@ describe("Radio question check", function() {
             expect(checkQuestionRadio).toBeDefined();
         });
         
-        it("should return answerFlagOne = 1 when selectedValue = optionfour", function(selectedValue) {
-            var result = selectedValue("optionfour")
-            expect(result).toBe("answerFlagOne = 1");
+        it("should return answerFlagOne = 1 when selectedValue = optionfour and thisquestion = Online Learning - Question 1", 
+            function(selectedValue) {
+                let thisquestion = "Online Learning - Question 1";
+                var result = selectedValue("optionfour");
+                expect(result).toBe("answerFlagOne = 1");
         });
         
     });
