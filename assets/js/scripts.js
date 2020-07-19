@@ -28,6 +28,22 @@ var answerFlagEight = 0;
 var answerFlagNine = 0;
 var answerFlagTen = 0;
 
+// Function: write quiz score progress to local storage
+function writeLocal() {
+    localStorage.setItem('answerFlagOne', answerFlagOne);
+    localStorage.setItem('answerFlagTwo', answerFlagTwo);
+    localStorage.setItem('answerFlagThree', answerFlagThree);
+    localStorage.setItem('answerFlagEight', answerFlagEight)
+}
+
+// Function: retrieve quiz score progress to local storage
+function readLocal() {
+    console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
+    console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
+    console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
+    console.log('answerFlagFour: ' + localStorage.getItem('answerFlagEight'));
+}
+
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
     // log to Console to test Functionality //
@@ -406,11 +422,8 @@ function checkQuestionRadio() {
             break;
     }
 
-    // log to Console to test Functionality //
-    console.log('answerFlagOne: ' + answerFlagOne);
-    console.log('answerFlagTwo: ' + answerFlagTwo);
-    console.log('answerFlagThree: ' + answerFlagThree);
-    console.log('answerFlagEight: ' + answerFlagEight);
+    writeLocal()
+    readLocal()
 
 }
 
@@ -462,11 +475,8 @@ function populateMuda(letterpick) {
                     console.log('no');
                 }
 
-    // log to Console to test Functionality //
-    console.log('answerFlagOne: ' + answerFlagOne);
-    console.log('answerFlagTwo: ' + answerFlagTwo);
-    console.log('answerFlagThree: ' + answerFlagThree);
-    console.log('answerFlagEight: ' + answerFlagEight);
+    writeLocal()
+    readLocal()
 
     letterCount = ++letterCount;
     if (letterCount == 4)  {
