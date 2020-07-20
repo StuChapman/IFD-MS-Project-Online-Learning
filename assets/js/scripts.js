@@ -38,26 +38,37 @@ $(window).on('load', function() {
     // check this question has not already been answered //
     let thisquestion = document.title.substr(18,10);
     console.log(thisquestion);
+    let questionarray = [
+                        ['Question 1',  'answerFlagOne'],
+                        ['Question 2',  'answerFlagTwo'],
+                        ['Question 3',  'answerFlagThree'],
+                        ['Question 4',  'answerFlagFour'],
+                        ['Question 5',  'answerFlagFive'],
+                        ['Question 6',  'answerFlagSix'],
+                        ['Question 7',  'answerFlagSeven'],
+                        ['Question 8',  'answerFlagEight'],
+                        ['Question 9',  'answerFlagNine'],
+                        ['Question 10',  'answerFlagTen']
+                        ];
 
-    let questionarray = ['Question 1','Question 2','Question 3', 'Question 4', 'Question 5', 'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10',]
-    let flagarray = ['answerFlagOne','answerFlagTwo','answerFlagThree', 'answerFlagFour', 'answerFlagFive', 'answerFlagSix', 'answerFlagSeven', 'answerFlagEight', 'answerFlagNine', 'answerFlagTen',]
+        let i = getIndexOfK(questionarray, thisquestion);
+        let varflag = (questionarray[i][1]);
 
-    let i = questionarray.indexOf(thisquestion);
-    let j = flagarray[i];
-    // log to Console to test Functionality //
-    console.log(j);
-
-    let varflag = localStorage.getItem(j);
-    // log to Console to test Functionality //
-    console.log(varflag);
-
-    if (varflag !== 0) {
-        alert("This question has already been answered!");
-    }
+        if (varflag !== 0) {
+            alert("This question has already been answered");
+        }
 
 });
 
-
+// Function: find index of multidimensional array //
+function getIndexOfK(arr, k) { //credit to https://jsfiddle.net/wao20/Lct1de56/ via https://stackoverflow.com/questions/16102263/to-find-index-of-multidimensional-array-in-javascript
+    for (var i = 0; i < arr.length; i++) {
+        var index = arr[i].indexOf(k);
+        if (index > -1) {
+        return i;
+        }
+    }
+}
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
