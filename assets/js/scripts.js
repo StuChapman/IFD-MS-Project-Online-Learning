@@ -43,7 +43,7 @@ localStorage.setItem('answerFlagTen', answerFlagTen);
 }
 
 // Function: retrieve and check quiz score progress on document load //
-$(window).on('load', function() {
+$(window).on('pageshow', function() {
     console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
     console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
     console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
