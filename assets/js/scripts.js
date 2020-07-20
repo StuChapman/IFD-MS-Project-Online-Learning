@@ -71,19 +71,19 @@ $(window).on('load', function() {
         return;
     } 
 
-    let j = questionarray[i];
+    let j = questionarray[i][1];
     // log to Console to test Functionality //
     console.log(j);
 
     let varflag = localStorage.getItem(j);
+    varflag = varflag * 1;
     console.log('varflag: ' + varflag);
     if (varflag !== 0) {
         alert("This question has already been answered. Tap 'OK' to navigate to next question");
+        // navigate to next question //
+        let navflag = (questionarray[i][2]);
+        window.location.replace(navflag);
     }
-    
-    // navigate to next question //
-    let navflag = (questionarray[i][2]);
-    window.location.replace(navflag);
 
 });
 
