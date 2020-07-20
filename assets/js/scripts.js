@@ -48,6 +48,12 @@ $(window).on('pageshow', function() {
     console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
     console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
     console.log('answerFlagFour: ' + localStorage.getItem('answerFlagEight'));
+    console.log('answerFlagFive: ' + localStorage.getItem('answerFlagFive'));
+    console.log('answerFlagSix: ' + localStorage.getItem('answerFlagSix'));
+    console.log('answerFlagSeven: ' + localStorage.getItem('answerFlagSeven'));
+    console.log('answerFlagEight: ' + localStorage.getItem('answerFlagEight'));
+    console.log('answerFlagNine: ' + localStorage.getItem('answerFlagNine'));
+    console.log('answerFlagTen: ' + localStorage.getItem('answerFlagTen'));
 
     // check this question has not already been answered //
     let thisquestion = document.title.substr(18,10);
