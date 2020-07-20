@@ -28,6 +28,20 @@ var answerFlagEight = 0;
 var answerFlagNine = 0;
 var answerFlagTen = 0;
 
+// Function: reset answerflags - ADMIN ONLY //
+function resetAnswerFlags() {
+localStorage.setItem('answerFlagOne', answerFlagOne);
+localStorage.setItem('answerFlagTwo', answerFlagTwo);
+localStorage.setItem('answerFlagThree', answerFlagThree);
+localStorage.setItem('answerFlagFour', answerFlagFour);
+localStorage.setItem('answerFlagFive', answerFlagFive);
+localStorage.setItem('answerFlagSix', answerFlagSix);
+localStorage.setItem('answerFlagSeven', answerFlagSeven);
+localStorage.setItem('answerFlagEight', answerFlagEight);
+localStorage.setItem('answerFlagNine', answerFlagNine);
+localStorage.setItem('answerFlagTen', answerFlagTen);
+}
+
 // Function: retrieve and check quiz score progress on document load //
 $(window).on('load', function() {
     console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
@@ -39,24 +53,37 @@ $(window).on('load', function() {
     let thisquestion = document.title.substr(18,10);
     console.log(thisquestion);
     let questionarray = [
-                        ['Question 1',  'answerFlagOne'],
-                        ['Question 2',  'answerFlagTwo'],
-                        ['Question 3',  'answerFlagThree'],
-                        ['Question 4',  'answerFlagFour'],
-                        ['Question 5',  'answerFlagFive'],
-                        ['Question 6',  'answerFlagSix'],
-                        ['Question 7',  'answerFlagSeven'],
-                        ['Question 8',  'answerFlagEight'],
-                        ['Question 9',  'answerFlagNine'],
-                        ['Question 10',  'answerFlagTen']
+                        ['Question 1',  'answerFlagOne', 'question-two.html'],
+                        ['Question 2',  'answerFlagTwo', 'question-three.html'],
+                        ['Question 3',  'answerFlagThree', 'question-four.html'],
+                        ['Question 4',  'answerFlagFour', 'question-five.html'],
+                        ['Question 5',  'answerFlagFive', 'question-six.html'],
+                        ['Question 6',  'answerFlagSix', 'question-seven.html'],
+                        ['Question 7',  'answerFlagSeven', 'question-eight.html'],
+                        ['Question 8',  'answerFlagEight', 'question-nine.html'],
+                        ['Question 9',  'answerFlagNine', 'question-ten.html'],
+                        ['Question 10',  'answerFlagTen', 'test-summary.html']
                         ];
 
-        let i = getIndexOfK(questionarray, thisquestion);
-        let varflag = (questionarray[i][1]);
+    let i = getIndexOfK(questionarray, thisquestion);
+    // exit function if i is undefined //
+    if(i == null){
+        return;
+    } 
 
-        if (varflag !== 0) {
-            alert("This question has already been answered");
-        }
+    let j = questionarray[i];
+    // log to Console to test Functionality //
+    console.log(j);
+
+    let varflag = localStorage.getItem(j);
+    console.log('varflag: ' + varflag);
+    if (varflag !== 0) {
+        alert("This question has already been answered. Tap 'OK' to navigate to next question");
+    }
+    
+    // navigate to next question //
+    let navflag = (questionarray[i][2]);
+    window.location.replace(navflag);
 
 });
 
