@@ -16,7 +16,7 @@ var overprocessingFlag = 0;
 var defectsFlag = 0;
 var skillsFlag = 0;
 
-//Set global variables - flags for each of the questions in the test, 0 = incorrect/incomplete, 1 = correct  //
+//Set global variables - flags for each of the questions in the test, 0 = incomplete, 1 = correct, -1 = incorrect //
 var answerFlagOne = 0;
 var answerFlagTwo = 0;
 var answerFlagThree = 0;
@@ -28,21 +28,36 @@ var answerFlagEight = 0;
 var answerFlagNine = 0;
 var answerFlagTen = 0;
 
-// Function: write quiz score progress to local storage
-function writeLocal() {
-    localStorage.setItem('answerFlagOne', answerFlagOne);
-    localStorage.setItem('answerFlagTwo', answerFlagTwo);
-    localStorage.setItem('answerFlagThree', answerFlagThree);
-    localStorage.setItem('answerFlagEight', answerFlagEight)
-}
-
-// Function: retrieve quiz score progress to local storage
-function readLocal() {
+// Function: retrieve and check quiz score progress on document load //
+$(window).on('load', function() {
     console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
     console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
     console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
     console.log('answerFlagFour: ' + localStorage.getItem('answerFlagEight'));
-}
+
+    // check this question has not already been answered //
+    let thisquestion = document.title.substr(18,10);
+    console.log(thisquestion);
+
+    let questionarray = ['Question 1','Question 2','Question 3', 'Question 4', 'Question 5', 'Question 6', 'Question 7', 'Question 8', 'Question 9', 'Question 10',]
+    let flagarray = ['answerFlagOne','answerFlagTwo','answerFlagThree', 'answerFlagFour', 'answerFlagFive', 'answerFlagSix', 'answerFlagSeven', 'answerFlagEight', 'answerFlagNine', 'answerFlagTen',]
+
+    let i = questionarray.indexOf(thisquestion);
+    let j = flagarray[i];
+    // log to Console to test Functionality //
+    console.log(j);
+
+    let varflag = localStorage.getItem(j);
+    // log to Console to test Functionality //
+    console.log(varflag);
+
+    if (varflag !== 0) {
+        alert("This question has already been answered!");
+    }
+
+});
+
+
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
@@ -101,6 +116,7 @@ function revealWaste() {
     // log to Console to test Functionality //
     console.log('Waste');
     nextRevealWaste++
+    // confirm that both definitions have been viewed before revealing next href //
     nextReveal = nextRevealValue * nextRevealWaste;
     // log to Console to test Functionality //
     console.log(nextReveal);
@@ -276,6 +292,7 @@ function handleWaste(imagetag) {
             break;
     }
 
+    // confirm that all popups have been viewed before revealing next href //
     // as this is a product, clickCount is only 1 once all images are clicked //
     let clickCount = (transportationFlag 
                         * inventoryFlag 
@@ -374,7 +391,7 @@ function popupWaste(imagetag) {
     $('#wastepopup').css('visibility', 'visible');
 }
 
-//Function: reveal the detailed description of each waste on eightwastes.html //
+//Function: hide the detailed description of each waste on eightwastes.html //
 function popDownWaste() {
     $('#wastepopup').css('visibility', 'hidden');
 }
@@ -399,31 +416,34 @@ function checkQuestionRadio() {
         case 'Online Learning - Question 1':
             if (selectedValue == 'optionfour') {
                 answerFlagOne = 1;
+                localStorage.setItem('answerFlagOne', answerFlagOne);
             } else {
-                answerFlagOne = 0;
+                answerFlagOne = -1;
+                localStorage.setItem('answerFlagOne', answerFlagOne);
             }
             break;
         case 'Online Learning - Question 3':
             if (selectedValue == 'optiontwo') {
                 answerFlagThree = 1;
+                localStorage.setItem('answerFlagThree', answerFlagThree);
             } else {
-                answerFlagThree = 0;
+                answerFlagThree = -1;
+                localStorage.setItem('answerFlagThree', answerFlagThree);
             }
             break;
         case 'Online Learning - Question 8':
             if (selectedValue == 'optionthree') {
                 answerFlagEight = 1;
+                localStorage.setItem('answerFlagEight', answerFlagEight);
             } else {
-                answerFlagEight = 0;
+                answerFlagEight = -1;
+                localStorage.setItem('answerFlagEight', answerFlagEight);
             }
             break;
         default:
             console.log('did not work');
             break;
     }
-
-    writeLocal()
-    readLocal()
 
 }
 
@@ -433,6 +453,7 @@ function populateMuda(letterpick) {
     // log to Console to test Functionality //
     console.log(letterpick);
 
+    // if selected letter has already been chosen and is gray-ed out, exit function //
     let letterString = "#letterpick-" + letterpick;
     console.log($(letterString).css('color'));
     if($(letterString).css('color') == 'rgb(128, 128, 128)'){
@@ -471,12 +492,11 @@ function populateMuda(letterpick) {
                     console.log('yes');
                     answerFlagTwo = 1;
                 } else {
-                    answerFlagTwo = 0;
+                    answerFlagTwo = -1;
                     console.log('no');
                 }
-
-    writeLocal()
-    readLocal()
+    // write answer to local storage //
+    localStorage.setItem('answerFlagTwo', answerFlagTwo);
 
     letterCount = ++letterCount;
     if (letterCount == 4)  {
@@ -485,7 +505,8 @@ function populateMuda(letterpick) {
     }
 
 }
-//Function: allow the user to reset if they want to change thier answer on question-two.html //
+
+//Function: allow the user to reset if they want to change their answer on question-two.html //
 function resetMuda() {
     $('#square-one').text('');
     $('#square-two').text('');
