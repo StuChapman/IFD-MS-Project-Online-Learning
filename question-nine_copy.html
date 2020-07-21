@@ -22,8 +22,7 @@
         emailjs.init("user_37585cYmkMNZRiOobd27i");
     })();
     </script>
-</head>
-
+</head> 
 <body>
     <!--navbar-->
     <nav class="sticky-top">
@@ -45,77 +44,63 @@
         </div>
         <h1 class="pt-3 pb-3">Q9: Value or Waste?</h1>
         <p class="paralarge">Drag each of these activities to the correct category ...</p>
-
-    <div class="boxheader value">Value?
-    </div>
-    <div class="container row ml-auto mr-auto value">
-        <div id="valuebox1" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="valuebox2" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="valuebox3" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="valuebox4" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="valuebox5" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="valuebox6" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-    </div>
-    <div class="boxheaderdemands">Demand Types - drag to the place you think they belong, then press 'Check Answers'...
-    </div>
-    <div id="homebox" class="container row ml-auto mr-auto" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag1" >
-                A Customer calling into branch for an update on their loan application.
+        <div class="row dragcontainerouter ml-auto mr-auto">
+            <div class="col-4">
+                <div class="row dragcontainerleft">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Value?</span>
+                    <div class="dragbox col-12" id="dragleft1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft4" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft5" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row dragcontainermid">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Activity</span>
+                    <div class="dragbox col-12">
+                        <div class="dragcard" id="dragmid1" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid2" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid3" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid4" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid5" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row dragcontainerright">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Waste?</span>
+                    <div class="dragbox col-12" id="dragright1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright4" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright5" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag2" >
-                A Customer calling the Claims helpline to renew their policy.
-            </div>
-        </div>
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag3" >
-                A Customer making an online payment.
-            </div>
-        </div>
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag4" >
-             A Customer with a question about thier invoice.
-            </div>
-        </div>
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag5" >
-                A Customer asking for their meal to be heated up.
-            </div>
-        </div>
-        <div class="box col-4">
-            <div class ="dragcard col-4 align-vertically" draggable="true" ondragstart="drag(event)" id="drag6" >
-                A patient having a cut stiched in casualty.
-            </div>
-        </div>
-    </div>
-    <div class="boxheader failure">Failure?
-    </div>
-    <div class="container row ml-auto mr-auto failure">
-        <div id="failurebox1" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="failurebox2" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="failurebox3" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="failurebox4" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="failurebox5" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-        <div id="failurebox6" class="box col-4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        </div>
-    </div>
-
-        <button  id="checkAnswersDnD" class="align-vertically" onclick="checkAnswersDnD();">Check Answers
-        </button>
-        
     </section>
 
 <!-- Bootstrap Modals -->
@@ -198,10 +183,5 @@
     <!-- scripts -->
     <script src="assets/js/scripts.js">
     </script>
-    <script src="assets/js/DragDropTouch.js">
-    </script>
-    <script src="assets/js/dandscripts.js">
-    </script>
 </body>
-
 </html>

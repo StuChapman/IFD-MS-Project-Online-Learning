@@ -129,7 +129,7 @@ nav {
 #textsection h1 {
     padding: 5vh;
     margin: 0;
-    font-size: calc(8vw + (30 - 8) * ((100vw - 300px) / 1620));
+    font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
     color: #CC613A;
     font-weight: bold;
 }
@@ -490,4 +490,71 @@ nav {
         max-width: 25vw;
     }
 
+}
+
+
+/************************************************************************* question-nine.html styles */
+
+.boxheader {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.boxheaderdemands {
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.value {
+    background-color: rgb(196, 247, 196);
+}
+
+.failure {
+    background-color: rgb(250, 204, 204);
+}
+
+.container {
+    width: 100vw;
+    height: 32vh;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.box {
+    width: 40vw;
+    height: 16vh;
+    border: 1px solid lightgray;
+}
+
+.row {
+    margin: 0;
+}
+
+.dragcard {
+    width: 100%;
+    height: 100%;
+    border: 1px solid brown;
+    background-color: gainsboro;
+    text-align: center;
+    font-size: 11px;
+}
+
+.align-vertically { /* credit to https://webdevblog.com/css-vertical-align/ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 100%;
+    padding: 0;
+}
+
+#checkAnswersDnD {
+    width: 100vw;
+    height: 20vw;
 }
