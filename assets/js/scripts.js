@@ -432,7 +432,11 @@ function popupWaste(imagetag) {
     $('#popptwo').text(popupArray[wasteIndex][2]);
     $('#wastepopupimage').attr('src','assets/images/' + indexString + '.jpg')
     $('#poppthree').text(popupArray[wasteIndex][3]);
-    $('#wastepopup').css('visibility', 'visible');
+    setTimeout(function() {
+        $('#wastepopup').css('visibility', 'visible');
+        console.log('timeout');
+    }, 150);
+    
 }
 
 //Function: hide the detailed description of each waste on eightwastes.html //
