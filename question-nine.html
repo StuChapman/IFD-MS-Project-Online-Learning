@@ -42,36 +42,91 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1>Q9: </h1>
-        <p class="paralarge">Question</p>
-        <p class="paramedium">9</p>
-        <p class="paramedium">Good Luck!</p>
+        <h1 class="pt-3 pb-3">Q9: Value or Waste?</h1>
+        <p class="paralarge">Drag each of these activities to the correct category ...</p>
+        <div class="row dragcontainerouter ml-auto mr-auto">
+            <div class="col-4">
+                <div class="row dragcontainerleft">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Value?</span>
+                    <div class="dragbox col-12" id="dragleft1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft4" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragleft5" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row dragcontainermid">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Activity</span>
+                    <div class="dragbox col-12">
+                        <div class="dragcard" id="dragmid1" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid2" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid3" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid4" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                    <div class="dragbox">
+                        <div class="dragcard col-12" id="dragmid5" draggable="true" ondragstart="drag(event)"  >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row dragcontainerright">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Waste?</span>
+                    <div class="dragbox col-12" id="dragright1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright4" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox col-12" id="dragright5" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 <!-- Bootstrap Modals -->
     <!-- Home Modal -->
         <div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="homeModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Warning <i class="fas fa-exclamation-triangle"></i></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Warning <i class="fas fa-exclamation-triangle"></i></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        You are about to leave this site for the Continuous Engagement home page. Are you sure?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-blue" data-dismiss="modal">Back</button>
+                        <button type="button" class="btn btn-orange">
+                            <a href="https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html">
+                                Continue
+                            </a>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-                You are about to leave this site for the Continuous Engagement home page. Are you sure?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-blue" data-dismiss="modal">Back</button>
-                <button type="button" class="btn btn-orange">
-                    <a href="https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html">
-                        Continue
-                    </a>
-                </button>
-            </div>
-            </div>
-        </div>
         </div>
 
     <!-- Help Modal -->

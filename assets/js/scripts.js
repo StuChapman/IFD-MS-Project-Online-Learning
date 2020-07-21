@@ -28,6 +28,13 @@ var answerFlagEight = 0;
 var answerFlagNine = 0;
 var answerFlagTen = 0;
 
+//Set global variables - flags for each of the dragcards on question-nine.html //
+var dragOneScore = 0;
+var dragTwoScore = 0;
+var dragThreeScore = 0;
+var dragFourScore = 0;
+var dragFiveScore = 0;
+
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
 localStorage.setItem('answerFlagOne', answerFlagOne);
@@ -561,4 +568,38 @@ function resetMuda() {
     $('#square-three').text('');
     $('#square-four').text('');
     $('.letterpickbox div').css('color', 'black');
+}
+
+//Function: allow drop event on question-nine.html //
+function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+    ev.preventDefault();
+}
+
+//Function: allow drag event on question-nine.html //
+function drag(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+    ev.dataTransfer.setData("text", ev.target.id);
+    console.log(ev.target.id);
+}
+
+//Function: determine drop locations on question-nine.html //
+function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+
+    console.log(data + ": " + ev.target.id);
+
+    switch (data) {
+        case 'drag1': dragOneScore = ev.target.id;
+        break;
+        case 'drag2': dragTwoScore = ev.target.id;
+        break;
+        case 'drag3': dragThreeScore = ev.target.id;
+        break;
+        case 'drag4': dragFourScore = ev.target.id;
+        break;
+        case 'drag5': dragFiveScore = ev.target.id;
+        break;
+        default: ;
+    }
 }

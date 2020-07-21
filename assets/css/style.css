@@ -51,6 +51,10 @@ label {
     padding: 0;
 }
 
+#textsection .col-4 {
+    padding: 0;
+}
+
 /*------------------- Hover Styling */
 
 a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
@@ -125,7 +129,7 @@ nav {
 #textsection h1 {
     padding: 5vh;
     margin: 0;
-    font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
+    font-size: calc(8vw + (30 - 8) * ((100vw - 300px) / 1620));
     color: #CC613A;
     font-weight: bold;
 }
@@ -184,7 +188,7 @@ nav {
     max-width: 7vh;
     height: 12.5vh;
     padding: 0;
-    font-size: 8.5vh;
+    font-size: 15vw;
     font-weight: bold;
 }
 
@@ -338,6 +342,7 @@ nav {
 }
 
 /* ------------------- Waste pop-up Styling */
+/* ------------------- more styling in Media Screen responsiveness */
 
 #wastepopup {
     position: absolute;
@@ -348,6 +353,13 @@ nav {
     background-color: #ffffff;
     border: 1px solid #657486;
     visibility: hidden;
+}
+
+/* ------------------- Drag and Drop Styling */
+/* ------------------- more styling in Media Screen responsiveness */
+
+.dragboxheader {
+    font-size: calc(2vh + (12 - 2) * ((100vw - 300px) / 1620));
 }
 
 /* ------------------- Footer Styling */
@@ -391,6 +403,33 @@ nav {
         max-width: 50%;
     }
 
+    .dragcontainerouter {
+        width: 80vw;
+        align-content: center;
+    }
+
+    .dragcontainerleft, .dragcontainermid, .dragcontainerright {
+        width: 10vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dragbox, .dragcard {
+        width: 10vh;
+        height: 8.5vh;
+        padding: 0;
+        margin-bottom: 2vw;
+    }
+
+    .dragbox {
+        background-color: #C4C4C4;
+    }
+
+    .dragcard {
+        background-color: rgb(248, 247, 247);
+        border: 1px solid #C4C4C4;
+    }
+
 }
 
 @media screen and (orientation: landscape){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
@@ -413,6 +452,16 @@ nav {
     .wasteimagecontainer {
         flex: 0 0 25%;
         max-width: 25%;
+    }
+
+    .dragcontainer {
+        width: 100vh;
+    }
+
+    .dragbox {
+        flex: 0 0 25%;
+        max-width: 25%;
+        background-color: #C4C4C4;
     }
 
 }
