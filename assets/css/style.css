@@ -455,21 +455,21 @@ nav {
     }
 
     .dragcontainerouter {
-        width: 80vw;
+        width: 75vw;
         align-content: center;
     }
 
     .dragcontainerleft, .dragcontainermid, .dragcontainerright {
-        width: 10vh;
+        width: 30vh;
         margin-left: auto;
         margin-right: auto;
     }
 
     .dragbox, .dragcard {
-        width: 10vh;
-        height: 8.5vh;
+        width: 30vh;
+        height: 8vh;
         padding: 0;
-        margin-bottom: 2vw;
+        margin-bottom: .5vw;
     }
 
     .dragbox {

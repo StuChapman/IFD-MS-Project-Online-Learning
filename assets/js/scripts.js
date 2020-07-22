@@ -594,6 +594,7 @@ function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_dragan
 function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.preventDefault();
 
+            $('#' + dragcard1).attr('ondragover', "");
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
@@ -602,18 +603,28 @@ function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop
     switch (data) {
         case 'dragcard1': 
             dragcard1 = ev.target.id;
+            // do not allow more than one card to be dropped into each box //
+            $('#' + dragcard1).attr('ondragover', "");
             break;
         case 'dragcard2': 
             dragcard2 = ev.target.id;
+            // do not allow more than one card to be dropped into each box //
+            $('#' + dragcard2).attr('ondragover', "");
             break;
         case 'dragcard3': 
             dragcard3 = ev.target.id;
+            // do not allow more than one card to be dropped into each box //
+            $('#' + dragcard3).attr('ondragover', "");
             break;
         case 'dragcard4': 
             dragcard4 = ev.target.id;
+            // do not allow more than one card to be dropped into each box //
+            $('#' + dragcard4).attr('ondragover', "");
             break;
         case 'dragcard5': 
             dragcard5 = ev.target.id;
+            // do not allow more than one card to be dropped into each box //
+            $('#' + dragcard5).attr('ondragover', "");
             break;
         default: 
             break;
@@ -654,10 +665,8 @@ function checkQuestionDragDrop() {
 
     if (drag1Score + drag2Score + drag3Score + drag4Score + drag5Score == 5) {
         answerFlagNine = 1;
-        $('#dragcard1').css('background-color', 'green');
     } else {
         answerFlagNine = 0;
-        $('#dragcard1').css('background-color', 'red');
     }
 
     // write answer to local storage //
