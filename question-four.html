@@ -42,10 +42,23 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1>Q4: </h1>
-        <p class="paralarge">Question</p>
-        <p class="paramedium">4</p>
-        <p class="paramedium">Good Luck!</p>
+        <h1>Q4: Is it Necessary?</h1>
+        <p class="paralarge">Which of the following statements are True?</p>
+        <p class="paralarge pt-3 pb-4">Necessary Non-Value-Add ...</p>
+        <form id="checkform" class="ml-auto mr-auto" onclick="return revealNext();">
+            <label for="checkone" class="d-block mb-2 float-left">
+                ... is more important than Value, as it protects the business</label>
+            <input type="checkbox" name="question" id="checkone" class="float-right"><br>
+            <label for="checktwo" class="d-block mb-2 float-left">
+                ... should be reduced to a minimum wherever possible</label>
+            <input type="checkbox" name="question" id="checktwo" class="float-right"><br>
+            <label for="checkthree" class="d-block mb-2 float-left">
+                ... only occurs in Financial instututions, like banks</label>
+            <input type="checkbox" name="question" id="checkthree" class="float-right"><br>
+            <label for="checkfour" class="d-block mb-2 float-left">
+                ... could be described as ‘Waste that is reluctantly accepted’</label>
+            <input type="checkbox" name="question" id="checkfour" class="float-right">
+        </form>
     </section>
 
 <!-- Bootstrap Modals -->
@@ -106,7 +119,7 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionRadio();" href="question-five.html">
+            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionCheckbox();" href="question-five.html">
                 <span>Submit <i class="fas fa-forward"></i></span>
             </a>
         </div>

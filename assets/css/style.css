@@ -218,6 +218,27 @@ nav {
     width: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
     height: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
 }
+
+/* ------------------- Check Form Styling */
+/* ------------------- more styling in Media Screen responsiveness */
+
+#checkform {
+    width: 70vw;
+    height: 40vh;
+    font-size: calc(2vh + (15 - 2) * ((100vw - 300px) / 1620));
+}
+
+#checkform input[type=checkbox] {
+    border: 0px;
+    width: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
+    height: calc(2.5vh + (15 - 2.5) * ((100vw - 300px) / 1620));
+}
+
+#checkform label {
+    width: 60vw;
+    text-align: left;
+}
+
 /* ------------------- Image Styling */
 
 #ohnoimage {
@@ -428,6 +449,10 @@ nav {
         padding: .5vh .5vh 0 .5vh;
     }
     
+    #checkform input[type=checkbox] {
+        margin-top: 1vh;
+    }
+
     .wastecontainer {
         width: 26vh;
     }

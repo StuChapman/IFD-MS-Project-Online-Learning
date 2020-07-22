@@ -63,7 +63,7 @@ $(window).on('pageshow', function() {
     console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
     console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
     console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
-    console.log('answerFlagFour: ' + localStorage.getItem('answerFlagEight'));
+    console.log('answerFlagFour: ' + localStorage.getItem('answerFlagFour'));
     console.log('answerFlagFive: ' + localStorage.getItem('answerFlagFive'));
     console.log('answerFlagSix: ' + localStorage.getItem('answerFlagSix'));
     console.log('answerFlagSeven: ' + localStorage.getItem('answerFlagSeven'));
@@ -559,6 +559,7 @@ function populateMuda(letterpick) {
                     answerFlagTwo = -1;
                     console.log('no');
                 }
+
     // write answer to local storage //
     localStorage.setItem('answerFlagTwo', answerFlagTwo);
 
@@ -577,6 +578,23 @@ function resetMuda() {
     $('#square-three').text('');
     $('#square-four').text('');
     $('.letterpickbox div').css('color', 'black');
+}
+
+//Function: check answers against desired question-four.html //
+function checkQuestionCheckbox() {
+let checkCount = 0;
+    if (!$('#checkone').is(":checked") 
+        && $('#checktwo').is(":checked") 
+            && !$('#checkthree').is(":checked") 
+                && $('#checkfour').is(":checked")) {
+        answerFlagFour = 1;
+    } else {
+        answerFlagFour = -1;
+    }
+
+    // write answer to local storage //
+    localStorage.setItem('answerFlagFour', answerFlagFour);
+
 }
 
 //Function: allow drag event on question-nine.html //
