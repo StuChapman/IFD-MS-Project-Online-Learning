@@ -362,6 +362,31 @@ nav {
     font-size: calc(2vh + (12 - 2) * ((100vw - 300px) / 1620));
 }
 
+.dragcontainerouter {
+    width: 80vw;
+    align-content: center;
+}
+
+.dragcontainerleft, .dragcontainermid, .dragcontainerright {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dragbox, .dragcard {
+    padding: 0;
+}
+
+.dragbox {
+    background-color: #C4C4C4;
+}
+
+.dragcard {
+    background-color: rgb(248, 247, 247);
+    border: 1px solid #C4C4C4;
+    padding: 2px;
+    font-size: 2vh;
+}
+
 /* ------------------- Footer Styling */
 
 #footer {
@@ -404,30 +429,18 @@ nav {
     }
 
     .dragcontainerouter {
-        width: 80vw;
-        align-content: center;
+        width: 90vw;
     }
 
     .dragcontainerleft, .dragcontainermid, .dragcontainerright {
-        width: 10vh;
-        margin-left: auto;
-        margin-right: auto;
+        width: 12vh;
     }
 
     .dragbox, .dragcard {
-        width: 10vh;
+        width: 12vh;
         height: 8.5vh;
-        padding: 0;
         margin-bottom: 2vw;
-    }
-
-    .dragbox {
-        background-color: #C4C4C4;
-    }
-
-    .dragcard {
-        background-color: rgb(248, 247, 247);
-        border: 1px solid #C4C4C4;
+        font-size: 2vh;
     }
 
 }
@@ -456,29 +469,17 @@ nav {
 
     .dragcontainerouter {
         width: 75vw;
-        align-content: center;
     }
 
     .dragcontainerleft, .dragcontainermid, .dragcontainerright {
         width: 30vh;
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .dragbox, .dragcard {
         width: 30vh;
         height: 8vh;
-        padding: 0;
         margin-bottom: .5vw;
-    }
-
-    .dragbox {
-        background-color: #C4C4C4;
-    }
-
-    .dragcard {
-        background-color: rgb(248, 247, 247);
-        border: 1px solid #C4C4C4;
+        font-size: 3vh;
     }
 
 }

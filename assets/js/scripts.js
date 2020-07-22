@@ -634,30 +634,29 @@ function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop
         revealNext();
     }
 }
-
 //Function: check drop locations against desired on question-nine.html //
 function checkQuestionDragDrop() {
-    if (dragcard1 == 'dragleft1') {
+    if (dragcard1.substring(4, 8) == 'left') {
         drag1Score = 1;
     } else {
         drag1Score = -1;
     }
-    if (dragcard2 == 'dragleft2') {
+    if (dragcard2.substring(4, 8) == 'righ') {
         drag2Score = 1;
     } else {
         drag2Score = -1;
     }
-    if (dragcard3 == 'dragleft3') {
+    if (dragcard3.substring(4, 8) == 'righ') {
         drag3Score = 1;
     } else {
         drag3Score = -1;
     }
-    if (dragcard4 == 'dragleft4') {
+    if (dragcard4.substring(4, 8) == 'left') {
         drag4Score = 1;
     } else {
         drag4Score = -1;
     }
-    if (dragcard5 == 'dragleft5') {
+    if (dragcard5.substring(4, 8) == 'righ') {
         drag5Score = 1;
     } else {
         drag5Score = -1;
@@ -666,7 +665,7 @@ function checkQuestionDragDrop() {
     if (drag1Score + drag2Score + drag3Score + drag4Score + drag5Score == 5) {
         answerFlagNine = 1;
     } else {
-        answerFlagNine = 0;
+        answerFlagNine = -1;
     }
 
     // write answer to local storage //
