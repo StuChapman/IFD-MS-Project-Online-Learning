@@ -16,7 +16,8 @@ var overprocessingFlag = 0;
 var defectsFlag = 0;
 var skillsFlag = 0;
 
-//Set global variables - flags for each of the questions in the test, 0 = incomplete, 1 = correct, -1 = incorrect //
+//Set global variables - flags for each of the questions in the test //
+// 0 = incomplete, 1 = correct, -1 = incorrect //
 var answerFlagOne = 0;
 var answerFlagTwo = 0;
 var answerFlagThree = 0;
@@ -29,11 +30,19 @@ var answerFlagNine = 0;
 var answerFlagTen = 0;
 
 //Set global variables - flags for each of the dragcards on question-nine.html //
-var dragOneScore = 0;
-var dragTwoScore = 0;
-var dragThreeScore = 0;
-var dragFourScore = 0;
-var dragFiveScore = 0;
+var dragcard1 = null;
+var dragcard2 = null;
+var dragcard3 = null;
+var dragcard4 = null;
+var dragcard5 = null;
+
+//Set global variables - flags for each of the dragcards drop locations on question-nine.html //
+// 0 = unmoved, 1 = correct, -1 = incorrect //
+var drag1Score = 0;
+var drag1Score = 0;
+var drag3Score = 0;
+var drag4Score = 0;
+var drag5Score = 0;
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
@@ -570,36 +579,88 @@ function resetMuda() {
     $('.letterpickbox div').css('color', 'black');
 }
 
-//Function: allow drop event on question-nine.html //
-function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
-    ev.preventDefault();
-}
-
 //Function: allow drag event on question-nine.html //
 function drag(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.dataTransfer.setData("text", ev.target.id);
     console.log(ev.target.id);
 }
 
+//Function: allow drop event on question-nine.html //
+function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+    ev.preventDefault();
+}
+
 //Function: determine drop locations on question-nine.html //
 function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+
+    let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
     console.log(data + ": " + ev.target.id);
 
     switch (data) {
-        case 'drag1': dragOneScore = ev.target.id;
-        break;
-        case 'drag2': dragTwoScore = ev.target.id;
-        break;
-        case 'drag3': dragThreeScore = ev.target.id;
-        break;
-        case 'drag4': dragFourScore = ev.target.id;
-        break;
-        case 'drag5': dragFiveScore = ev.target.id;
-        break;
-        default: ;
+        case 'dragcard1': 
+            dragcard1 = ev.target.id;
+            break;
+        case 'dragcard2': 
+            dragcard2 = ev.target.id;
+            break;
+        case 'dragcard3': 
+            dragcard3 = ev.target.id;
+            break;
+        case 'dragcard4': 
+            dragcard4 = ev.target.id;
+            break;
+        case 'dragcard5': 
+            dragcard5 = ev.target.id;
+            break;
+        default: 
+            break;
     }
+
+    if (dragcard1 !== null && dragcard2 !== null && dragcard3 !== null && dragcard4 !== null && dragcard5 !== null) {
+        revealNext();
+    }
+}
+
+//Function: check drop locations against desired on question-nine.html //
+function checkQuestionDragDrop() {
+    if (dragcard1 == 'dragleft1') {
+        drag1Score = 1;
+    } else {
+        drag1Score = -1;
+    }
+    if (dragcard2 == 'dragleft2') {
+        drag2Score = 1;
+    } else {
+        drag2Score = -1;
+    }
+    if (dragcard3 == 'dragleft3') {
+        drag3Score = 1;
+    } else {
+        drag3Score = -1;
+    }
+    if (dragcard4 == 'dragleft4') {
+        drag4Score = 1;
+    } else {
+        drag4Score = -1;
+    }
+    if (dragcard5 == 'dragleft5') {
+        drag5Score = 1;
+    } else {
+        drag5Score = -1;
+    }
+
+    if (drag1Score + drag2Score + drag3Score + drag4Score + drag5Score == 5) {
+        answerFlagNine = 1;
+        $('#dragcard1').css('background-color', 'green');
+    } else {
+        answerFlagNine = 0;
+        $('#dragcard1').css('background-color', 'red');
+    }
+
+    // write answer to local storage //
+    localStorage.setItem('answerFlagNine', answerFlagNine);
+
 }

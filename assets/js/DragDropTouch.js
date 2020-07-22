@@ -1,4 +1,7 @@
-//Credit to: https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat
+// This code was created by Bernardo Castilho: https://www.codeproject.com/script/Membership/View.aspx?mid=337492 //
+// to add support for standard HTML5 Drag and Drop operations on Mobile Devices //
+// the full article can be found at https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat //
+// full credit is recognised //
 
 var DragDropTouch;
 (function (DragDropTouch_1) {
