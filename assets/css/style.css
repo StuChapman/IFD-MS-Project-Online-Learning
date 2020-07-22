@@ -179,16 +179,17 @@ nav {
     margin-bottom: 5vh;
 }
 
+/* ------------------- more styling in Media Screen responsiveness */
 .letterpickbox {
-    width: 80vw;
-    align-content: stretch;
+    align-content: stretch;    
+    width: 60vw;
 }
 
 .lettersquare, .letterpick {
     max-width: 7vh;
     height: 12.5vh;
     padding: 0;
-    font-size: 15vw;
+    font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
     font-weight: bold;
 }
 
@@ -202,7 +203,6 @@ nav {
     margin: 0 1vw;
     color: #000000;
 }
-
 
 /* ------------------- Option Form Styling */
 
@@ -407,6 +407,15 @@ nav {
 /* ------------------- Media Screen responsiveness */
 
 @media screen and (orientation: portrait) { /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
+
+    #divleft {
+        margin-right: auto;
+    }
+
+    #divright {
+        margin-left: auto;
+    }
+
     #transportation, 
     #inventory,
     #motion,
@@ -446,6 +455,15 @@ nav {
 }
 
 @media screen and (orientation: landscape){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
+
+    #divleft {
+        margin-right: 0;
+    }
+
+    #divright {
+        margin-left: 0;
+    }
+
     #transportation, 
     #inventory,
     #motion,
