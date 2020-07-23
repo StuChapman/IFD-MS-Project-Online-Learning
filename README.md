@@ -26,7 +26,7 @@ have been grouped into 2: Director of Continuous Engagement (site owner) and Cli
 3.	… want the application to look professional.
 4.	… want the information contained to be industry standard.
 5.	… want the user to be able to intuitively complete the learning and the test, with as little prompting as possible.
-6.	… want the user to be guided through the material via disabled and enabled navigation devices.
+6.	… want the user to be guided through the material via guided navigation devices.
 7.	… want the progress for the user to be stored locally so that if there was issue with their device (accidental refresh/loss of power etc) they could pick up where they left off.
 8.	… want the user to be able to ask questions via an email client, understanding that responses are not intended to be instant.
 9.	… want there to be pass and fail criteria and the user to be informed via an online “certificate” of their result (preference is a printable .pdf format).
@@ -85,20 +85,12 @@ As is now standard workflow for me; I produced detailed mockups for: phones, tab
 (links to .pdfs to be included)
 I used [figma](www.figma.com) to produce the mockups. 
 
-[index.html](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/mockups/User_Centric_Development_Milestone_Project-index.pdf)
-
-[services.html](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/mockups/User_Centric_Development_Milestone_Project-services.pdf)
-
-[methods.html](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/mockups/User_Centric_Development_Milestone_Project-methods.pdf)
-
-[case-studies.html](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/mockups/User_Centric_Development_Milestone_Project-case-studies.pdf)
-
-[contact.html](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/mockups/User_Centric_Development_Milestone_Project-contact.pdf)
+[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/mockups)
 
 
 ### Colour Schemes and Fonts
 
-I used this [image](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/d33885bf6639d8c8dca7a632edbea6ad5e7f8b1d/assets/images/Stu-Chapman-Photo.jpg) as the 'brand' for the company and the colour scheme for the site.
+I used the same branding as the Continuous Engagement Ltd. website [website](https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html).
 
 The colours I used (by 'eyedropping' the image in PowerPoint to get the hex code) were:
 
@@ -196,9 +188,9 @@ The features that are specific to individual pages are:
 **eightwastes.html** 
 1. The 8 Wastes, with an image and title.
 2. A suplimentary div that is reavealed on the tapping of each image.
-3. The div is interactive; in that the text and image vary according to which image has been tapped.
+3. The div is adaptive; in that the text and image vary according to which image has been tapped.
 4. Once tapped, the image will reduce opacity to allow the user to see which images remain (the opaque images can still be reviewed).
-5. The "next" anchor is not visible all images have been tapped.
+5. The "next" anchor is not visible until all images have been tapped.
 
 **test-intro.html** 
 1. A "Click to Begin" button to begin the Interactive Test Section.
@@ -206,7 +198,7 @@ The features that are specific to individual pages are:
 
 **question-one.html** 
 1. 4 Radio buttons, one of which is the correct answer.
-2. The "submit" anchor is not visible all images have been tapped.
+2. The "submit" anchor is not visible until a radio button has been selected (the user can change their selection prior to tapping the "submit" anchor).
 3. There is a variable called 'answerFlagOne' that is written to the local browser storage on tapping the "submit" anchor
     - 0 indicates incomplete (default).
     - 1 indicates a correct answer.
@@ -216,10 +208,39 @@ The features that are specific to individual pages are:
     
     The 'answerFlagOne' variable is also used to check if this question has already been answered (say, for example, the user uses the 'back' or 'forward' browser navigation). If the value is not 0, an alert will appear informing the user the question has already been completed, and they will be navigated to the next question.
 
-
 **question-two.html** 
+1. An interactive puzzle where the user selects letters from a selection to populate 4 blank spaces, thus creating the answer 'MUDA'.
+    The inspiration for this game is a game called 'Pictoword' available in the Apple App Store.
+2. Once a letter has been selected, it is 'gray-ed' out and is no longer available for selection.
+3. There is a 'reset' button to clear the restore the page to its original state if the user decided they want to change thier response (prior to tapping "submit").
+4. The "submit" anchor is not visible until all images letter spaces have been populated.
+5. There is a variable called 'answerFlagTwo' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-three.html** 
 1. 4 Radio buttons, one of which is the correct answer.
-2. The "submit" anchor is not visible all images have been tapped.
+2. The "submit" anchor is not visible until a radio button has been selected (the user can change their selection prior to tapping the "submit" anchor).
+3. There is a variable called 'answerFlagThree' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-four.html** 
+1. 4 check boxes, two of which are the correct answer.
+2. The "submit" anchor is not visible until ONE check box has been selected (the user can change their selection prior to tapping the "submit" anchor).
+3. There is a variable called 'answerFlagFour' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-eight.html** 
+1. 4 Radio buttons, one of which is the correct answer.
+2. The "submit" anchor is not visible until a radio button has been selected (the user can change their selection prior to tapping the "submit" anchor).
+3. There is a variable called 'answerFlagEight' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-nine.html** 
+1. An interactive puzzle where the user selects drags cards from the center of the screen and drops them, either in: Value or Waste boxes.
+    The code for drag and drop on a desktop device is from [w3schools](https://www.w3schools.com/), specifically [drag and drop](https://www.w3schools.com/HTML/html5_draganddrop.asp)
+    The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
+    Full credit to Bernardo - I have used his code complete in a seperate javascript file [DragDropTouch.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/assets/js/DragDropTouch.js).
+2. Once a box has had a card dropped into it, it is not longer enabled (te prevent more than one card being dropped in the same box).
+3. The user can change the location of cards as many times as they like before tapping the "submit" anchor.
+4. The "submit" anchor is not visible until all 5 cards have been dropped into boxes.
+5. There is a variable called 'answerFlagNine' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
 
 ### Features Left to Implement
 
@@ -302,10 +323,10 @@ I deployed to Github Pages by the following steps:
 1.	From the UCD-MS-Project-Continuous-Engagement repository in Github, click ‘Settings’
 2.	Scroll down to ‘GitHub Pages’
 3.	From the ‘source’ drop-down, select ‘master branch’
-4.	The url was then presented to me as https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/
+4.	The url was then presented to me as https://stuchapman.github.io/IFD-MS-Project-Online-Learning/
 
 #### To run the code locally;
-1.	From the UCD-MS-Project-Continuous-Engagement repository in Github, click ‘Clone or download’
+1.	From the IFD-MS-Project-Online-Learning repository in Github, click ‘Clone or download’
 2.	Copy the URL to your clipboard
 3.	In Gitpod, open the terminal
 4.	Change the directory to that where you wish to place the files
@@ -321,14 +342,11 @@ I deployed to Github Pages by the following steps:
     from [css-tricks](https://www.css-tricks.com/books/fundamental-css-tactics/scale-typography-screen-size/) and 
     [made by Mike](www.madebymike.com.au/writing/fluid-type-calc-examples/)
 2.	The method for aligning text vertically is from [webdevblog](www.webdevblog.com/css-vertical-align/) 
+3.  The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
 
 ### Media
 
-1.	All images were taken from www.pexels.com 
-    1. [neon-signage](https://www.pexels.com/photo/neon-signage-2681319/)
-    2. [group-of-people-watching-on-laptop](https://www.pexels.com/photo/group-of-people-watching-on-laptop-1595385/)
-    3. [books-business-computer-connection](https://www.pexels.com/photo/books-business-computer-connection-459654/)
-    4. [working-in-a-group](https://www.pexels.com/photo/working-in-a-group-6224/)
+1.	5.	All images were taken from [clipart-library](http://clipart-library.com).
 2.	The infographics and ‘brand image’ were designed and created by me
 
 ### Acknowledgements
