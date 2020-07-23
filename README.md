@@ -75,8 +75,7 @@ This section comprises of:
 * question-seven.html
 * question-eight.html - a question where the user needs to deduce the acronym for the 8 Wastes.
 * question-nine.html - an interactive puzzle for the user to move actions to boxes of: Value and Waste. 
-* question-ten.html
-* question-one.html
+* question-ten.html - a multi-option question on waste identification.
 * test-summary.html
 
 ### Mockups:

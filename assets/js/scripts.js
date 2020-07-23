@@ -1,4 +1,7 @@
-//Set global variables //
+
+// ********************************** Global Variables ********************************** //
+
+//Set global variables - variables that are passed between functions //
 var nextReveal = 0;
 var nextRevealValue = 0;
 var nextRevealWaste = 0;
@@ -44,6 +47,8 @@ var drag3Score = 0;
 var drag4Score = 0;
 var drag5Score = 0;
 
+// ********************************** Functions ********************************** //
+
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
 localStorage.setItem('answerFlagOne', answerFlagOne);
@@ -86,6 +91,10 @@ $(window).on('pageshow', function() {
                         ['Question 9',  'answerFlagNine', 'question-ten.html'],
                         ['Question 10',  'answerFlagTen', 'test-summary.html']
                         ];
+
+    if (thisquestion = 'Test Summar') {
+        populateSummary();
+    }
 
     let i = getIndexOfK(questionarray, thisquestion);
     // exit function if i is undefined //
@@ -733,5 +742,161 @@ function checkTwo() {
     if (checkCount > 1) {
         revealNext();
     }
+
+}
+
+//Function: populate test results on test-summary.html //
+function populateSummary() {
+    let result;
+
+    switch (localStorage.getItem('answerFlagOne')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansone').text(result);
+
+    switch (localStorage.getItem('answerFlagTwo')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#anstwo').text(result);
+
+    switch (localStorage.getItem('answerFlagThree')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansthree').text(result);
+
+    switch (localStorage.getItem('answerFlagFour')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansfour').text(result);
+
+    switch (localStorage.getItem('answerFlagFive')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansfive').text(result);
+
+    switch (localStorage.getItem('answerFlagSix')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#anssix').text(result);
+
+    switch (localStorage.getItem('answerFlagSeven')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansseven').text(result);
+
+    switch (localStorage.getItem('answerFlagEight')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#anseight').text(result);
+
+    switch (localStorage.getItem('answerFlagNine')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansnine').text(result);
+
+    switch (localStorage.getItem('answerFlagTen')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansten').text(result);
 
 }
