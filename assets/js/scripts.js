@@ -465,7 +465,7 @@ function popDownWaste() {
     $('#wastepopup').css('visibility', 'hidden');
 }
 
-//Function: check the answers against desired for each question-xxx.html //
+//Function: check the answers against desired for radio button style questions: one, three and eight //
 function checkQuestionRadio() {
     const rbs = document.querySelectorAll('input[name="question"]'); //Credit: https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/ //
     let selectedValue;
@@ -585,20 +585,37 @@ function resetMuda() {
     $('.letterpickbox div').css('color', 'black');
 }
 
-//Function: check answers against desired question-four.html //
+//Function: check answers against desired on checkbox questions: four and ten //
 function checkQuestionCheckbox() {
-let checkCount = 0;
-    if (!$('#checkone').is(":checked") 
-        && $('#checktwo').is(":checked") 
-            && !$('#checkthree').is(":checked") 
-                && $('#checkfour').is(":checked")) {
-        answerFlagFour = 1;
-    } else {
-        answerFlagFour = -1;
-    }
 
-    // write answer to local storage //
-    localStorage.setItem('answerFlagFour', answerFlagFour);
+    let thisquestion = document.title;
+
+    switch(thisquestion) {
+        case 'Online Learning - Question 4':
+            if (!$('#checkone').is(":checked") 
+                && $('#checktwo').is(":checked") 
+                    && !$('#checkthree').is(":checked") 
+                        && $('#checkfour').is(":checked")) {
+                answerFlagFour = 1;
+                localStorage.setItem('answerFlagFour', answerFlagFour);
+            } else {
+                answerFlagFour = -1;
+                localStorage.setItem('answerFlagFour', answerFlagFour);
+            }
+            break;
+        case 'Online Learning - Question 10':
+            if ($('#checkone').is(":checked") 
+                && !$('#checktwo').is(":checked") 
+                    && !$('#checkthree').is(":checked") 
+                        && $('#checkfour').is(":checked")) {
+                answerFlagTen = 1;
+                localStorage.setItem('answerFlagTen', answerFlagTen);
+            } else {
+                answerFlagTen = -1;
+                localStorage.setItem('answerFlagTen', answerFlagTen);
+            }
+            break;
+    }
 
 }
 
@@ -657,6 +674,7 @@ function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop
         revealNext();
     }
 }
+
 //Function: check drop locations against desired on question-nine.html //
 function checkQuestionDragDrop() {
     if (dragcard1.substring(4, 8) == 'left') {
@@ -693,5 +711,27 @@ function checkQuestionDragDrop() {
 
     // write answer to local storage //
     localStorage.setItem('answerFlagNine', answerFlagNine);
+
+}
+
+//Function: confirm two checkboxes have been checked before revealing submit on question-ten.html //
+function checkTwo() {
+    let checkCount = 0;
+    if ($('#checkone').is(":checked")) {
+        ++checkCount;
+    }
+    if ($('#checktwo').is(":checked")) {
+        ++checkCount;
+    }
+    if ($('#checkthree').is(":checked")) {
+        ++checkCount;
+    }
+    if ($('#checkfour').is(":checked")) {
+        ++checkCount;
+    }
+
+    if (checkCount > 1) {
+        revealNext();
+    }
 
 }

@@ -42,10 +42,26 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1>Q10: </h1>
-        <p class="paralarge">Question</p>
-        <p class="paramedium">10</p>
-        <p class="paramedium">Good Luck!</p>
+        <h1>Q10: Which Wastes?</h1>
+        <p class="paramedium">A Customer contacts an online retailer to tell them they have delivered the wrong items.
+            <br>
+            They are told they need to contact the returns department.
+        </p>
+        <p class="paramedium">Which 2 of the 8 wastes are present in thie above scenario...?</p>
+        <form id="checkform" class="ml-auto mr-auto" onclick="return checkTwo();">
+            <label for="checkone" class="d-block mb-2 float-left">
+                Defects</label>
+            <input type="checkbox" name="question" id="checkone" class="float-right"><br>
+            <label for="checktwo" class="d-block mb-2 float-left">
+                Skills</label>
+            <input type="checkbox" name="question" id="checktwo" class="float-right"><br>
+            <label for="checkthree" class="d-block mb-2 float-left">
+                Overproduction</label>
+            <input type="checkbox" name="question" id="checkthree" class="float-right"><br>
+            <label for="checkfour" class="d-block mb-2 float-left">
+                Transportation</label>
+            <input type="checkbox" name="question" id="checkfour" class="float-right">
+        </form>
     </section>
 
 <!-- Bootstrap Modals -->
@@ -106,7 +122,7 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionRadio();" href="test-summary.html">
+            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionCheckbox();" href="test-summary.html">
                 <span>Submit <i class="fas fa-forward"></i></span>
             </a>
         </div>

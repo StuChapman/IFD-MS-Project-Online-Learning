@@ -85,7 +85,7 @@ As is now standard workflow for me; I produced detailed mockups for: phones, tab
 (links to .pdfs to be included)
 I used [figma](www.figma.com) to produce the mockups. 
 
-[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/18c7c826e41b681485720aa0e0b86767d523ecad/mockups)
+[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/8405ec53ae4b9b496fdcb19522b0d6ad86559581/mockups)
 
 
 ### Colour Schemes and Fonts
@@ -96,10 +96,10 @@ The colours I used (by 'eyedropping' the image in PowerPoint to get the hex code
 
 1. #657486 for the navbar
 2. #000000 for small sized text
-3. #101828 for medium sized text and the footer
-4. #CC613A for large text, banners and infographic backgrounds
-5. #ffffff for banner text and infographic line/text
-6. #D9D9D9 and #F0F0F0 for the photolink section (these were 'eyedropped' from the background image)
+3. #101828 for medium sized text
+4. #CC613A for large text
+5. #ffffff for white text
+6. #EFEFEF for the footer and the banner underneath the Navigation bar
 
 I used these colours exclusively to keep the 'brand' appearance across all pages.
 
