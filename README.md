@@ -85,7 +85,7 @@ As is now standard workflow for me; I produced detailed mockups for: phones, tab
 (links to .pdfs to be included)
 I used [figma](www.figma.com) to produce the mockups. 
 
-[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/mockups)
+[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/18c7c826e41b681485720aa0e0b86767d523ecad/mockups)
 
 
 ### Colour Schemes and Fonts
@@ -158,7 +158,7 @@ The features that are specific to individual pages are:
 1. A "Click to Begin" button to begin the Interactive Learning Section.
 
 **looking.html** 
-1. A video, liked via the [youTube](https://www.youtube.com/watch?v=5M0aUOudbx0) API of Marc Onetto [bio](https://www.marketscreener.com/business-leaders/Marc-Onetto-004R6M-E/biography/) (ex Amazon) talking about Waste in the publishing industry.
+1. A video [YouTube](https://www.youtube.com/watch?v=5M0aUOudbx0), linked via the YouTube [API](https://developers.google.com/youtube/iframe_api_reference) of Marc Onetto (ex Amazon) [bio](https://www.marketscreener.com/business-leaders/Marc-Onetto-004R6M-E/biography/) talking about Waste in the publishing industry.
 2. A bespoke "play/pause" video.
 3. The "next" anchor is not visible until the video has played in full.
 
@@ -262,60 +262,56 @@ The features that are specific to individual pages are:
 
 ## Testing
 My approach to testing was to test each of the features for functionality (operation) and rendering (visuals) against a variety of media devices, in both portrait and landscape orientation, as well as the 4 main browsers.
-I would test ‘as-and-when’ I was building and enhancing features, then, when the site was nearing completion; I created a matrix to complete methodically to ensure all functions operated and rendered correctly.
 
-I also completed some ‘user testing’ my asking my family to look at the site on mobile devices and laptops.
+I created a matrix to complete methodically to ensure all functions operated and rendered correctly.
 
-During the ongoing build test, I discovered an issue with the background image not rendering. It appeared fine in Gitpod, but when I first deployed to Github, the image was not visible. I tried a number of options to solve this, and found the only one that would work, was putting the **full** url from the image hosted on Github into the code. This is unsatisfactory for me, as it means the code is static and will not be portable without access to Github. I am still investigating a more satisfactory solution.
+For testing mid-build, I often logged variables to the console. This helped me see that variables were populating as designed (or not!) and that code had executed as planned.
 
-### Challenges
+I commented these in the scripts.js file with "// log to Console to test Functionality //" 
 
-There were a few issues that needed research before I could solve them:
+### Challenges, Bugs and Errors ###
 
-1. I discovered that using the accordion method of revealing hidden content on methods.html was not a great user experience, as the revealed content was off the bottom of the viewable screen. I believe the user would be unaware of this and feel that the link was broken. I initially tried adding a second set of code to allow the revealed content to appear *above* the banners, but this created duplicate ‘id’s in the code.
-    After discussion with my mentor, I decided to use the carousel method (which I had seen on the Amazon site and liked). This works much better and the user experience is much cleaner. It also inspired me to add some images to help describe the content to the user.
+Whilst in build, the following: challenges, bugs and errors required solutions...
 
-2. The height of the iPhone X screen was a challenge as on designing index.html, there was a lot of blank space below the footer.
-    There was a similar issue on the iPad Pro. Yet, the view fitted more regular phone sizes perfectly. I decided to style and size
-    the app for the iPhone X first, and allow content to scroll off the bottom of the screen for smaller phones. I looked at other sites and this seems to be the norm for users to scroll down for more content.
-    A trick that I used to help with this was to set a minimum vh for the background image and text section. this kept things spaced out nicely, and responded to different screen heights.
+    Challenge:  User accidentally tapping Brand Image and navigating away from the application.
+    Solution:   A Bootstrap Modal asking the user *"You are about to leave this site for the Continuous Engagement home page. Are you sure?"*.
 
-3. When I created the large, orange "banners" that link to further content on services.html and methods.html, I wanted the text centred both horizontally and vertically.
-    Researching found that it has often been an ongoing issue with vertical alignment. I found a little trick at [webdevblog](https://webdevblog.com/css-vertical-align) to set: **display: flex;**
-    and **align-items: center;** which solved the problem for me.
+    Challenge:  User navigates back and forth through test with the browser back and forward navigation, thus allowing repeated attempts at the test.
+    Solution:   Create the 10 'answerFlagXXX' variables to check if this question has already been answered, an alert the user, and navigated to the next question.
 
-### Bugs and Errors
+    Challenge:  An uploaded .mp4 video file would not play in deployed version due to it's filesize.
+    Solution:   Link to the video through YouTube API.
 
-There were many situations through the course of coding this project - mostly sizing and layout issues due to using Bootstrap plugins. These were usually padding or marging related and were overcome by using Safari Developer Tools too identify 
-which part of the css styling needed to be adjusted to suit my own application.
+    Challenge:  Rendering on mobile device, landscape view (especially where a grid was used).
+    Solution:   Utilise: @media screen and (orientation: portrait) and (orientation: landscape).
 
-for example 
+    Challenge:  Need to record the scores to the test questions.
+    Solution:   Write variables to local storage.
 
-    .col-xl-4 {
-        max-width: 33.3%;
-    }
-    
-    .col-xl-3 {
-        max-width: 25%;
-    }
+    Bug:        Original method of $("#arrow_____").animate to reveal the definition of Value/Waste on definition.html caused the text within the div to constantly re-format as the div expanded to size.
+    Solution:   Create masks $("#arrowmask_____").animate to reveal the definition, by shrinking the mask, rather than growing the div.
 
-To ensure that there was no unwanted wraparound of cards that I wished to fit the Bootstrap grid system.
+    Bug:        Images on revealed div on eightwastes.html taking time to cache, leaving previous image visible. This could be confusing to the user.
+    Solution:   Add a 200ms delay after image starts loading, before div is visible.
 
-I created more formal [Testing Matrices](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/testing) 
-to ensure that I could periodically test the features and rendering in a systematic way. This was fundamental as there are often small errors like types or missing margins
-that aren't immediately obvious 
+    Bug:        It is possible to drop multiple cards on question.nine.html into a single box. This is poor user experience.
+    Solution:   Once a box has been filled; change ondragover attribute to null - ( $('#' + dragcard3).attr('ondragover', ""); )
 
-The first pass of ‘completion’ testing revealed some particular errors:
-1.	The background image was incorrectly sized on contact.html – I corrected this by adjusting the max-height
-2.  The headers on case-studies.html were the wrong colour on small media devices – I also corrected this.
-3.  The menu links are supposed to change to a slightly darker colour to indicate that the user is currently visiting that particular page
-    - this functionality has broken and all pages were showing "home" as the active page. I realised that I had made some adjustments to the navbar in index.html, and copied the code
-    into each of the other pages without adjusting the active pages.
-4.  On checking the infographics; I realised that I had not creted hyperlinks to the methods.html page form the contact.html page. I added the hyperlinks.
+    Bug:        Question-ten.html showing as complete when it was incomplete due to the code that grabs the document title ( let thisquestion = document.title.substr(18,10); ) only grabbing 10 characters (so "Question 10" was being truncated to "Question 1").
+    Solution:   Change code to ( let thisquestion = document.title.substr(18,11); ).
+
+    Bug:        Method to check questions already answered not operating correctly when pressing the back button on mobile devices.
+    Solution:   Chnge method from on 'load' to 'pageshow'.
+
+    Bug:        Help Modal not closing on Submit.
+    Solution:   Add ( " data-dismiss="modal" ) to onclick attribute.
+
+    Error:      revealWaste() function declared twice.
+    Solution:   Renamed 2nd version as popupWaste().
 
 ### Solutions to User Stories
 
-[Screenshots](https://github.com/StuChapman/UCD-MS-Project-Continuous-Engagement/blob/195ffade32fdce65d439bf33c1f11352de30da86/screenshots) that address the different User Stories.
+[Screenshots](https://github.com/StuChapman/...tbc...) that address the different User Stories.
 
 ## Deployment
 
@@ -343,6 +339,8 @@ I deployed to Github Pages by the following steps:
     [made by Mike](www.madebymike.com.au/writing/fluid-type-calc-examples/)
 2.	The method for aligning text vertically is from [webdevblog](www.webdevblog.com/css-vertical-align/) 
 3.  The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
+4.  YouTube [API](https://developers.google.com/youtube/iframe_api_reference).
+5.   @media screen and (orientation: portrait) and (orientation: landscape) from Stack Overflow [discussion](https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree).
 
 ### Media
 
