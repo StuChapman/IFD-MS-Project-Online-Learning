@@ -72,7 +72,7 @@ $(window).on('pageshow', function() {
     console.log('answerFlagTen: ' + localStorage.getItem('answerFlagTen'));
 
     // check this question has not already been answered //
-    let thisquestion = document.title.substr(18,10);
+    let thisquestion = document.title.substr(18,11);
     console.log(thisquestion);
     let questionarray = [
                         ['Question 1',  'answerFlagOne', 'question-two.html'],
@@ -277,7 +277,11 @@ function populateImage() {
 
     console.log('imageCount: ' + imageCount + ' ' + imageArray[imageCount]);
     $("#valueimage").attr('src', 'assets/images/' + imageArray[imageCount][0] + '.jpg'); //Credit: https://www.juniordevelopercentral.com/jquery-change-image-src/#:~:text=jQuery%20change%20image%20src%20-%20How%20To%20Change,as%20simple%20as%20using%20the%20attr%20%2Afunction.%20 //
-    $("#imagetext").text(imageArray[imageCount][1]);
+    // 200ms delay to allow image to cache //
+    setTimeout(function() {
+        $("#imagetext").text(imageArray[imageCount][1]);
+        console.log('timeout');
+    }, 200);
 
     switch(imageCount) {
         case 0:
@@ -448,10 +452,11 @@ function popupWaste(imagetag) {
     $('#popptwo').text(popupArray[wasteIndex][2]);
     $('#wastepopupimage').attr('src','assets/images/' + indexString + '.jpg')
     $('#poppthree').text(popupArray[wasteIndex][3]);
+    // 200ms delay to allow image to cache //
     setTimeout(function() {
         $('#wastepopup').css('visibility', 'visible');
         console.log('timeout');
-    }, 150);
+    }, 200);
     
 }
 
