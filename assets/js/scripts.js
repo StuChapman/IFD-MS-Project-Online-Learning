@@ -92,7 +92,7 @@ $(window).on('pageshow', function() {
                         ['Question 10',  'answerFlagTen', 'test-summary.html']
                         ];
 
-    if (thisquestion = 'Test Summar') {
+    if (thisquestion == 'Test Summar') {
         populateSummary();
     }
 
