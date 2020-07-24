@@ -474,6 +474,33 @@ function popDownWaste() {
     $('#wastepopup').css('visibility', 'hidden');
 }
 
+//Function: work through the steps in example.html //
+function exampleSelect() {
+    let exampleStepNo;
+    exampleStepNo = $.trim($('#examplestep').text().substring(0, 1));
+    // log to Console to test Functionality //
+    console.log(exampleStepNo);
+
+    var exampleindex  = examplelist.selectedIndex; // Credit: https://www.codeproject.com/articles/656/using-javascript-to-handle-drop-down-list-selectio //
+    console.log(exampleindex);
+
+    switch (exampleStepNo) {
+            case '1':
+                if (exampleindex == 2) {
+                    $('#examplestep').text('Thats right! Moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...');
+                } else {
+                    $('#examplestep').text('Not quite - moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...');
+                }
+                break;
+            default: 
+                break;
+        }
+
+    $('#examplepara').text('tap the arrow to move to the next step...');
+    $('#examplelist').css('visibility', 'hidden');
+    $("#examplecarouselarrow").css('color', '#657486');
+}
+
 //Function: check the answers against desired for radio button style questions: one, three and eight //
 function checkQuestionRadio() {
     const rbs = document.querySelectorAll('input[name="question"]'); //Credit: https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/ //

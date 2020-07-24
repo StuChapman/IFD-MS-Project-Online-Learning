@@ -46,18 +46,24 @@
         <p id="example text" class="paramedium">We'll step through an example now and decide if the steps in the process are: 
             Value or Waste (and if so, which of the 8 Wastes).</p>
         <div class="row">
-            <div class="col examplebox align-vertically ml-5">
-                <span id="examplestep" class="paramedium">First thing we need to do; is get the wood from the truck and 
+            <div class="col-9 examplebox align-vertically pl-3">
+                <span id="examplestep" class="paramedium">1. First thing we need to do; is get the wood from the truck and 
                     bring it to our workbench.</span>
             </div>
-            <div class="col examplebox align-vertically mr-3">
-                <span id="rightcarouselarrow">
-                    <i class="fas fa-chevron-right hidden" onclick="return nextImage();"></i>
+            <div class="col-3 examplebox align-vertically pr-3">
+                <span id="examplecarouselarrow">
+                    <i class="fas fa-chevron-right" onchange="return nextImage();"></i>
                 </span>
             </div>
         </div>
-        <p class="paramedium">Is this step Value or Waste? If Waste, which of the 8 Wastes? Select from the 
+        <p id="examplepara" class="paramedium">Is this step Value or Waste? If Waste, which of the 8 Wastes? Select from the 
             list below...</p>
+        <select name="examplelist" id="examplelist" onchange="return exampleSelect(examplelist);">
+            <option value="default" selected>select...</option>
+            <option value="value">Value</option>
+            <option value="transportation">Waste - Transportation</option>
+            <option value="inventory">Waste - Inventory</option>
+        </select>
     </section>
 
 <!-- Bootstrap Modals -->

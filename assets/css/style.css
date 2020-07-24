@@ -214,8 +214,9 @@ nav {
 
 .examplebox {
     padding: 0;
-    height: 25vh;
-    width: 30vw;
+    margin-bottom: 2.5vh;
+    height: 30vh;
+    background-color: #f6f6f6;
 }
 
 /* ------------------- Option Form Styling */
@@ -316,7 +317,7 @@ nav {
     font-size: calc(2vh + (10 - 2) * ((100vw - 300px) / 1620));
 }
 
-#leftcarouselarrow, #rightcarouselarrow {
+#leftcarouselarrow, #rightcarouselarrow, #examplecarouselarrow {
     font-size: 7.5vh;
 }
 
@@ -327,6 +328,11 @@ nav {
 
 #rightcarouselarrow {
     color: #657486;
+    padding: 0 0 0 10vw;
+}
+
+#examplecarouselarrow {    
+    color: #eeeeee;
     padding: 0 0 0 10vw;
 }
 
