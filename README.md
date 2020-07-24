@@ -268,7 +268,7 @@ For testing mid-build, I often logged variables to the console. This helped me s
 
 I commented these in the scripts.js file with "// log to Console to test Functionality //" 
 
-### Challenges, Bugs and Errors ###
+### Challenges, Bugs and Errors
 
 Whilst in build, the following: challenges, bugs and errors required solutions...
 
@@ -307,6 +307,86 @@ Whilst in build, the following: challenges, bugs and errors required solutions..
 
     Error:      revealWaste() function declared twice.
     Solution:   Renamed 2nd version as popupWaste().
+
+#### function populateSummary()
+
+I wrote a function to read the 10 answerFlag variables, from local storage, convert the value to: P for Pass, F for Fail and n/a for 0.
+This would then populate test-summary.html.
+
+The challenge I had was: as there were 10 variables, I had to write the code to convert the variable 10 times. This just seemed like a very inelegant solution.
+
+I decided to change the answerFlag variables from text to alphanumeric (i.e. answerFlagOne becomes answerFlag1 etc.). I was then able to create a loop from 1 to 10, running a single block of code 10 times.
+
+This felt like a much cleaner way of achieving the end result. The code is below...
+
+Before.
+```javascript
+function populateSummary() {
+    let result;
+    switch (localStorage.getItem('answerFlagOne')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#ansone').text(result);
+    switch (localStorage.getItem('answerFlagTwo')) {
+        case '-1':
+            result = 'F';
+            break;
+        case '0':
+            result = 'n/a';
+            break;
+        case '1':
+            result = 'P';
+            break;
+        default: 
+            break;
+    }
+    $('#anstwo').text(result);
+
+    // and so on for AnswerFlagThree thru Ten ...
+```
+After.
+```javascript
+function populateSummary() {
+    let totalScore = 0;
+    let result;
+    let answerVar;
+    let answerSpan;
+    let i;
+
+    for (i = 0; i < 11; i++) {
+        answerVar = 'answerFlag' + i;
+        switch (localStorage.getItem(answerVar)) {
+            case '-1':
+                result = 'F';
+                break;
+            case '0':
+                result = 'n/a';
+                break;
+            case '1':
+                result = 'P';
+                ++totalScore;
+                break;
+            default: 
+                break;
+        }
+        answerSpan = '#answer' + i;
+        $(answerSpan).text(result);
+    }
+
+    $('#totalScore').text(totalScore + ' out of 10');
+
+}
+```
 
 ### Solutions to User Stories
 
