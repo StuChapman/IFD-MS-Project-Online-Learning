@@ -365,7 +365,7 @@ function handleWaste(imagetag) {
             break;
     }
 
-    // confirm that all popups have been viewed before revealing next href //
+    // confirm that all popups have been viewed before revealing next anchor //
     // as this is a product, clickCount is only 1 once all images are clicked //
     let clickCount = (transportationFlag 
                         * inventoryFlag 
@@ -594,7 +594,7 @@ function resetMuda() {
     $('.letterpickbox div').css('color', 'black');
 }
 
-//Function: check answers against desired on checkbox questions: four and ten //
+//Function: check answers against desired on checkbox questions: four, seven and ten //
 function checkQuestionCheckbox() {
 
     let thisquestion = document.title;
@@ -612,6 +612,17 @@ function checkQuestionCheckbox() {
                 localStorage.setItem('answerFlag4', answerFlag4);
             }
             break;
+        case 'Online Learning - Question 7':
+            if (!$('#checkone').is(":checked") 
+                && !$('#checktwo').is(":checked") 
+                    && $('#checkthree').is(":checked") 
+                        && $('#checkfour').is(":checked")) {
+                answerFlag7 = 1;
+            } else {
+                answerFlag7 = -1;
+            }
+            localStorage.setItem('answerFlag7', answerFlag7);
+            break;
         case 'Online Learning - Question 10':
             if ($('#checkone').is(":checked") 
                 && !$('#checktwo').is(":checked") 
@@ -628,7 +639,7 @@ function checkQuestionCheckbox() {
 
 }
 
-//Function: allow drag event on question-nine.html //
+//Function: allow drag event on question-nin.html //
 function drag(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.dataTransfer.setData("text", ev.target.id);
     console.log(ev.target.id);
@@ -757,13 +768,13 @@ function populateSummary() {
         answerVar = 'answerFlag' + i;
         switch (localStorage.getItem(answerVar)) {
             case '-1':
-                result = 'F';
+                result = 'Fail';
                 break;
             case '0':
-                result = 'n/a';
+                result = 'Null';
                 break;
             case '1':
-                result = 'P';
+                result = 'Pass';
                 ++totalScore;
                 break;
             default: 

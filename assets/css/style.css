@@ -208,6 +208,16 @@ nav {
     color: #000000;
 }
 
+#examplestep {
+    width: 50vw;
+}
+
+.examplebox {
+    padding: 0;
+    height: 25vh;
+    width: 30vw;
+}
+
 /* ------------------- Option Form Styling */
 
 #optionform {

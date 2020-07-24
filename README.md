@@ -310,7 +310,7 @@ Whilst in build, the following: challenges, bugs and errors required solutions..
 
 #### function populateSummary()
 
-I wrote a function to read the 10 answerFlag variables, from local storage, convert the value to: P for Pass, F for Fail and n/a for 0.
+I wrote a function to read the 10 answerFlag variables from local storage, convert the value to: P for Pass, F for Fail and _ for 0.
 This would then populate test-summary.html.
 
 The challenge I had was: as there were 10 variables, I had to write the code to convert the variable 10 times. This just seemed like a very inelegant solution.
@@ -325,13 +325,14 @@ function populateSummary() {
     let result;
     switch (localStorage.getItem('answerFlagOne')) {
         case '-1':
-            result = 'F';
+            result = 'Fail';
             break;
         case '0':
-            result = 'n/a';
+            result = 'Null';
             break;
         case '1':
-            result = 'P';
+            result = 'Pass';
+            ++totalScore;
             break;
         default: 
             break;
@@ -339,13 +340,14 @@ function populateSummary() {
     $('#ansone').text(result);
     switch (localStorage.getItem('answerFlagTwo')) {
         case '-1':
-            result = 'F';
+            result = 'Fail';
             break;
         case '0':
-            result = 'n/a';
+            result = 'Null';
             break;
         case '1':
-            result = 'P';
+            result = 'Pass';
+            ++totalScore;
             break;
         default: 
             break;
@@ -367,13 +369,13 @@ function populateSummary() {
         answerVar = 'answerFlag' + i;
         switch (localStorage.getItem(answerVar)) {
             case '-1':
-                result = 'F';
+                result = 'Fail';
                 break;
             case '0':
-                result = 'n/a';
+                result = 'Null';
                 break;
             case '1':
-                result = 'P';
+                result = 'Pass';
                 ++totalScore;
                 break;
             default: 
