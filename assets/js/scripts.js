@@ -21,16 +21,16 @@ var skillsFlag = 0;
 
 //Set global variables - flags for each of the questions in the test //
 // 0 = incomplete, 1 = correct, -1 = incorrect //
-var answerFlagOne = 0;
-var answerFlagTwo = 0;
-var answerFlagThree = 0;
-var answerFlagFour = 0;
-var answerFlagFive = 0;
-var answerFlagSix = 0;
-var answerFlagSeven = 0;
-var answerFlagEight = 0;
-var answerFlagNine = 0;
-var answerFlagTen = 0;
+var answerFlag1 = 0;
+var answerFlag2 = 0;
+var answerFlag3 = 0;
+var answerFlag4 = 0;
+var answerFlag5 = 0;
+var answerFlag6 = 0;
+var answerFlag7 = 0;
+var answerFlag8 = 0;
+var answerFlag9 = 0;
+var answerFlag10 = 0;
 
 //Set global variables - flags for each of the dragcards on question-nine.html //
 var dragcard1 = null;
@@ -51,45 +51,45 @@ var drag5Score = 0;
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
-localStorage.setItem('answerFlagOne', answerFlagOne);
-localStorage.setItem('answerFlagTwo', answerFlagTwo);
-localStorage.setItem('answerFlagThree', answerFlagThree);
-localStorage.setItem('answerFlagFour', answerFlagFour);
-localStorage.setItem('answerFlagFive', answerFlagFive);
-localStorage.setItem('answerFlagSix', answerFlagSix);
-localStorage.setItem('answerFlagSeven', answerFlagSeven);
-localStorage.setItem('answerFlagEight', answerFlagEight);
-localStorage.setItem('answerFlagNine', answerFlagNine);
-localStorage.setItem('answerFlagTen', answerFlagTen);
+localStorage.setItem('answerFlag1', answerFlag1);
+localStorage.setItem('answerFlag2', answerFlag2);
+localStorage.setItem('answerFlag3', answerFlag3);
+localStorage.setItem('answerFlag4', answerFlag4);
+localStorage.setItem('answerFlag5', answerFlag5);
+localStorage.setItem('answerFlag6', answerFlag6);
+localStorage.setItem('answerFlag7', answerFlag7);
+localStorage.setItem('answerFlag8', answerFlag8);
+localStorage.setItem('answerFlag9', answerFlag9);
+localStorage.setItem('answerFlag10', answerFlag10);
 }
 
 // Function: retrieve and check quiz score progress on document load //
 $(window).on('pageshow', function() {
-    console.log('answerFlagOne: ' + localStorage.getItem('answerFlagOne'));
-    console.log('answerFlagTwo: ' + localStorage.getItem('answerFlagTwo'));
-    console.log('answerFlagThree: ' + localStorage.getItem('answerFlagThree'));
-    console.log('answerFlagFour: ' + localStorage.getItem('answerFlagFour'));
-    console.log('answerFlagFive: ' + localStorage.getItem('answerFlagFive'));
-    console.log('answerFlagSix: ' + localStorage.getItem('answerFlagSix'));
-    console.log('answerFlagSeven: ' + localStorage.getItem('answerFlagSeven'));
-    console.log('answerFlagEight: ' + localStorage.getItem('answerFlagEight'));
-    console.log('answerFlagNine: ' + localStorage.getItem('answerFlagNine'));
-    console.log('answerFlagTen: ' + localStorage.getItem('answerFlagTen'));
+    console.log('answerFlag1: ' + localStorage.getItem('answerFlag1'));
+    console.log('answerFlag2: ' + localStorage.getItem('answerFlag2'));
+    console.log('answerFlag3: ' + localStorage.getItem('answerFlag3'));
+    console.log('answerFlag4: ' + localStorage.getItem('answerFlag4'));
+    console.log('answerFlag5: ' + localStorage.getItem('answerFlag5'));
+    console.log('answerFlag6: ' + localStorage.getItem('answerFlag6'));
+    console.log('answerFlag7: ' + localStorage.getItem('answerFlag7'));
+    console.log('answerFlag8: ' + localStorage.getItem('answerFlag8'));
+    console.log('answerFlag9: ' + localStorage.getItem('answerFlag9'));
+    console.log('answerFlag10: ' + localStorage.getItem('answerFlag10'));
 
     // check this question has not already been answered //
     let thisquestion = document.title.substr(18,11);
     console.log(thisquestion);
     let questionarray = [
-                        ['Question 1',  'answerFlagOne', 'question-two.html'],
-                        ['Question 2',  'answerFlagTwo', 'question-three.html'],
-                        ['Question 3',  'answerFlagThree', 'question-four.html'],
-                        ['Question 4',  'answerFlagFour', 'question-five.html'],
-                        ['Question 5',  'answerFlagFive', 'question-six.html'],
-                        ['Question 6',  'answerFlagSix', 'question-seven.html'],
-                        ['Question 7',  'answerFlagSeven', 'question-eight.html'],
-                        ['Question 8',  'answerFlagEight', 'question-nine.html'],
-                        ['Question 9',  'answerFlagNine', 'question-ten.html'],
-                        ['Question 10',  'answerFlagTen', 'test-summary.html']
+                        ['Question 1',  'answerFlag1', 'question-two.html'],
+                        ['Question 2',  'answerFlag2', 'question-three.html'],
+                        ['Question 3',  'answerFlag3', 'question-four.html'],
+                        ['Question 4',  'answerFlag4', 'question-five.html'],
+                        ['Question 5',  'answerFlag5', 'question-six.html'],
+                        ['Question 6',  'answerFlag6', 'question-seven.html'],
+                        ['Question 7',  'answerFlag7', 'question-eight.html'],
+                        ['Question 8',  'answerFlag8', 'question-nine.html'],
+                        ['Question 9',  'answerFlag9', 'question-ten.html'],
+                        ['Question 10',  'answerFlag10', 'test-summary.html']
                         ];
 
     if (thisquestion == 'Test Summar') {
@@ -493,29 +493,29 @@ function checkQuestionRadio() {
     switch(thisquestion) {
         case 'Online Learning - Question 1':
             if (selectedValue == 'optionfour') {
-                answerFlagOne = 1;
-                localStorage.setItem('answerFlagOne', answerFlagOne);
+                answerFlag1 = 1;
+                localStorage.setItem('answerFlag1', answerFlag1);
             } else {
-                answerFlagOne = -1;
-                localStorage.setItem('answerFlagOne', answerFlagOne);
+                answerFlag1 = -1;
+                localStorage.setItem('answerFlag1', answerFlag1);
             }
             break;
         case 'Online Learning - Question 3':
             if (selectedValue == 'optiontwo') {
-                answerFlagThree = 1;
-                localStorage.setItem('answerFlagThree', answerFlagThree);
+                answerFlag3 = 1;
+                localStorage.setItem('answerFlag3', answerFlag3);
             } else {
-                answerFlagThree = -1;
-                localStorage.setItem('answerFlagThree', answerFlagThree);
+                answerFlag3 = -1;
+                localStorage.setItem('answerFlag3', answerFlag3);
             }
             break;
         case 'Online Learning - Question 8':
             if (selectedValue == 'optionthree') {
-                answerFlagEight = 1;
-                localStorage.setItem('answerFlagEight', answerFlagEight);
+                answerFlag8 = 1;
+                localStorage.setItem('answerFlag8', answerFlag8);
             } else {
-                answerFlagEight = -1;
-                localStorage.setItem('answerFlagEight', answerFlagEight);
+                answerFlag8 = -1;
+                localStorage.setItem('answerFlag8', answerFlag8);
             }
             break;
         default:
@@ -568,14 +568,14 @@ function populateMuda(letterpick) {
             && ($.trim($('#square-three').text()) == 'D') 
                 && ($.trim($('#square-four').text()) == 'A')){
                     console.log('yes');
-                    answerFlagTwo = 1;
+                    answerFlag2 = 1;
                 } else {
-                    answerFlagTwo = -1;
+                    answerFlag2 = -1;
                     console.log('no');
                 }
 
     // write answer to local storage //
-    localStorage.setItem('answerFlagTwo', answerFlagTwo);
+    localStorage.setItem('answerFlag2', answerFlag2);
 
     letterCount = ++letterCount;
     if (letterCount == 4)  {
@@ -605,11 +605,11 @@ function checkQuestionCheckbox() {
                 && $('#checktwo').is(":checked") 
                     && !$('#checkthree').is(":checked") 
                         && $('#checkfour').is(":checked")) {
-                answerFlagFour = 1;
-                localStorage.setItem('answerFlagFour', answerFlagFour);
+                answerFlag4 = 1;
+                localStorage.setItem('answerFlag4', answerFlag4);
             } else {
-                answerFlagFour = -1;
-                localStorage.setItem('answerFlagFour', answerFlagFour);
+                answerFlag4 = -1;
+                localStorage.setItem('answerFlag4', answerFlag4);
             }
             break;
         case 'Online Learning - Question 10':
@@ -617,11 +617,11 @@ function checkQuestionCheckbox() {
                 && !$('#checktwo').is(":checked") 
                     && !$('#checkthree').is(":checked") 
                         && $('#checkfour').is(":checked")) {
-                answerFlagTen = 1;
-                localStorage.setItem('answerFlagTen', answerFlagTen);
+                answerFlag10 = 1;
+                localStorage.setItem('answerFlag10', answerFlag10);
             } else {
-                answerFlagTen = -1;
-                localStorage.setItem('answerFlagTen', answerFlagTen);
+                answerFlag10 = -1;
+                localStorage.setItem('answerFlag10', answerFlag10);
             }
             break;
     }
@@ -713,13 +713,13 @@ function checkQuestionDragDrop() {
     }
 
     if (drag1Score + drag2Score + drag3Score + drag4Score + drag5Score == 5) {
-        answerFlagNine = 1;
+        answerFlag9 = 1;
     } else {
-        answerFlagNine = -1;
+        answerFlag9 = -1;
     }
 
     // write answer to local storage //
-    localStorage.setItem('answerFlagNine', answerFlagNine);
+    localStorage.setItem('answerFlag9', answerFlag9);
 
 }
 
@@ -747,156 +747,32 @@ function checkTwo() {
 
 //Function: populate test results on test-summary.html //
 function populateSummary() {
+    let totalScore = 0;
     let result;
+    let answerVar;
+    let answerSpan;
+    let i;
 
-    switch (localStorage.getItem('answerFlagOne')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
+    for (i = 0; i < 11; i++) {
+        answerVar = 'answerFlag' + i;
+        switch (localStorage.getItem(answerVar)) {
+            case '-1':
+                result = 'F';
+                break;
+            case '0':
+                result = 'n/a';
+                break;
+            case '1':
+                result = 'P';
+                ++totalScore;
+                break;
+            default: 
+                break;
+        }
+        answerSpan = '#answer' + i;
+        $(answerSpan).text(result);
     }
-    $('#ansone').text(result);
 
-    switch (localStorage.getItem('answerFlagTwo')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#anstwo').text(result);
-
-    switch (localStorage.getItem('answerFlagThree')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansthree').text(result);
-
-    switch (localStorage.getItem('answerFlagFour')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansfour').text(result);
-
-    switch (localStorage.getItem('answerFlagFive')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansfive').text(result);
-
-    switch (localStorage.getItem('answerFlagSix')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#anssix').text(result);
-
-    switch (localStorage.getItem('answerFlagSeven')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansseven').text(result);
-
-    switch (localStorage.getItem('answerFlagEight')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#anseight').text(result);
-
-    switch (localStorage.getItem('answerFlagNine')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansnine').text(result);
-
-    switch (localStorage.getItem('answerFlagTen')) {
-        case '-1':
-            result = 'F';
-            break;
-        case '0':
-            result = 'n/a';
-            break;
-        case '1':
-            result = 'P';
-            break;
-        default: 
-            break;
-    }
-    $('#ansten').text(result);
+    $('#totalScore').text(totalScore + ' out of 10');
 
 }

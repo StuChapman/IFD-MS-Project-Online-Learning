@@ -40,6 +40,10 @@ label {
     margin-top: 7.5vh;
 }
 
+.white {
+    color: #ffffff;
+}
+
 /*------------------- Bootstrap Overrules */
 
 .row {
@@ -430,6 +434,10 @@ nav {
 
 @media screen and (orientation: portrait){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
 
+    .extramarginbottom {
+        margin-bottom: 1vh;
+    }
+
     #divleft {
         margin-right: auto;
     }
@@ -482,6 +490,10 @@ nav {
 
 @media screen and (orientation: landscape){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
 
+    .extramarginbottom {
+        margin-bottom: 5vh;
+    }
+
     #divleft {
         margin-right: 0;
     }
@@ -524,6 +536,10 @@ nav {
         height: 8vh;
         margin-bottom: .5vw;
         font-size: 3vh;
+    }
+
+    .resultscontainer {
+        width: 70vw;
     }
 
 }
