@@ -19,17 +19,6 @@ var overprocessingFlag = 0;
 var defectsFlag = 0;
 var skillsFlag = 0;
 
-
-//Set global variables - array of examplestep and exampleindex for example.html //
-exampleArray = 
-                [
-                    ['1. First thing we need to do is get the wood from the truck and bring it to our workbench.', '2', 'Moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...],
-                    ['window', 'Cleaning the windows on a building'],
-                    ['meal', 'Serving a meal to a Customer'],
-                    ['tyre', 'Replacing a flat tyre on a car'],
-                    ['sale', 'Selling a new insurance policy to a Customer']
-                ];
-
 //Set global variables - flags for each of the questions in the test //
 // 0 = incomplete, 1 = correct, -1 = incorrect //
 var answerFlag1 = 0;
@@ -334,7 +323,6 @@ function scrollUp() {
     $('#scrollone').css('display', 'block');
     $('#scrolltwo').css('display', 'none');
 }
-
 
 //Function: handle the images on eightwastes.html ready for the popup //
 function handleWaste(imagetag) {
@@ -827,3 +815,4 @@ function populateSummary() {
     $('#totalScore').text(totalScore + ' out of 10');
 
 }
+
