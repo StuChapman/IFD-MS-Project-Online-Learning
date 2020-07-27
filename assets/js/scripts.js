@@ -59,7 +59,7 @@ var drag3Score = 0;
 var drag4Score = 0;
 var drag5Score = 0;
 
-// ********************************** Interactive Learning Functions ********************************** //
+// ********************************** Interactive Learning Section Functions ********************************** //
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
@@ -506,24 +506,32 @@ function exampleSelect() {
     }
 
     if (exampleStepNo == 7) {
+        $('#examplepara').text('tap next to start the Online Test...');
+        $('#examplelist').css('visibility', 'hidden');
+        $("#examplecarouselarrow").css('color', '#dddcdc');
         revealNext();
+    } else {
+        $('#examplepara').text('tap the arrow to move to the next step...');
+        $('#examplelist').css('visibility', 'hidden');
+        $("#examplecarouselarrow").css('color', '#657486');
     }
 
-    $('#examplepara').text('tap the arrow to move to the next step...');
-    $('#examplelist').css('visibility', 'hidden');
-    $("#examplecarouselarrow").css('color', '#657486');
 }
 
 //Function: navigate to the next step in example.html //
 function nextExample() {
-    ++exampleStepNo;
-    $('#examplestep').text(examplearray[exampleStepNo - 1][0]);
-    $('#examplelist').css('visibility', 'visible');
-    $("#examplecarouselarrow").css('color', '#eeeeee');
-
+    if ($("#examplecarouselarrow").css('color') == 'rgb(221, 220, 220)') {
+        return;
+    } else {
+        ++exampleStepNo;
+        $('#examplestep').text(examplearray[exampleStepNo - 1][0]);
+        document.getElementById("examplelist").selectedIndex = "0";
+        $('#examplelist').css('visibility', 'visible');
+        $("#examplecarouselarrow").css('color', '#dddcdc');
+    }
 }
 
-// ********************************** Test Functions ********************************** //
+// ********************************** Interactive Test Section Functions ********************************** //
 
 //Function: check the answers against desired for radio button style questions: one, three and eight //
 function checkQuestionRadio() {

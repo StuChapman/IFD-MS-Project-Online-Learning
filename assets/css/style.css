@@ -64,6 +64,7 @@ label {
 a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     color: rgb(255, 255, 255, .5);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn.focus, .btn:focus {
@@ -71,7 +72,8 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     box-shadow: none;
 }
 
-#brandimage:hover {
+#brandimage:hover, #leftcarouselarrow:hover, #rightcarouselarrow:hover, .letterpick:hover,
+.fa-chevron-right, .fa-chevron-left, .fa-chevron-down, .fa-chevron-up, .wasteimagecontainer {
     cursor: pointer;
 }
 
@@ -80,9 +82,6 @@ a:hover, #helpbtn:hover, .btn-orange:hover, .btn-blue:hover {
     font-weight: bold; 
 }
 
-#leftcarouselarrow:hover, #rightcarouselarrow:hover {
-    cursor: pointer;
-}
 
 /*------------------- Navbar Styling */
 
@@ -337,8 +336,7 @@ nav {
 }
 
 #examplecarouselarrow {    
-    color: #eeeeee;
-    padding: 0 0 0 10vw;
+    color: #dddcdc;
 }
 
 #downarrow, #uparrow {
@@ -542,6 +540,10 @@ nav {
     .wasteimagecontainer {
         flex: 0 0 25%;
         max-width: 25%;
+    }
+
+    .examplecontainer {
+        width: 65vw;
     }
 
     .dragcontainerouter {
