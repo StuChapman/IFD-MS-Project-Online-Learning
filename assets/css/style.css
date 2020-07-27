@@ -183,6 +183,11 @@ nav {
     margin-bottom: 5vh;
 }
 
+#textsection #examplestep {
+    color: #CC613A;
+    font-weight: bold;
+}
+
 /* ------------------- more styling in Media Screen responsiveness */
 .letterpickbox {
     align-content: stretch;    

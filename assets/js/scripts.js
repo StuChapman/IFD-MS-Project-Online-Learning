@@ -19,6 +19,17 @@ var overprocessingFlag = 0;
 var defectsFlag = 0;
 var skillsFlag = 0;
 
+
+//Set global variables - array of examplestep and exampleindex for example.html //
+exampleArray = 
+                [
+                    ['1. First thing we need to do is get the wood from the truck and bring it to our workbench.', '2', 'Moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...],
+                    ['window', 'Cleaning the windows on a building'],
+                    ['meal', 'Serving a meal to a Customer'],
+                    ['tyre', 'Replacing a flat tyre on a car'],
+                    ['sale', 'Selling a new insurance policy to a Customer']
+                ];
+
 //Set global variables - flags for each of the questions in the test //
 // 0 = incomplete, 1 = correct, -1 = incorrect //
 var answerFlag1 = 0;
@@ -47,7 +58,7 @@ var drag3Score = 0;
 var drag4Score = 0;
 var drag5Score = 0;
 
-// ********************************** Functions ********************************** //
+// ********************************** Interactive Learning Functions ********************************** //
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
@@ -501,6 +512,13 @@ function exampleSelect() {
     $("#examplecarouselarrow").css('color', '#657486');
 }
 
+//Function: navigate to the next step in example.html //
+function nextExample() {
+    
+}
+
+// ********************************** Test Functions ********************************** //
+
 //Function: check the answers against desired for radio button style questions: one, three and eight //
 function checkQuestionRadio() {
     const rbs = document.querySelectorAll('input[name="question"]'); //Credit: https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/ //
@@ -666,7 +684,7 @@ function checkQuestionCheckbox() {
 
 }
 
-//Function: allow drag event on question-nin.html //
+//Function: allow drag event on question-nine.html //
 function drag(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.dataTransfer.setData("text", ev.target.id);
     console.log(ev.target.id);
@@ -681,40 +699,35 @@ function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_dragan
 function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.preventDefault();
 
-            $('#' + dragcard1).attr('ondragover', "");
+    $('#' + dragcard1).attr('ondragover', "");
     let data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
     console.log(data + ": " + ev.target.id);
 
-    switch (data) {
-        case 'dragcard1': 
-            dragcard1 = ev.target.id;
-            // do not allow more than one card to be dropped into each box //
-            $('#' + dragcard1).attr('ondragover', "");
-            break;
-        case 'dragcard2': 
-            dragcard2 = ev.target.id;
-            // do not allow more than one card to be dropped into each box //
-            $('#' + dragcard2).attr('ondragover', "");
-            break;
-        case 'dragcard3': 
-            dragcard3 = ev.target.id;
-            // do not allow more than one card to be dropped into each box //
-            $('#' + dragcard3).attr('ondragover', "");
-            break;
-        case 'dragcard4': 
-            dragcard4 = ev.target.id;
-            // do not allow more than one card to be dropped into each box //
-            $('#' + dragcard4).attr('ondragover', "");
-            break;
-        case 'dragcard5': 
-            dragcard5 = ev.target.id;
-            // do not allow more than one card to be dropped into each box //
-            $('#' + dragcard5).attr('ondragover', "");
-            break;
-        default: 
-            break;
+    let dragVar;
+    dragVar = ev.target.id;
+    // do not allow more than one card to be dropped into each box //
+    $('#' + dragVar).attr('ondragover', "");
+    
+            switch (data) {
+            case 'dragcard1': 
+                dragcard1 = ev.target.id;
+                break;
+            case 'dragcard2': 
+                dragcard2 = ev.target.id;
+                break;
+            case 'dragcard3': 
+                dragcard3 = ev.target.id;
+                break;
+            case 'dragcard4': 
+                dragcard4 = ev.target.id;
+                break;
+            case 'dragcard5': 
+                dragcard5 = ev.target.id;
+                break;
+            default: 
+                break;
     }
 
     if (dragcard1 !== null && dragcard2 !== null && dragcard3 !== null && dragcard4 !== null && dragcard5 !== null) {
