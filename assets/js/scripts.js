@@ -8,6 +8,7 @@ var nextRevealWaste = 0;
 var player;
 var imageCount = 0;
 var letterCount = 0;
+var exampleStepNo = 1;
 
 //Set global variables - flags to ensure all 8 images have been clicked before navigating from eightwastes.html //
 var transportationFlag = 0;
@@ -31,6 +32,17 @@ var answerFlag7 = 0;
 var answerFlag8 = 0;
 var answerFlag9 = 0;
 var answerFlag10 = 0;
+
+//Set global variables - array examplestep, answerindex and answertext for on example.html //
+let examplearray = [
+                    ['1. First thing we need to do is get the wood from the truck and bring it to our workbench.',  '2', 'Moving material (wood) around is TRANSPORTATION. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...'],
+                    ['2. Then we drill some holes in the wood to make the joints',  '1', 'Changing the shape of the work adds VALUE to it - it becomes closer to the finished product.'],
+                    ['3. Next, check the holes are the right size.',  '7', 'Checking is OVERPROCESSING - we should make failsafes that ensure processes are correct every time, without the need to check.'],
+                    ['4. Fasten the legs to the base with glue and allow it to dry',  '5', 'WAITING for the glue to dry is Waste. We could experiment with different methods here, like using wood screws.'],
+                    ['5. Turn the chair upside-down to fit the seat-back.',  '4', 'The MOTION of turning the chair adds time. If we designed a fixture to hold the chair in place while we fir the legs and the seat-back, we could remove this.'],
+                    ['6. Finally, we paint the chair.',  '1', 'Adding paint is changing the shape, so more VALUE is being added.'],
+                    ['7. Last thing to do is to put the chair in the storeroom with all the others.',  '3', 'Creating INVENTORY is waste. Do we have orders for all the chairs in our storeroom? We should build to demand.']
+                    ];
 
 //Set global variables - flags for each of the dragcards on question-nine.html //
 var dragcard1 = null;
@@ -475,25 +487,27 @@ function popDownWaste() {
 
 //Function: work through the steps in example.html //
 function exampleSelect() {
-    let exampleStepNo;
     exampleStepNo = $.trim($('#examplestep').text().substring(0, 1));
     // log to Console to test Functionality //
     console.log(exampleStepNo);
 
+    let answerindex = examplearray[exampleStepNo - 1][1];
+    console.log(answerindex);
+    let answertext = examplearray[exampleStepNo - 1][2];
+    console.log(answertext);
+
     var exampleindex  = examplelist.selectedIndex; // Credit: https://www.codeproject.com/articles/656/using-javascript-to-handle-drop-down-list-selectio //
     console.log(exampleindex);
 
-    switch (exampleStepNo) {
-            case '1':
-                if (exampleindex == 2) {
-                    $('#examplestep').text('Thats right! Moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...');
-                } else {
-                    $('#examplestep').text('Not quite - moving material (wood) around is Transportation. Even if we cannot fully eliminate it, we should reduce it as much as possible - maybe have the truck deliver to the workbench...');
-                }
-                break;
-            default: 
-                break;
-        }
+    if (exampleindex == answerindex) {
+        $('#examplestep').text('Thats right! ' + answertext);
+    } else {
+        $('#examplestep').text('Not quite. ' + answertext);
+    }
+
+    if (exampleStepNo == 7) {
+        revealNext();
+    }
 
     $('#examplepara').text('tap the arrow to move to the next step...');
     $('#examplelist').css('visibility', 'hidden');
@@ -502,7 +516,11 @@ function exampleSelect() {
 
 //Function: navigate to the next step in example.html //
 function nextExample() {
-    
+    ++exampleStepNo;
+    $('#examplestep').text(examplearray[exampleStepNo - 1][0]);
+    $('#examplelist').css('visibility', 'visible');
+    $("#examplecarouselarrow").css('color', '#eeeeee');
+
 }
 
 // ********************************** Test Functions ********************************** //
