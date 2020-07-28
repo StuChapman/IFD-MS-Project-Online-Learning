@@ -148,6 +148,22 @@ function sendEmail() {
     console.log(this.question.value);
     console.log(document.title);
 
+    if (this.emailinput.value !== "[a-zA-Z]*") {
+        alert('Please enter your name. Letters only, no numbers or special characters.');
+        this.sendername.value = "";
+        return;
+    }
+
+    if (this.emailinput.value == "") {
+        alert('Please enter your email address.');
+        return;
+    }
+
+    if (this.question.value == "") {
+        alert('Please enter your question.');
+        return;
+    }
+
     emailjs.init("user_37585cYmkMNZRiOobd27i");
 
     var thispage = document.title;
@@ -170,7 +186,7 @@ function sendEmail() {
         function(error) {
             console.log("FAILED", error);
         });
-    return false;
+
 }
 
 //Function: reveal the definition for Value by clicking the word value on definition.html //
@@ -196,7 +212,7 @@ function revealValue() {
 function revealWaste() { 
     // log to Console to test Functionality //
     console.log('Waste');
-    nextRevealWaste++
+    nextRevealWaste++;
     // confirm that both definitions have been viewed before revealing next href //
     nextReveal = nextRevealValue * nextRevealWaste;
     // log to Console to test Functionality //
@@ -228,7 +244,7 @@ function playVid() {
 
     switch(playText) {
         case "play":
-            player.playVideo()
+            player.playVideo();
             $("#playbutton").text("pause");
             break;
         case "pause":
@@ -267,7 +283,7 @@ function prevImage() {
 
 //Function: set the image and text on value.html //
 function populateImage() {
-    let getpage = document.title
+    let getpage = document.title;
     // log to Console to test Functionality //
     console.log(getpage);
 
@@ -316,7 +332,7 @@ function populateImage() {
             break;
         case 4:
             $("#rightcarouselarrow").css('color', '#eeeeee');
-            revealNext()
+            revealNext();
             break;
         default:
             break;
@@ -394,7 +410,7 @@ function handleWaste(imagetag) {
     }
 
     // change opacity of clicked image to show status as clicked //
-    $(imagetag).css('opacity', .25); //Credit: https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js
+    $(imagetag).css('opacity', 0.25); //Credit: https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js
 
     popupWaste(imagetag);
 }
@@ -470,7 +486,7 @@ function popupWaste(imagetag) {
     $('#pophead').text(popupArray[wasteIndex][0]);
     $('#poppone').text(popupArray[wasteIndex][1]);
     $('#popptwo').text(popupArray[wasteIndex][2]);
-    $('#wastepopupimage').attr('src','assets/images/' + indexString + '.jpg')
+    $('#wastepopupimage').attr('src','assets/images/' + indexString + '.jpg');
     $('#poppthree').text(popupArray[wasteIndex][3]);
     // 200ms delay to allow image to cache //
     setTimeout(function() {
@@ -531,7 +547,7 @@ function nextExample() {
     }
 }
 
-// ********************************** Interactive Test Section Functions ********************************** //
+// ********************************** Question Functions ********************************** //
 
 //Function: check the answers against desired for radio button style questions: one, three and eight //
 function checkQuestionRadio() {
