@@ -148,22 +148,23 @@ function sendEmail() {
     console.log(this.question.value);
     console.log(document.title);
 
-    if (this.emailinput.value !== "[a-zA-Z]*") {
+    if (!(/^[a-zA-Z\s]+$/.test(this.sendername.value)) && this.sendername.value !== null) {
         alert('Please enter your name. Letters only, no numbers or special characters.');
         this.sendername.value = "";
         return;
     }
 
-    if (this.emailinput.value == "") {
-        alert('Please enter your email address.');
+    if (!(/^\S+@\S+\.\S+$/.test(this.emailinput.value))) {
+        alert('Please enter a valid email address.');
         return;
     }
 
-    if (this.question.value == "") {
-        alert('Please enter your question.');
-        return;
+    if (this.question.value.length < 10) {
+        alert('Please enter a question of at least 10 characters.');
+        this.sendername.value = this.sendername.value;
+        return false;
     }
-
+    
     emailjs.init("user_37585cYmkMNZRiOobd27i");
 
     var thispage = document.title;
@@ -178,13 +179,12 @@ function sendEmail() {
 
     emailjs.send(service_id, template_id, template_params)
     //Credit: Code Institute//
-    // log to Console to test Functionality //
     .then(
         function(response) {
-            console.log("success", response);
+            alert('Email sent succesfully.', response);
         },
         function(error) {
-            console.log("FAILED", error);
+            alert('Email failed to send. ', error);
         });
 
 }

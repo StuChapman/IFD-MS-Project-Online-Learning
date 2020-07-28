@@ -173,6 +173,11 @@ nav {
     font-size: calc(1.5vh + (12 - 1.5) * ((100vw - 300px) / 1620));
 }
 
+.modal .imagefooter {
+    color: gray;
+    font-size: calc(1vh + (8 - 1) * ((100vw - 300px) / 1620));
+}
+
 #lettersquarebox, .letterpickbox {
     padding: 0;
 }
