@@ -44,14 +44,14 @@ let examplearray = [
                     ['7. Last thing to do is to put the chair in the storeroom with all the others.',  '3', 'Creating INVENTORY is waste. Do we have orders for all the chairs in our storeroom? We should build to demand.']
                     ];
 
-//Set global variables - flags for each of the dragcards on question-nine.html //
+//Set global variables - flags for each of the dragcards on question-five.html //
 var dragcard1 = null;
 var dragcard2 = null;
 var dragcard3 = null;
 var dragcard4 = null;
 var dragcard5 = null;
 
-//Set global variables - flags for each of the dragcards drop locations on question-nine.html //
+//Set global variables - flags for each of the dragcards drop locations on question-five.html //
 // 0 = unmoved, 1 = correct, -1 = incorrect //
 var drag1Score = 0;
 var drag1Score = 0;
@@ -166,18 +166,19 @@ function sendEmail() {
     }
     
     emailjs.init("user_37585cYmkMNZRiOobd27i");
-
+    
     var thispage = document.title;
     var template_params = {
     "from_name": this.sendername.value,
     "from_email": this.emailinput.value,
     "question": thispage + ": " + this.question.value
     };
-
+    
     var service_id = "continuous_engagement";
     var template_id = "template_6DMLrcJu";
 
     emailjs.send(service_id, template_id, template_params)
+    
     //Credit: Code Institute//
     .then(
         function(response) {
@@ -425,8 +426,7 @@ function popupWaste(imagetag) {
     console.log(indexString);
     let wasteIndex =0;
 
-    popupArray = 
-                [
+    let popupArray = [
                     ['Transportation', 'Moving product or work around for no reason.', 
                         'In a restaurant, this might be; carrying all the meat downstairs to the cellar, only to have to carry it all back upstairs again to cook it.', 
                             '...or a Customer being transferred from one department to another.'],
@@ -714,18 +714,18 @@ function checkQuestionCheckbox() {
 
 }
 
-//Function: allow drag event on question-nine.html //
+//Function: allow drag event on question-five.html //
 function drag(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.dataTransfer.setData("text", ev.target.id);
     console.log(ev.target.id);
 }
 
-//Function: allow drop event on question-nine.html //
+//Function: allow drop event on question-five.html //
 function allowDrop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.preventDefault();
 }
 
-//Function: determine drop locations on question-nine.html //
+//Function: determine drop locations on question-five.html //
 function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
     ev.preventDefault();
 
@@ -765,7 +765,7 @@ function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop
     }
 }
 
-//Function: check drop locations against desired on question-nine.html //
+//Function: check drop locations against desired on question-five.html //
 function checkQuestionDragDrop() {
     if (dragcard1.substring(4, 8) == 'left') {
         drag1Score = 1;

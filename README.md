@@ -61,6 +61,7 @@ This section comprises of:
 * waste.html - 5 Examples of Waste.
 * nonvalueadd.html - an additional concept that is neither Value nor Waste, but is relevant.
 * eightwastes.html - The eight wastes, as described by Ohno and examples of each.
+* example.html - A step by step example, where the user can select whether steps are Value or Waste.
 
 **Online Interactive Test** - for the user to consolidate their knowledge against a standard.
 
@@ -77,6 +78,10 @@ This section comprises of:
 * question-nine.html - an interactive puzzle for the user to move actions to boxes of: Value and Waste. 
 * question-ten.html - a multi-option question on waste identification.
 * test-summary.html
+
+I made a decision to have a seperate html file for each question, rather than a single file with the questions populated via Javascript.
+
+This was because the question format varies enough from question to question to make this the cleanest method.
 
 ### Mockups:
 
@@ -157,7 +162,7 @@ The features that are specific to individual pages are:
 1. A "Click to Begin" button to begin the Interactive Learning Section.
 
 **looking.html** 
-1. A video [YouTube](https://www.youtube.com/watch?v=5M0aUOudbx0), linked via the YouTube [API](https://developers.google.com/youtube/iframe_api_reference) of Marc Onetto (ex Amazon) [bio](https://www.marketscreener.com/business-leaders/Marc-Onetto-004R6M-E/biography/) talking about Waste in the publishing industry.
+1. A [YouTube](https://www.youtube.com/watch?v=5M0aUOudbx0) video, linked via the YouTube [API](https://developers.google.com/youtube/iframe_api_reference) of Marc Onetto (ex Amazon) [bio](https://www.marketscreener.com/business-leaders/Marc-Onetto-004R6M-E/biography/) talking about Waste in the publishing industry.
 2. A bespoke "play/pause" video.
 3. The "next" anchor is not visible until the video has played in full.
 
@@ -190,6 +195,17 @@ The features that are specific to individual pages are:
 3. The div is adaptive; in that the text and image vary according to which image has been tapped.
 4. Once tapped, the image will reduce opacity to allow the user to see which images remain (the opaque images can still be reviewed).
 5. The "next" anchor is not visible until all images have been tapped.
+
+**example.html** 
+1. A 7 step example (Making a Chair) with a description of each step.
+2. A 'drop-down' select control to select one of: Value or the 8 Wastes.
+3. A response ('That's right! or 'Not quite') along with an explanation, to explain the correct selection to the user,
+4. A 'next' chevron to index throught the steps.
+5. The 'next' chevron is 'grey-ed out' until an option has been selected from the select control.
+6. The select control is hidden once it has been selected, until the user has navigated to the next step via the 'next' chevron.
+7. The "next" anchor is not visible until all 7 steps have been viewed.
+
+Note. This is just an example - it is not part of the test. 
 
 **test-intro.html** 
 1. A "Click to Begin" button to begin the Interactive Test Section.

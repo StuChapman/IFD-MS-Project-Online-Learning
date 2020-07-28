@@ -42,27 +42,12 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1 class="pt-2 pb-2">Q9: Value or Waste?</h1>
-        <p class="paralarge">Drag each of these activities to the correct category ...</p>
+        <h1 class="pt-2 pb-2">Q9: The 8 Wastes</h1>
+        <p class="paralarge">Drag the 4 descriptions to the Waste they describe ...</p>
         <div class="row dragcontainerouter ml-auto mr-auto">
             <div class="col-4">
-                <div class="row dragcontainerleft">
-                    <span class="dragboxheader ml-auto mr-auto mb-1">Value?</span>
-                    <div class="dragbox" id="dragleft1" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                    <div class="dragbox" id="dragleft2" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                    <div class="dragbox" id="dragleft3" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                    <div class="dragbox" id="dragleft4" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                    <div class="dragbox" id="dragleft5" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
                 <div class="row dragcontainermid">
-                    <span class="dragboxheader ml-auto mr-auto mb-1">Activity</span>
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Description</span>
                     <div class="dragbox">
                         <div class="dragcard align-vertically" id="dragcard1" draggable="true" ondragstart="drag(event)" >
                             Stitching a wound in ER
@@ -83,16 +68,25 @@
                             Painting a fence
                         </div>
                     </div>
-                    <div class="dragbox">
-                        <div class="dragcard align-vertically" id="dragcard5" draggable="true" ondragstart="drag(event)" >
-                            Explaining a website
-                        </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row dragcontainerleft">
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Wastes</span>
+                    <div class="dragbox" id="dragleft1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                        Transportation
+                    </div>
+                    <div class="dragbox" id="dragleft2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox" id="dragleft3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    </div>
+                    <div class="dragbox" id="dragleft4" ondrop="drop(event)" ondragover="allowDrop(event)" >
                     </div>
                 </div>
             </div>
             <div class="col-4">
                 <div class="row dragcontainerright">
-                    <span class="dragboxheader ml-auto mr-auto mb-1">Waste?</span>
+                    <span class="dragboxheader ml-auto mr-auto mb-1">Wastes</span>
                     <div class="dragbox" id="dragright1" ondrop="drop(event)" ondragover="allowDrop(event)" >
                     </div>
                     <div class="dragbox" id="dragright2" ondrop="drop(event)" ondragover="allowDrop(event)" >
@@ -100,8 +94,6 @@
                     <div class="dragbox" id="dragright3" ondrop="drop(event)" ondragover="allowDrop(event)" >
                     </div>
                     <div class="dragbox" id="dragright4" ondrop="drop(event)" ondragover="allowDrop(event)" >
-                    </div>
-                    <div class="dragbox" id="dragright5" ondrop="drop(event)" ondragover="allowDrop(event)" >
                     </div>
                 </div>
             </div>
@@ -151,12 +143,12 @@
                                 <input type="text" id="sendername" placeholder="Firstname Lastname" required><br>
                                 <label class="mr-auto" for="emailinput">Email address *</label><br>
                                 <input type="email" id="emailinput" placeholder="name@example.com" required><br>
-                                <label class="mr-auto" for="question">Type your question here... *</label><br>
+                                <label class="mr-auto" for="question">Type your question here... *<span class="imagefooter">(min 10 characters)</span></label><br>
                                 <textarea id="question" rows="2" required></textarea>
                             </div>
                             <div class="modal-footer">
                                 <label class="mr-auto" for="submit">You will receive an email from continuousengagement@outlook.com</label><br>
-                                <button type="submit" class="btn btn-blue" onclick="return sendEmail(this);" data-dismiss="modal">Submit</button>
+                                <button type="submit" class="btn btn-blue" onclick="return sendEmail(this);" >Submit</button>
                             </div>
                         </form>
                     </div>
