@@ -51,6 +51,15 @@ var dragcard3 = null;
 var dragcard4 = null;
 var dragcard5 = null;
 
+//Set global variables - array for the contents of each of the orderboxes on question-nine.html //
+let orderArray = [
+                    ['orderbox1', 'ordercard1', 'text1'],
+                    ['orderbox2', 'ordercard2', 'text2'],
+                    ['orderbox3', 'ordercard3', 'text3'],
+                    ['orderbox4', 'ordercard4', 'text4'],
+                    ['orderbox5', 'ordercard5', 'text5']
+                    ];
+
 //Set global variables - flags for each of the dragcards drop locations on question-five.html //
 // 0 = unmoved, 1 = correct, -1 = incorrect //
 var drag1Score = 0;
@@ -740,24 +749,24 @@ function drop(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop
     // do not allow more than one card to be dropped into each box //
     $('#' + dragVar).attr('ondragover', "");
     
-            switch (data) {
-            case 'dragcard1': 
-                dragcard1 = ev.target.id;
-                break;
-            case 'dragcard2': 
-                dragcard2 = ev.target.id;
-                break;
-            case 'dragcard3': 
-                dragcard3 = ev.target.id;
-                break;
-            case 'dragcard4': 
-                dragcard4 = ev.target.id;
-                break;
-            case 'dragcard5': 
-                dragcard5 = ev.target.id;
-                break;
-            default: 
-                break;
+    switch (data) {
+    case 'dragcard1': 
+        dragcard1 = ev.target.id;
+        break;
+    case 'dragcard2': 
+        dragcard2 = ev.target.id;
+        break;
+    case 'dragcard3': 
+        dragcard3 = ev.target.id;
+        break;
+    case 'dragcard4': 
+        dragcard4 = ev.target.id;
+        break;
+    case 'dragcard5': 
+        dragcard5 = ev.target.id;
+        break;
+    default: 
+        break;
     }
 
     if (dragcard1 !== null && dragcard2 !== null && dragcard3 !== null && dragcard4 !== null && dragcard5 !== null) {
@@ -801,6 +810,45 @@ function checkQuestionDragDrop() {
 
     // write answer to local storage //
     localStorage.setItem('answerFlag9', answerFlag9);
+
+}
+
+//Function: allow drag event on question-nine.html //
+function dragOrder(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+    ev.dataTransfer.setData("text", ev.target.id);
+
+    let i = getIndexOfK(orderArray, ev.target.id);
+    console.log(i);
+    orderArray[i][1] = 'empty';
+
+}
+
+//Function: determine drop locations on question-nine.html //
+function order(ev) {
+    ev.preventDefault();
+
+    let i = getIndexOfK(orderArray, ev.target.id);
+    let j = getIndexOfK(orderArray, 'empty');
+
+    let ordercardDrag;
+    let orderboxDrag;
+    let ordertextDrag;
+
+    let ordercardDrop = ev.dataTransfer.getData("text");
+    let orderboxDrop = orderArray[i][0];
+    let ordertextDrop = orderArray[j][2];
+
+    console.log('ordercardDrop= ' + ordercardDrop 
+                + ', orderboxDrop= ' + orderboxDrop 
+                + ', i= ' + i + ', j= ' + j);
+    
+    orderArray[i][1] = ordercardDrop;
+    orderArray[i][2] = ordertextDrop;
+    orderArray[j][1] = ev.target.id;
+
+    console.log(orderArray);
+    
+    document.getElementById(orderboxDrop).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardDrop + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextDrop + '</div>';
 
 }
 

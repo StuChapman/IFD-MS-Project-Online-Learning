@@ -450,12 +450,12 @@ nav {
     align-content: center;
 }
 
-.ordercontainerleft, .ordercontainermid, .ordercontainerright, .ordercontainerchevrons {
+.ordercontainerleft, .ordercontainermid, .ordercontainerright {
     margin-left: auto;
     margin-right: auto;
 }
 
-.orderbox, .ordercard, .orderchevrons {
+.orderbox, .ordercard {
     padding: 0;
 }
 
@@ -547,17 +547,13 @@ nav {
     }
 
     .ordercontainerleft, .ordercontainermid, .ordercontainerright, .orderbox, .ordercard {
-        width: 35vw;
+        width: 44vw;
     }
 
-    .orderbox, .ordercard, .orderchevrons {
-        height: 8.5vh;
+    .orderbox, .ordercard {
+        height: 5vh;
         margin-bottom: 2vw;
         font-size: 2vh;
-    }
-
-    .orderchevrons {
-        width: 10vw;
     }
 
 }
