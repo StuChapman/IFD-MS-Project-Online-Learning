@@ -44,42 +44,85 @@
         </div>
         <h1 class="pt-2 pb-2">Q9: The 8 Wastes</h1>
         <p class="paralarge">Reorder the descriptions to align to the Waste they describe ...</p>
-        <div class="row dragcontainerouter ml-auto mr-auto">
-            <div class="col-4">
-                <div class="row dragcontainermid">
-                    <span class="dragboxheader ml-auto mr-auto mb-1">Description</span>
-                    <div class="dragbox">
-                        <div class="dragcard align-vertically" id="dragcard1" draggable="true" ondragstart="drag(event)" >
-                            Stitching a wound in ER
+        <div class="row ordercontainerouter ml-auto mr-auto">
+            <div class="col-5">
+                <div class="row ordercontainermid">
+                    <span class="orderboxheader ml-auto mr-auto mb-1">Description</span>
+                    <div class="orderbox">
+                        <div class="ordercard align-vertically" id="ordercard1" >
+                            1
+                            <br>
+                            9
                         </div>
                     </div>
-                    <div class="dragbox">
-                        <div class="dragcard align-vertically" id="dragcard2" draggable="true" ondragstart="drag(event)" >
-                            Reheating a coffee
+                    <div class="orderbox">
+                        <div class="ordercard align-vertically" id="ordercard2" >
+                            2
                         </div>
                     </div>
-                    <div class="dragbox">
-                        <div class="dragcard align-vertically" id="dragcard3" draggable="true" ondragstart="drag(event)" >
-                            Inspecting a product
+                    <div class="orderbox">
+                        <div class="ordercard align-vertically" >
+                            3
                         </div>
                     </div>
-                    <div class="dragbox">
-                        <div class="dragcard align-vertically" id="dragcard4" draggable="true" ondragstart="drag(event)" >
-                            Painting a fence
+                    <div class="orderbox">
+                        <div class="ordercard align-vertically" id="ordercard4" >
+                            4
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="row dragcontainerright">
-                    <span class="dragboxheader ml-auto mr-auto mb-1">Wastes</span>
-                    <div class="dragbox" id="dragright1" ondrop="drop(event)" ondragover="allowDrop(event)" >
+            <div class="col-5">
+                <div class="row ordercontainerright">
+                    <span class="orderboxheader ml-auto mr-auto mb-1">Wastes</span>
+                    <div class="orderbox align-vertically" id="orderright1" >
+                        4
                     </div>
-                    <div class="dragbox" id="dragright2" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    <div class="orderbox align-vertically" id="orderright2" >
+                        3
                     </div>
-                    <div class="dragbox" id="dragright3" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    <div class="orderbox align-vertically" id="orderright3" >
+                        2
                     </div>
-                    <div class="dragbox" id="dragright4" ondrop="drop(event)" ondragover="allowDrop(event)" >
+                    <div class="orderbox align-vertically" id="orderright4" >
+                        1
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row ordercontainerchevrons">
+                    <span class="orderboxheader ml-auto mr-auto mb-1">Up/Down</span>
+                    <div class="orderchevrons d-block" >
+                        <div>
+                            <i id="orderup1" class="fas fa-chevron-up" onclick="return orderUp();"></i>
+                        </div>
+                        <div>
+                            <i id="orderdown1" class="fas fa-chevron-down" onclick="return orderDown();"></i>
+                        </div>
+                    </div>
+                    <div class="orderchevrons d-block" >
+                        <div>
+                            <i id="orderup2" class="fas fa-chevron-up" onclick="return orderUp();"></i>
+                        </div>
+                        <div>
+                            <i id="orderdown2" class="fas fa-chevron-down" onclick="return orderDown();"></i>
+                        </div>
+                    </div>
+                    <div class="orderchevrons d-block" >
+                        <div>
+                            <i id="orderup3" class="fas fa-chevron-up" onclick="return orderUp();"></i>
+                        </div>
+                        <div>
+                            <i id="orderdown3" class="fas fa-chevron-down" onclick="return orderDown();"></i>
+                        </div>
+                    </div>
+                    <div class="orderchevrons d-block" >
+                        <div>
+                            <i id="orderup4" class="fas fa-chevron-up" onclick="return orderUp();"></i>
+                        </div>
+                        <div>
+                            <i id="orderdown4" class="fas fa-chevron-down" onclick="return orderDown();"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,7 +187,7 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionDragDrop();" href="question-ten.html">
+            <a id="nextLink" class="pr-4 ml-auto hidden" onclick="checkQuestionorderDrop();" href="question-ten.html">
                 <span>Submit <i class="fas fa-forward"></i></span>
             </a>
         </div>
@@ -165,10 +208,6 @@
     </script>
     <!-- scripts -->
     <script src="assets/js/scripts.js">
-    </script>
-    <!-- Mobile Drag and Drop scripts -->
-    <!-- Credit to: https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat -->
-    <script src="assets/js/DragDropTouch.js">
     </script>
 </body>
 </html>
