@@ -53,11 +53,11 @@ var dragcard5 = null;
 
 //Set global variables - array for the contents of each of the orderboxes on question-nine.html //
 let orderArray = [
-                    ['orderbox1', 'ordercard1', 'text1'],
-                    ['orderbox2', 'ordercard2', 'text2'],
-                    ['orderbox3', 'ordercard3', 'text3'],
-                    ['orderbox4', 'ordercard4', 'text4'],
-                    ['orderbox5', 'ordercard5', 'text5']
+                    ['orderbox1', 'ordercard1', 'text1', 'full'],
+                    ['orderbox2', 'ordercard2', 'text2', 'full'],
+                    ['orderbox3', 'ordercard3', 'text3', 'full'],
+                    ['orderbox4', 'ordercard4', 'text4', 'full'],
+                    ['orderbox5', 'ordercard5', 'text5', 'full']
                     ];
 
 //Set global variables - flags for each of the dragcards drop locations on question-five.html //
@@ -814,12 +814,12 @@ function checkQuestionDragDrop() {
 }
 
 //Function: allow drag event on question-nine.html //
-function dragOrder(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp
+function dragOrder(ev) {// credit to https://www.w3schools.com/HTML/html5_draganddrop.asp //
     ev.dataTransfer.setData("text", ev.target.id);
 
     let i = getIndexOfK(orderArray, ev.target.id);
     console.log(i);
-    orderArray[i][1] = 'empty';
+    orderArray[i][3] = 'vacated';
 
 }
 
@@ -828,27 +828,35 @@ function order(ev) {
     ev.preventDefault();
 
     let i = getIndexOfK(orderArray, ev.target.id);
-    let j = getIndexOfK(orderArray, 'empty');
+    let j = getIndexOfK(orderArray, 'vacated');
 
-    let ordercardDrag;
-    let orderboxDrag;
-    let ordertextDrag;
+    // get the box, card and text that we are dragging //
+    let orderboxDrag = orderArray[j][0];
+    let ordercardDrag = orderArray[j][1];
+    let ordertextDrag = orderArray[j][2];
 
-    let ordercardDrop = ev.dataTransfer.getData("text");
-    let orderboxDrop = orderArray[i][0];
-    let ordertextDrop = orderArray[j][2];
+    // get the box, card and text that we are need to shift from the dragged to the vacated box //
+    let orderboxShift = orderArray[i][0];
+    let ordercardShift = orderArray[i][1];
+    let ordertextShift = orderArray[i][2];
 
-    console.log('ordercardDrop= ' + ordercardDrop 
-                + ', orderboxDrop= ' + orderboxDrop 
-                + ', i= ' + i + ', j= ' + j);
+    console.log('orderboxShift= ' + orderboxShift 
+                + ', orderboxDrag= ' + orderboxDrag 
+                + ', ordercardShift= ' + ordercardShift 
+                + ', ordercardDrag= ' + ordercardDrag);
     
-    orderArray[i][1] = ordercardDrop;
-    orderArray[i][2] = ordertextDrop;
-    orderArray[j][1] = ev.target.id;
+    // repopulate orderArray //
+    orderArray[i][1] = ordercardDrag;
+    orderArray[i][2] = ordertextDrag;
+    orderArray[j][3] = 'full';
+    orderArray[j][1] = ordercardShift;
+    orderArray[j][2] = ordertextShift;
 
     console.log(orderArray);
     
-    document.getElementById(orderboxDrop).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardDrop + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextDrop + '</div>';
+    // populate the box, card and text that have been dragged and shifted //
+    document.getElementById(orderboxShift).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardDrag + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextDrag + '</div>';
+    document.getElementById(orderboxDrag).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardShift + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextShift + '</div>';
 
 }
 
