@@ -456,18 +456,13 @@ nav {
 }
 
 .orderbox, .ordercard {
-    padding: 0;
-}
-
-.orderbox {
-    background-color: #C4C4C4;
+    font-size: 2vh;
 }
 
 .ordercard {
-    background-color: rgb(248, 247, 247);
-    border: 1px solid #C4C4C4;
     padding: 2px;
-    font-size: 2vh;
+    border: 1px solid #C4C4C4;
+    background-color: rgb(248, 247, 247);
 }
 
 /* ------------------- Footer Styling */
