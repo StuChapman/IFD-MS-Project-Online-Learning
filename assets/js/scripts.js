@@ -277,7 +277,7 @@ function resetPlay() {
 //Function: scroll to next image on value.html //
 function nextImage() {
     if (imageCount == 4) {
-          imageCount == 4;
+          imageCount = 4;
         } else {
           imageCount++;
         }
@@ -287,7 +287,7 @@ function nextImage() {
 //Function: scroll to previous image on value.html //
 function prevImage() {
     if (imageCount == 0) {
-          imageCount == 0;
+          imageCount = 0;
         } else {
           imageCount--;
         }
