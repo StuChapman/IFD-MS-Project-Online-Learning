@@ -693,11 +693,10 @@ function checkQuestionCheckbox() {
                     && !$('#checkthree').is(":checked") 
                         && $('#checkfour').is(":checked")) {
                 answerFlag4 = 1;
-                localStorage.setItem('answerFlag4', answerFlag4);
             } else {
                 answerFlag4 = -1;
-                localStorage.setItem('answerFlag4', answerFlag4);
             }
+            localStorage.setItem('answerFlag4', answerFlag4);
             break;
         case 'Online Learning - Question 7':
             if (!$('#checkone').is(":checked") 
@@ -716,11 +715,10 @@ function checkQuestionCheckbox() {
                     && !$('#checkthree').is(":checked") 
                         && $('#checkfour').is(":checked")) {
                 answerFlag10 = 1;
-                localStorage.setItem('answerFlag10', answerFlag10);
             } else {
                 answerFlag10 = -1;
-                localStorage.setItem('answerFlag10', answerFlag10);
             }
+            localStorage.setItem('answerFlag10', answerFlag10);
             break;
     }
 
@@ -806,13 +804,13 @@ function checkQuestionDragDrop() {
     }
 
     if (drag1Score + drag2Score + drag3Score + drag4Score + drag5Score == 5) {
-        answerFlag9 = 1;
+        answerFlag5 = 1;
     } else {
-        answerFlag9 = -1;
+        answerFlag5 = -1;
     }
 
     // write answer to local storage //
-    localStorage.setItem('answerFlag9', answerFlag9);
+    localStorage.setItem('answerFlag5', answerFlag5);
 
 }
 
@@ -873,10 +871,13 @@ if ( orderArray[0][1] == 'ordercard4'
     && orderArray[5][1] == 'ordercard5'
     && orderArray[6][1] == 'ordercard3'
     && orderArray[7][1] == 'ordercard2') {
-    answerFlag9 = 1; 
+    answerFlag9 = 1;
     } else {
-    answerFlag9 = 0; 
+    answerFlag9 = -1; 
     }
+
+    localStorage.setItem('answerFlag9', answerFlag9);
+
 }
 
 

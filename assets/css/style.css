@@ -450,13 +450,18 @@ nav {
     align-content: center;
 }
 
-.ordercontainerleft, .ordercontainermid, .ordercontainerright {
+.ordercontainerleft, .ordercontainerright {
     margin-left: auto;
     margin-right: auto;
 }
 
+.ordercontainerleft {
+    color: #CC613A;
+}
+
 .orderbox, .ordercard {
     font-size: 2vh;
+    line-height: 2.2vh;
 }
 
 .ordercard {
@@ -608,16 +613,16 @@ nav {
     }
 
     .ordercontainerouter {
-        width: 75vw;
+        width: 70vw;
     }
 
     .ordercontainerleft, .ordercontainermid, .ordercontainerright {
-        width: 24vw;
+        width: 34vw;
     }
 
     .orderbox, .ordercard {
-        width: 24vw;
-        height: 8vh;
+        width: 34vw;
+        height: 5.25vh;
         margin-bottom: .5vw;
         font-size: 3vh;
     }
