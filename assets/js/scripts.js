@@ -53,11 +53,14 @@ var dragcard5 = null;
 
 //Set global variables - array for the contents of each of the orderboxes on question-nine.html //
 let orderArray = [
-                    ['orderbox1', 'ordercard1', 'text1', 'full'],
-                    ['orderbox2', 'ordercard2', 'text2', 'full'],
-                    ['orderbox3', 'ordercard3', 'text3', 'full'],
-                    ['orderbox4', 'ordercard4', 'text4', 'full'],
-                    ['orderbox5', 'ordercard5', 'text5', 'full']
+                    ['orderbox1', 'ordercard1', 'delivering ahead of schedule', 'full'],
+                    ['orderbox2', 'ordercard2', 'using the wrong resource', 'full'],
+                    ['orderbox3', 'ordercard3', 'faults', 'full'],
+                    ['orderbox4', 'ordercard4', 'moving the work/customer around', 'full'],
+                    ['orderbox5', 'ordercard5', 'complicated processes', 'full'],
+                    ['orderbox6', 'ordercard6', 'moving the worker around', 'full'],
+                    ['orderbox7', 'ordercard7', 'queues', 'full'],
+                    ['orderbox8', 'ordercard8', 'building up stock', 'full']
                     ];
 
 //Set global variables - flags for each of the dragcards drop locations on question-five.html //
@@ -851,14 +854,31 @@ function order(ev) {
     orderArray[j][3] = 'full';
     orderArray[j][1] = ordercardShift;
     orderArray[j][2] = ordertextShift;
-
-    console.log(orderArray);
     
     // populate the box, card and text that have been dragged and shifted //
     document.getElementById(orderboxShift).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardDrag + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextDrag + '</div>';
     document.getElementById(orderboxDrag).innerHTML = '<div class="ordercard align-vertically" id="' + ordercardShift + '" draggable="true" ondragstart="dragOrder(event)" >' + ordertextShift + '</div>';
 
+    revealNext();
+
 }
+
+//Function: check order against desired on question-nine.html //
+function checkQuestionOrder() {
+if ( orderArray[0][1] == 'ordercard4'
+    && orderArray[1][1] == 'ordercard8'
+    && orderArray[2][1] == 'ordercard6'
+    && orderArray[3][1] == 'ordercard7'
+    && orderArray[4][1] == 'ordercard1'
+    && orderArray[5][1] == 'ordercard5'
+    && orderArray[6][1] == 'ordercard3'
+    && orderArray[7][1] == 'ordercard2') {
+    answerFlag9 = 1; 
+    } else {
+    answerFlag9 = 0; 
+    }
+}
+
 
 //Function: confirm two checkboxes have been checked before revealing submit on question-ten.html //
 function checkTwo() {
