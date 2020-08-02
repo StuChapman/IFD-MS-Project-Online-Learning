@@ -42,10 +42,55 @@
         <div id="topper" class="d-block align-vertically">
             Continuous Engagement Ltd – online learning
         </div>
-        <h1>Q6: </h1>
-        <p class="paralarge">Question</p>
-        <p class="paramedium">6</p>
-        <p class="paramedium">Good Luck!</p>
+        <h1>Q6: What's the phrase></h1>
+        <p class="paralarge">Complete the definition of Value...</p>
+        <div class="ml-auto mr-auto">
+            <p class="paralarge">“Value” is defined as work that </p>
+        </div>
+        <div class="ml-auto d-inline">
+            <div id="square-one" class="wordsquare">
+            </div>
+        </div>
+        <div class="mr-auto d-inline">
+            <div id="square-two" class="wordsquare">
+            </div>
+        </div>
+        <div class="ml-auto mr-auto">
+            <p class="paralarge">to what the Customer is </p>
+        </div>
+        <div id="square-three" class="wordsquare ml-auto mr-auto">
+        </div>
+        <div id="square-four" class="wordsquare ml-auto mr-auto">
+        </div>
+        <div class="wordpickbox row ml-auto mr-auto">
+            <div  id="divleft" class="ml-auto">
+                <div id="wordpick-M" class="wordpick d-inline" onclick="return populateMuda('M');">M
+                </div>
+                <div id="wordpick-R" class="wordpick d-inline" onclick="return populateMuda('R');">R
+                </div>
+                <div id="wordpick-S" class="wordpick d-inline" onclick="return populateMuda('S');">S
+                </div>
+                <div id="wordpick-D" class="wordpick d-inline" onclick="return populateMuda('D');">D
+                </div>
+                <div id="wordpick-F" class="wordpick d-inline" onclick="return populateMuda('F');">F
+                </div>
+            </div>
+            <div id="divright" class="mr-auto">
+                <div id="wordpick-O" class="wordpick d-inline" onclick="return populateMuda('O');">O
+                </div>
+                <div id="wordpick-N" class="wordpick d-inline" onclick="return populateMuda('N');">N
+                </div>
+                <div id="wordpick-A" class="wordpick d-inline" onclick="return populateMuda('A');">A
+                </div>
+                <div id="wordpick-Y" class="wordpick d-inline" onclick="return populateMuda('Y');">Y
+                </div>
+                <div id="wordpick-U" class="wordpick d-inline" onclick="return populateMuda('U');">U
+                </div>
+            </div>
+        </div>
+        <button id="resetbutton" type="button" class="btn btn-blue" onclick="return resetMuda();">
+            reset
+        </button>
     </section>
 
 <!-- Bootstrap Modals -->
@@ -106,7 +151,7 @@
 
     <footer>
         <div id="footer" class="align-vertically">
-            <a id="nextLink" class="pr-4 ml-auto " onclick="checkQuestionRadio();" href="question-seven.html">
+            <a id="nextLink" class="pr-4 ml-auto hidden" href="question-three.html">
                 <span>Submit <i class="fas fa-forward"></i></span>
             </a>
         </div>

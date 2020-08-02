@@ -1,52 +1,22 @@
-describe("My whatCanIDrink function", function() {
+describe("Online Learning - Question 1", function() {
     // A test suite begins with a call to the global Jasmine function describe with two parameters: a string and a function.
     beforeEach(function() {
-        drink = new populateMuda();
+        answer = new checkQuestionRadio(thisquestion, selectedValue);
     });
     
-    describe("Checks age", function() {
+    describe("checkQuestionRadio", function() {
         // Specs are defined by calling the global Jasmine function it
         it("should exist", function() {
             // Expectations are built with the function expect which takes a value, called the actual.
             // Each matcher implements a boolean comparison between the actual value and the expected value.
             // Any matcher can evaluate to a negative assertion by chaining the call to expect with a not before calling the matcher.
-            expect(populateMuda).toBeDefined();
+            expect(checkQuestionRadio).toBeDefined();
         });
         
-        it("should return drink toddy when called as whatCanIDrink(13)", function() {
-            var result = populateMuda(13)
-            expect(result).toBe("Drink Toddy");
+        it("should return answerFlag1 = 1 when thisquestion = 'Online Learning - Question 1' and selectedValue = 'optionfour'", function() {
+            var result = checkQuestionRadio('Online Learning - Question 1', 'optionfour')
+            expect(result).toBe("answerFlag1 = 1");
         });
         
-        
-        it("should return drink coke when called as whatCanIDrink(17)", function() {
-            var result = whatCanIDrink(17)
-            expect(result).toBe("Drink Coke");
-        });
-        
-        it("should return drink beer when called as whatCanIDrink(18)", function() {
-            var result = whatCanIDrink(18)
-            expect(result).toBe("Drink Beer");
-        });
-        
-        it("should return drink beer when called as whatCanIDrink(20)", function() {
-            var result = whatCanIDrink(20)
-            expect(result).toBe("Drink Beer");
-        }); 
-        
-        it("should return drink whisky when called as whatCanIDrink(30)", function() {
-            var result = whatCanIDrink(30)
-            expect(result).toBe("Drink Whisky");
-        });
-        
-        it("should be unable to return a drink when called as whatCanIDrink(140)", function() {
-            var result = whatCanIDrink(140)
-            expect(result).toBe("Sorry. I can’t tell what drink because that age is incorrect!");
-        });
-        
-        it("should contain Drink when called as whatCanIDrink(17)", function() {
-            var result = whatCanIDrink(10).indexOf("Drink");
-            expect(result).not.toEqual(-1);
-        });
     });
 });
