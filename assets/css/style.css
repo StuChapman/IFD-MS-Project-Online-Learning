@@ -227,29 +227,22 @@ nav {
 
 
 /* ------------------- more styling in Media Screen responsiveness */
-.wordpickbox {
-    align-content: stretch;    
-    width: 60vw;
-}
-
 .wordsquarebox {
     padding: 3vh;
     background-color: #f6f6f6;
 }
 
 .wordpickbox {
+    align-content: stretch;    
+    width: 60vw;
     padding: 0;
 }
 
 .wordsquare, .wordpick {
-    height: 5vh;
-    padding: 0;
-    font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
     font-weight: bold;
 }
 
 .wordsquare {
-    margin: 1vw 1vw 5vw;
     border-bottom: 2px solid #000000;
     color: #CC613A;
 }
@@ -589,11 +582,18 @@ nav {
     }
 
     .wordsquarebox, .wordpickbox {
-        width: 70vw;
+        width: 75vw;
+        font-size: calc(2.5vh + (12 - 2.5) * ((100vw - 300px) / 1620));
     }
 
     .wordsquare {
         width: 12.5vh;
+    }
+
+    .wordsquare, .wordpick {
+        padding-bottom: 4vh;
+        margin: 1vw 1vw 3vw;
+        height: 3.5vh;
     }
 
 }
@@ -667,16 +667,29 @@ nav {
         font-size: 3vh;
     }
 
+    .wordsquarebox, .wordpickbox {
+        font-size: 2.5vh;
+    }
+
     .wordsquarebox {
-        width: 95vw;
+        width: 90vw;
     }
     
     .wordpickbox {
         width: 95vw;
+        padding: 5vh 0;
     }
 
-    .wordsquare {
-        width: 17.5vh;
+    .wordsquare  {
+        width: 12.5vh;
+    }
+
+    .wordsquare, .word  {
+        margin: 0 1vw 1vw;
+    }
+
+    .wordsquare, .wordpick, .word {
+        height: 5vh;
     }
 
     .resultscontainer {
