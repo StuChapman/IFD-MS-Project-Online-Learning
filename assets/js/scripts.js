@@ -612,7 +612,7 @@ function checkQuestionRadio() {
 
 }
 
-//Function: check the answer against desired for question-two.html //
+//Function: check the answer against desired for questions: two and six //
 function populateMuda(letterpick) {
 
     // log to Console to test Functionality //
@@ -620,7 +620,7 @@ function populateMuda(letterpick) {
 
     // if selected letter has already been chosen and is gray-ed out, exit function //
     let letterString = "#letterpick-" + letterpick;
-    console.log($(letterString).css('color'));
+    console.log('COLOR: ' + $(letterString).css('color'));
     if($(letterString).css('color') == 'rgb(128, 128, 128)'){
         console.log('letter used');
         return;
@@ -650,19 +650,38 @@ function populateMuda(letterpick) {
     console.log($.trim($('#square-three').text())); 
     console.log($.trim($('#square-four').text()));
 
-    if (($.trim($('#square-one').text()) == 'M') 
-        && ($.trim($('#square-two').text()) == 'U') 
-            && ($.trim($('#square-three').text()) == 'D') 
-                && ($.trim($('#square-four').text()) == 'A')){
-                    console.log('yes');
-                    answerFlag2 = 1;
-                } else {
-                    answerFlag2 = -1;
-                    console.log('no');
-                }
+    let thisquestion = document.title;
 
+    if (thisquestion == 'Online Learning - Question 2') {
+        if (($.trim($('#square-one').text()) == 'M') 
+            && ($.trim($('#square-two').text()) == 'U') 
+                && ($.trim($('#square-three').text()) == 'D') 
+                    && ($.trim($('#square-four').text()) == 'A')){
+                        console.log('yes');
+                        answerFlag2 = 1;
+                    } else {
+                        answerFlag2 = -1;
+                        console.log('no');
+                    }
     // write answer to local storage //
     localStorage.setItem('answerFlag2', answerFlag2);
+    }
+
+    if (thisquestion == 'Online Learning - Question 6') {
+        // allow 'directly' and 'contributes' be interchangeable on question-six.html - symantically the same sentence //
+        if ((($.trim($('#square-one').text()) == 'contributes') || ($.trim($('#square-one').text()) == 'directly'))
+            && (($.trim($('#square-two').text()) == 'directly') || ($.trim($('#square-two').text()) == 'contributes'))
+                && ($.trim($('#square-three').text()) == 'paying') 
+                    && ($.trim($('#square-four').text()) == 'for')){
+                        console.log('yes');
+                        answerFlag6 = 1;
+                    } else {
+                        answerFlag6 = -1;
+                        console.log('no');
+                    }
+    // write answer to local storage //
+    localStorage.setItem('answerFlag6', answerFlag6);
+    }
 
     letterCount = ++letterCount;
     if (letterCount == 4)  {
@@ -672,13 +691,14 @@ function populateMuda(letterpick) {
 
 }
 
-//Function: allow the user to reset if they want to change their answer on question-two.html //
+//Function: allow the user to reset if they want to change their answer on question: two and six //
 function resetMuda() {
     $('#square-one').text('');
     $('#square-two').text('');
     $('#square-three').text('');
     $('#square-four').text('');
     $('.letterpickbox div').css('color', 'black');
+    $('.wordpickbox div').css('color', 'black');
 }
 
 //Function: check answers against desired on checkbox questions: four, seven and ten //
