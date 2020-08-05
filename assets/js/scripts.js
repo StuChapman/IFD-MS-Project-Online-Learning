@@ -39,7 +39,7 @@ let examplearray = [
                     ['2. Then we drill some holes in the wood to make the joints',  '1', 'Changing the shape of the work adds VALUE to it - it becomes closer to the finished product.'],
                     ['3. Next, check the holes are the right size.',  '7', 'Checking is OVERPROCESSING - we should make failsafes that ensure processes are correct every time, without the need to check.'],
                     ['4. Fasten the legs to the base with glue and allow it to dry',  '5', 'WAITING for the glue to dry is Waste. We could experiment with different methods here, like using wood screws.'],
-                    ['5. Turn the chair upside-down to fit the seat-back.',  '4', 'The MOTION of turning the chair adds time. If we designed a fixture to hold the chair in place while we fir the legs and the seat-back, we could remove this.'],
+                    ['5. Turn the chair upside-down to fit the seat-back.',  '4', 'The MOTION of turning the chair adds time. If we designed a fixture to hold the chair in place while we fit the legs and the seat-back, we could remove this.'],
                     ['6. Finally, we paint the chair.',  '1', 'Adding paint is changing the shape, so more VALUE is being added.'],
                     ['7. Last thing to do is to put the chair in the storeroom with all the others.',  '3', 'Creating INVENTORY is waste. Do we have orders for all the chairs in our storeroom? We should build to demand.']
                     ];
@@ -75,16 +75,16 @@ var drag5Score = 0;
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
-localStorage.setItem('answerFlag1', answerFlag1);
-localStorage.setItem('answerFlag2', answerFlag2);
-localStorage.setItem('answerFlag3', answerFlag3);
-localStorage.setItem('answerFlag4', answerFlag4);
-localStorage.setItem('answerFlag5', answerFlag5);
-localStorage.setItem('answerFlag6', answerFlag6);
-localStorage.setItem('answerFlag7', answerFlag7);
-localStorage.setItem('answerFlag8', answerFlag8);
-localStorage.setItem('answerFlag9', answerFlag9);
-localStorage.setItem('answerFlag10', answerFlag10);
+localStorage.setItem('answerFlag1', 0);
+localStorage.setItem('answerFlag2', 0);
+localStorage.setItem('answerFlag3', 0);
+localStorage.setItem('answerFlag4', 0);
+localStorage.setItem('answerFlag5', 0);
+localStorage.setItem('answerFlag6', 0);
+localStorage.setItem('answerFlag7', 0);
+localStorage.setItem('answerFlag8', 0);
+localStorage.setItem('answerFlag9', 0);
+localStorage.setItem('answerFlag10', 0);
 }
 
 // Function: retrieve and check quiz score progress on document load //
