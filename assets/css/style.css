@@ -115,6 +115,10 @@ nav {
 
 /* ------------------- Text Section Styling */
 
+#textsection .login {
+    width: 50vw;
+}
+
 #textsection {
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;

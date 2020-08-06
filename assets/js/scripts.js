@@ -87,6 +87,24 @@ localStorage.setItem('answerFlag9', 0);
 localStorage.setItem('answerFlag10', 0);
 }
 
+//Function: get the user's name and email to pass to the test pass certificate (validate at a later date) //
+function logIn() {
+    if (!(/\s/g.test(this.username.value))) {
+        alert('Please enter both first and last names, with a space between.');
+        this.sendername.value = "";
+        return;
+    }
+    if (!(/^\S+@\S+\.\S+$/.test(this.useremail.value))) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    localStorage.setItem('username', this.username.value);
+    localStorage.setItem('useremail', this.useremail.value);
+    
+    alert('Welcome ' + username.value + '. Tap ok to start.')
+    window.location.replace('intro.html');
+}
+
 // Function: retrieve and check quiz score progress on document load //
 $(window).on('pageshow', function() {
     console.log('answerFlag1: ' + localStorage.getItem('answerFlag1'));
@@ -154,22 +172,6 @@ function getIndexOfK(arr, k) { //credit to https://jsfiddle.net/wao20/Lct1de56/ 
 
 //Function: use emailjs account to email a question from the help? button on the header //
 function sendEmail() {
-    // log to Console to test Functionality //
-    console.log(this.sendername.value);
-    console.log(this.emailinput.value);
-    console.log(this.question.value);
-    console.log(document.title);
-
-    if (!(/^[a-zA-Z\s]+$/.test(this.sendername.value)) && this.sendername.value !== null) {
-        alert('Please enter your name. Letters only, no numbers or special characters.');
-        this.sendername.value = "";
-        return;
-    }
-
-    if (!(/^\S+@\S+\.\S+$/.test(this.emailinput.value))) {
-        alert('Please enter a valid email address.');
-        return;
-    }
 
     if (this.question.value.length < 10) {
         alert('Please enter a question of at least 10 characters.');
@@ -181,8 +183,8 @@ function sendEmail() {
     
     var thispage = document.title;
     var template_params = {
-    "from_name": this.sendername.value,
-    "from_email": this.emailinput.value,
+    "from_name": localStorage.getItem('username'),
+    "from_email": localStorage.getItem('useremail'),
     "question": thispage + ": " + this.question.value
     };
     
@@ -191,14 +193,7 @@ function sendEmail() {
 
     emailjs.send(service_id, template_id, template_params)
     
-    //Credit: Code Institute//
-    .then(
-        function(response) {
-            alert('Email sent succesfully.', response);
-        },
-        function(error) {
-            alert('Email failed to send. ', error);
-        });
+    alert('Email sent succesfully.', response);
 
 }
 
@@ -950,8 +945,13 @@ function populateSummary() {
         answerSpan = '#answer' + i;
         $(answerSpan).text(result);
     }
-
+    
     $('#totalScore').text(totalScore + ' out of 10');
+
+    if (totalScore < 7) {
+        console.log(totalScore);
+        $('#retestbutton').text('Retake Test');
+    }
 
 }
 
