@@ -970,8 +970,8 @@ function resetPrint() {
                 resetAnswerFlags();
                 window.location.replace('test-intro.html');
                 break;
-            case '0':
-                result = 'Null';
+            case 'Print Certificate':
+                window.location.replace('test-certificate.html');
                 break;
             default: 
                 break;

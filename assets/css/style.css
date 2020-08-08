@@ -257,6 +257,12 @@ nav {
     color: #000000;
 }
 
+#certName {
+    color: #CC613A;
+    font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
+    font-weight: bold;
+}
+
 /* ------------------- Option Form Styling */
 
 #optionform {
@@ -514,6 +520,20 @@ nav {
 
 #footer a {
     color: #101828;
+}
+
+#certfooter {
+    padding: 1vh;
+    background-color: #657486;
+    font-family: 'Cairo', sans-serif;
+    height: 10vh;
+}
+
+#certsection {
+    background-color: #ffffff;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    height: 50vh;
 }
 
 /* ------------------- Media Screen responsiveness */
