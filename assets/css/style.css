@@ -119,11 +119,28 @@ nav {
     width: 50vw;
 }
 
-#textsection {
+#textsection, #certsection {
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
     text-align: center;
     height: 82.5vh;
+}
+
+#certsection {
+    width: 900px;
+    height: 1272px;
+    border: double 3px black;
+    border-radius: 10px;
+}
+
+.certhead {
+    width: 100%;
+    height: 10vh;
+    background-color: #657486;
+}
+
+#signature {
+    width: 300px;
 }
 
 #topper {
@@ -136,14 +153,25 @@ nav {
 #textsection h1 {
     padding: 5vh;
     margin: 0;
-    font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
+}
+
+#certsection {
+    z-index: 1;
+}
+
+#textsection h1, #certsection h1 {
     color: #CC613A;
     font-weight: bold;
+    font-size: 75px;
 }
 
 #textsection p {
     padding: 0 2.5vh 2.5vh;
     margin: 0;
+}
+
+#certsection p {
+    font-size: 50px;
 }
 
 #textsection .extrapadding {
@@ -152,7 +180,15 @@ nav {
 
 #textsection .paralarge {
     font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
+}
+
+#textsection .paralarge, #certsection .paralarge {
+    font-size: calc(2.5vh + (20 - 2.5) * ((100vw - 300px) / 1620));
     color: #101828;
+}
+
+#certsection .paralarge {
+    font-size: 50px;
 }
 
 #textsection .paramedium {
@@ -520,20 +556,6 @@ nav {
 
 #footer a {
     color: #101828;
-}
-
-#certfooter {
-    padding: 1vh;
-    background-color: #657486;
-    font-family: 'Cairo', sans-serif;
-    height: 10vh;
-}
-
-#certsection {
-    background-color: #ffffff;
-    font-family: 'Cairo', sans-serif;
-    text-align: center;
-    height: 50vh;
 }
 
 /* ------------------- Media Screen responsiveness */

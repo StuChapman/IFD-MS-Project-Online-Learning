@@ -100,7 +100,7 @@ function logIn() {
     }
     localStorage.setItem('username', this.username.value);
     localStorage.setItem('useremail', this.useremail.value);
-    
+
     alert('Welcome ' + username.value + '. Tap ok to start.')
     window.location.replace('intro.html');
 }
@@ -136,6 +136,11 @@ $(window).on('pageshow', function() {
 
     if (thisquestion == 'Test Summar') {
         populateSummary();
+    }
+
+    if (thisquestion == 'Certificate') {
+        $('#certName').text(localStorage.getItem('username'));
+        $('#totalScore').text(localStorage.getItem('totalScore') + ' out of 10.');
     }
 
     let i = getIndexOfK(questionarray, thisquestion);
@@ -950,7 +955,8 @@ function populateSummary() {
         $(answerSpan).css('color', resultColor);
         $(answerSpan).html(result);
     }
-    
+
+    localStorage.setItem('totalScore', totalScore);
     $('#totalScore').text(totalScore + ' out of 10');
 
     if (totalScore < 7) {
