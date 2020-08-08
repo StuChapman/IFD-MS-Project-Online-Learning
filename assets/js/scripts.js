@@ -922,6 +922,7 @@ function checkTwo() {
 function populateSummary() {
     let totalScore = 0;
     let result;
+    let resultColor;
     let answerVar;
     let answerSpan;
     let i;
@@ -930,20 +931,24 @@ function populateSummary() {
         answerVar = 'answerFlag' + i;
         switch (localStorage.getItem(answerVar)) {
             case '-1':
-                result = 'Fail';
+                result = '<i class="fas fa-times"></i>';
+                resultColor = 'red';
                 break;
             case '0':
-                result = 'Null';
+                result = '<i class="fas fa-minus"></i>';
+                resultColor = 'gray';
                 break;
             case '1':
-                result = 'Pass';
+                result = '<i class="fas fa-check"></i>';
+                resultColor = 'green';
                 ++totalScore;
                 break;
             default: 
                 break;
         }
         answerSpan = '#answer' + i;
-        $(answerSpan).text(result);
+        $(answerSpan).css('color', resultColor);
+        $(answerSpan).html(result);
     }
     
     $('#totalScore').text(totalScore + ' out of 10');
@@ -955,3 +960,21 @@ function populateSummary() {
 
 }
 
+//Function: either return to start of test or print certificate on test-summary.html //
+function resetPrint() {
+
+    let resetPrint = $('#retestbutton').text();
+
+    switch (resetPrint) {
+            case 'Retake Test':
+                resetAnswerFlags();
+                window.location.replace('test-intro.html');
+                break;
+            case '0':
+                result = 'Null';
+                break;
+            default: 
+                break;
+        }
+
+}
