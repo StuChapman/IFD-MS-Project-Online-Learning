@@ -341,6 +341,34 @@ All of the resources I could find (Stack Overflow etc.) advised that this should
 
 I decided to remove the type and fully test all pages and functionality post this.
 
+Another error; *Error: The element a must not appear as a descendant of the button element.* needed a solution, so I replaced the anchor element with the call of a function.
+
+```javascript
+<button type="button" class="btn btn-orange">
+                            <a href="https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html">
+                                Continue
+                            </a>
+                        </button>
+```
+
+was changed to.
+
+```javascript
+<button type="button" class="btn btn-orange" onclick="return goCELHome();">Continue
+                        </button>
+```
+
+with the function,
+
+```javascript
+// Function: navigate to Continuous Engagament Ltd homepage //
+function goCELHome() {
+window.location.replace('https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html');
+}
+```
+
+added in [scripts-global-variables.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/master/assets/js/scripts-global-variables.js).
+
 ### Challenges, Bugs and Errors
 
 Whilst in build, the following: challenges, bugs and errors required solutions...

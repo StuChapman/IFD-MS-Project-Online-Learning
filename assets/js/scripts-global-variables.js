@@ -82,3 +82,8 @@ var drag5Score = 0;
 function goCELHome() {
 window.location.replace('https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html');
 }
+
+// Function: navigate to question-one.html from test-intro.html //
+function goBegin() {
+window.location.replace('question-one.html');
+}
