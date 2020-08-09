@@ -512,8 +512,6 @@ I deployed to Github Pages by the following steps:
 
 ## Credits
 
-
-
 ### Content
 
 1.	The formula (calc(10px + (48 - 10) * ((100vw - 300px) / (1800 - 300)))) for responsive font sizing is 
@@ -522,7 +520,14 @@ I deployed to Github Pages by the following steps:
 2.	The method for aligning text vertically is from [webdevblog](www.webdevblog.com/css-vertical-align/) 
 3.  The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
 4.  YouTube [API](https://developers.google.com/youtube/iframe_api_reference).
-5.   @media screen and (orientation: portrait) and (orientation: landscape) from Stack Overflow [discussion](https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree).
+5.  @media screen and (orientation: portrait) and (orientation: landscape) from Stack Overflow [discussion](https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree).
+6.  The function to find index of an item within a multidimensional array 'getIndexOfK(arr, k)' [jfiddle](https://jsfiddle.net/wao20/Lct1de56/) via [Stack Overflow](https://stackoverflow.com/questions/16102263/to-find-index-of-multidimensional-array-in-javascript).
+7.  For animation of divs '$("#arrowmaskwaste").animate', credit goes to [Tutorial Republic](https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-slide-left-and-right-effect).
+8.  Changing the scr attribute of an element '$("#valueimage").attr('src', 'assets/images/' + imageArray[imageCount][0] + '.jpg')', Credit to [juniordevelopercentral.com](https://www.juniordevelopercentral.com/jquery-change-image-src/#:~:text=jQuery%20change%20image%20src%20-%20How%20To%20Change,as%20simple%20as%20using%20the%20attr%20%2Afunction.%20).
+9.  Using the substring method 'imagetag.substr(1)', Credit this thread on [Stack Overflow](https://stackoverflow.com/questions/4564414/delete-first-character-of-a-string-in-javascript).
+10. Dynamically altering the opacity of an image '$(imagetag).css('opacity', 0.25)', credit this thread on [Stack Overflow](https://stackoverflow.com/questions/2396342/transparent-image-is-it-possible-in-js).
+11. Finding the selected item on a select control 'examplelist.selectedIndex', credit to [codeproject.com](https://www.codeproject.com/articles/656/using-javascript-to-handle-drop-down-list-selectio).
+12. Finding the selected item in a radio button collection 'const rbs = document.querySelectorAll('input[name="question"]')', credit to [javascripttutorial.net](https://www.javascripttutorial.net/javascript-dom/javascript-radio-button/).
 
 ### Media
 
