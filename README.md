@@ -1,9 +1,9 @@
 # Interactive Learning – The 8 Wastes
 
- Link to the wesite [here](https://stuchapman.github.io/IFD-MS-Online-Learning-8-Wastes/)
+ Link to the wesite [here](https://stuchapman.github.io/IFD-MS-Project-Online-Learning/)
 
 Create a web application that can be launched from the Continuous Engagement Ltd website; that allows the user to learn, and consolidate their learning through an interactive test, a topic that is fundamental to: Lean, 6 Sigma and Operational Excellence – namely, The 8 Wastes.
-The branding is to match the Continuous Engagement ltd. website.
+The branding is to match the Continuous Engagement Ltd. website.
 There should be a learning section, followed by a test. 
 The site will be used to support engagements that Continuous Engagement makes with companies; by allowing an element of self-learning to support on-site training and coaching.
 The app could also be licensed to users as a standalone product.
@@ -53,7 +53,8 @@ I designed the site around 2 sections:
 **Interactive Learning** - for the user to gain the knowledge in an engaging experience.
 
 This section comprises of:
-* index.html - to intruduce the user to the 2 main concept (Value and Waste) and inform them of the test and pass mark.
+* index.html - get the user's name and email address - to be used for: certificate and email question form.
+* intro.html - to intruduce the user to the 2 main concept (Value and Waste) and inform them of the test and pass mark.
 * background.html - to inform the user of the origins of the terms Value and Waste.
 * looking.html - a video of Mark Onetto ex of Amazon to bring the concept of Waste to life.
 * definition.html - simple definitions of Value and Waste.
@@ -68,16 +69,17 @@ This section comprises of:
 This section comprises of:
 * test-intro.html - to launch the test and remind the user of the pass mark.
 * question-one.html - a multi-choice question on the georgaphical origins of Waste and Value.
-* question-two.html - a multi-choice question on the Japanese term for Waste.
-* question-three.html - an interactive puzzle referring to the Marc Onetto video.
+* question-two.html - an interactive puzzle on the Japanese term for Waste.
+* question-three.html - a multi-choice question referring to the Marc Onetto video.
 * question-four.html - a multi-option question on non value add.
-* question-five.html - 
-* question-six.html
-* question-seven.html
+* question-five.html - an interactive puzzle for the user to move activoities into boxes of: Value or Waste. 
+* question-six.html - an interactive puzzle on the definition of Value.
+* question-seven.html - a multi-option question on non value add.
 * question-eight.html - a question where the user needs to deduce the acronym for the 8 Wastes.
-* question-nine.html - an interactive puzzle for the user to move actions to boxes of: Value and Waste. 
+* question-nine.html - an interactive puzzle for the user to re-order definitions of the 8 Wastes. 
 * question-ten.html - a multi-option question on waste identification.
-* test-summary.html
+* test-summary.html - the user's final score, which questions the got right/wrong, and thr ability to print a pass certificate pr retake the test.
+* test-certificate - an A4 sized view that can be printed; showing the user's name and score.
 
 I made a decision to have a seperate html file for each question, rather than a single file with the questions populated via Javascript.
 
@@ -87,7 +89,7 @@ This was because the question format varies enough from question to question to 
 
 As is now standard workflow for me; I produced detailed mockups for: phones, tablets and desktop devices prior to writing any code. Key design decisions are made at this stage to ensure the creation of code meets these designs, rather than designing the app at the same time as coding it.
 (links to .pdfs to be included)
-I used [figma](www.figma.com) to produce the mockups. 
+I used [figma](https://www.figma.com/) to produce the mockups. 
 
 [mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/8405ec53ae4b9b496fdcb19522b0d6ad86559581/mockups)
 
@@ -140,8 +142,8 @@ The standard features that are available on every page are:
     * A “brand image” that allows the user to hyperlink to the Continuous Engagement home page from any page, in all media device sizes.
         I created a Bootstrap Modal to "catch" the user if the try to navigate away from the application; to confirm if this is intentional. 
     * A "help" button to allow the user to send questions to the Continuous Engagment email inbox, via the [emailjs](https://www.emailjs.com/) API. This uses a Bootstrap Modal containing a form to collect information on:
-        * The sender's name
-        * The sender's email address
+        * The sender's name (pre-populated from login).
+        * The sender's email address (pre-populated from login).
         * The question to be answered.
         * The current page title to allow Continuous Engagement Ltd to understand where the user was in the learning at the time the question arose.
     * A banner underneath the Navigation bar to remind the user they are in the "Continuous Engagement Ltd – online learning" application.
@@ -158,7 +160,13 @@ The standard features that are available on every page are:
 
 The features that are specific to individual pages are:
 
+
 **index.html** 
+1. A "login" section to collect the user's: name and email address. These are written to local storage to be used later.
+2. The 'Name' section is validated to be 2 names with a space between.
+3. The 'email' section is validated to be a properly constructed email address.
+
+**intro.html** 
 1. A "Click to Begin" button to begin the Interactive Learning Section.
 
 **looking.html** 
@@ -228,7 +236,7 @@ Note. This is just an example - it is not part of the test.
     The inspiration for this game is a game called 'Pictoword' available in the Apple App Store.
 2. Once a letter has been selected, it is 'gray-ed' out and is no longer available for selection.
 3. There is a 'reset' button to clear the restore the page to its original state if the user decided they want to change thier response (prior to tapping "submit").
-4. The "submit" anchor is not visible until all images letter spaces have been populated.
+4. The "submit" anchor is not visible until all letter spaces have been populated.
 5. There is a variable called 'answerFlagTwo' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
 
 **question-three.html** 
@@ -241,21 +249,58 @@ Note. This is just an example - it is not part of the test.
 2. The "submit" anchor is not visible until ONE check box has been selected (the user can change their selection prior to tapping the "submit" anchor).
 3. There is a variable called 'answerFlagFour' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
 
+**question-five.html** 
+1. An interactive puzzle where the user selects drags cards from the center of the screen and drops them, either in: Value or Waste boxes.
+    The code for drag and drop on a desktop device is from [w3schools](https://www.w3schools.com/), specifically [drag and drop](https://www.w3schools.com/HTML/html5_draganddrop.asp)
+    The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
+    Full credit to Bernardo - I have used his code complete in a separate javascript file [DragDropTouch.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/assets/js/DragDropTouch.js).
+2. Once a box has had a card dropped into it, it is not longer enabled (te prevent more than one card being dropped in the same box).
+3. The user can change the location of cards as many times as they like before tapping the "submit" anchor.
+4. The "submit" anchor is not visible until all 5 cards have been dropped into boxes.
+5. There is a variable called 'answerFlagFive' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-six.html** 
+1. An interactive puzzle where the user selects words from a selection to populate 4 blank spaces, thus creating the answer definition of the word 'Waste' from definition.html.
+2. Once a word has been selected, it is 'gray-ed' out and is no longer available for selection.
+3. There is a 'reset' button to clear the restore the page to its original state if the user decided they want to change thier response (prior to tapping "submit").
+4. The "submit" anchor is not visible until all word spaces have been populated.
+5. There is a variable called 'answerFlagSix' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**question-seven.html** 
+1. 4 check boxes, two of which are the correct answer.
+2. The "submit" anchor is not visible until ONE check box has been selected (the user can change their selection prior to tapping the "submit" anchor).
+3. There is a variable called 'answerFlagSeven' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
 **question-eight.html** 
 1. 4 Radio buttons, one of which is the correct answer.
 2. The "submit" anchor is not visible until a radio button has been selected (the user can change their selection prior to tapping the "submit" anchor).
 3. There is a variable called 'answerFlagEight' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
 
 **question-nine.html** 
-1. An interactive puzzle where the user selects drags cards from the center of the screen and drops them, either in: Value or Waste boxes.
+1. An interactive puzzle where the user reorders a set of cards in a vertical column to align them with the Waste that thier text matches.
     The code for drag and drop on a desktop device is from [w3schools](https://www.w3schools.com/), specifically [drag and drop](https://www.w3schools.com/HTML/html5_draganddrop.asp)
     The code for drag and drop on a touch screen device is by [Bernardo Castilho](https://www.codeproject.com/script/Membership/View.aspx?mid=337492), specifically [DragDropTouch](https://www.codeproject.com/Articles/1091766/Add-support-for-standard-HTML-Drag-and-Drop-operat).
-    Full credit to Bernardo - I have used his code complete in a seperate javascript file [DragDropTouch.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/assets/js/DragDropTouch.js).
-2. Once a box has had a card dropped into it, it is not longer enabled (te prevent more than one card being dropped in the same box).
+    Full credit to Bernardo - I have used his code complete in a separate javascript file [DragDropTouch.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/c8de4fce678a7d8c81fdf9835ea7480c7e69f37c/assets/js/DragDropTouch.js).
+2. Once a box has had a card dropped into it, the existing card in that box is swapped into the box made vacent by the one dragged. 
 3. The user can change the location of cards as many times as they like before tapping the "submit" anchor.
-4. The "submit" anchor is not visible until all 5 cards have been dropped into boxes.
+4. The "submit" anchor is not visible until at least one of the cards has been moved.
 5. There is a variable called 'answerFlagNine' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
 
+**question-ten.html** 
+1. 4 check boxes, two of which are the correct answer.
+2. The "submit" anchor is not visible until ONE check box has been selected (the user can change their selection prior to tapping the "submit" anchor).
+3. There is a variable called 'answerFlagTen' that is written to the local browser storage on tapping the "submit" anchor, and is used in the same way as 'answerFlagOne'.
+
+**test-summary.html** 
+1. A confirmation that the test is complete.
+2. A check(green) or cross(red) for each of the questions taken.
+3. An overall score that is compared to the passmark of 7.
+4. A button which, if the test is passed, navigates to test-certificate.html, or to test-intro.html to re-take the test with the AnswerFlags all set to 0. 
+
+**test-certificate.html** 
+1. An A4 scaled certificate that can be printed.
+2. The user's name
+3. The overall score.
 
 ### Features Left to Implement
 
@@ -274,6 +319,8 @@ Note. This is just an example - it is not part of the test.
 5.	[Google Fonts](https://fonts.google.com/?query=cairo) - for the ‘Cairo’ font – used exclusively across the site.
 6.	[Figma](http://www.figma.com) - to produce the mockups.
 7.  [emailjs](https://www.emailjs.com/) - to send questions via email.
+8.  [jasmine](https://jasmine.github.io/) - for (limited) testing of javascript.
+9.  [w3 validator](https://validator.w3.org/) - for html validation.
 
 ## Testing
 My approach to testing was to test each of the features for functionality (operation) and rendering (visuals) against a variety of media devices, in both portrait and landscape orientation, as well as the 4 main browsers.
@@ -283,6 +330,16 @@ I created a matrix to complete methodically to ensure all functions operated and
 For testing mid-build, I often logged variables to the console. This helped me see that variables were populating as designed (or not!) and that code had executed as planned.
 
 I commented these in the scripts.js file with "// log to Console to test Functionality //" 
+
+### Validation via [w3 validator](https://validator.w3.org/)
+
+I received the following warning multiple times for every html file...
+
+*Warning: The type attribute is unnecessary for JavaScript resources.*
+
+All of the resources I could find (Stack Overflow etc.) advised that this should be used as a warning, rather than a bug ... [example](https://www.webmasterworld.com/javascript/4879097.htm).
+
+I decided to remove the type and fully test all pages and functionality post this.
 
 ### Challenges, Bugs and Errors
 
@@ -441,7 +498,7 @@ I deployed to Github Pages by the following steps:
 
 ### Media
 
-1.	5.	All images were taken from [clipart-library](http://clipart-library.com).
+1.	Images were taken from [clipart-library](http://clipart-library.com).
 2.	The infographics and ‘brand image’ were designed and created by me
 
 ### Acknowledgements
@@ -449,5 +506,5 @@ I deployed to Github Pages by the following steps:
 I would like to thank the following people for thier support and input:
 
 1. My mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his knowledge and clear direction (it was he who made it very clear that a detailed set of mockups were vital - this is knowledge I will keep with me for the rest of my career!)
-2. My partner, [Leah Harrison](https://www.facebook.com/leah.harrison.73744?eid=ARAmY9N1IiEptfP63TCAVnMZopPWxDv1tJL8BkuU9svBwDI3Eswr2C0RcoW-zx5We_ulMsujpIqL0-9B&timeline_context_item_type=intro_card_relationship&timeline_context_item_source=745641114) for the moral support and being my 'guinea pig' for live testing.
+2. My 3 daughters; Elena(14), Thalia(12) and Maia(11), for being my 'guinea pigs' for live testing. They scored 8/10 as a team!
 3. My friends [Scott](https://www.facebook.com/scott.mckellar.399) and [Magoo](https://www.facebook.com/carlos.fandango.56232), who I consulted before I started the FSD course, and gave me the confidence to go for it!
