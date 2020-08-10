@@ -1,18 +1,14 @@
+// jshint esversion: 6
 
 // ********************************** Interactive Learning Section Functions ********************************** //
 
 // Function: reset answerflags - ADMIN ONLY //
 function resetAnswerFlags() {
-localStorage.setItem('answerFlag1', 0);
-localStorage.setItem('answerFlag2', 0);
-localStorage.setItem('answerFlag3', 0);
-localStorage.setItem('answerFlag4', 0);
-localStorage.setItem('answerFlag5', 0);
-localStorage.setItem('answerFlag6', 0);
-localStorage.setItem('answerFlag7', 0);
-localStorage.setItem('answerFlag8', 0);
-localStorage.setItem('answerFlag9', 0);
-localStorage.setItem('answerFlag10', 0);
+    var i;
+    for (i = 0; i < 11; i++) {
+        localStorage.setItem('answerFlag' + i, 0);
+        }
+
 }
 
 //Function: get the user's name and email to pass to the test pass certificate (validate at a later date) //
@@ -29,7 +25,7 @@ function logIn() {
     localStorage.setItem('username', this.username.value);
     localStorage.setItem('useremail', this.useremail.value);
 
-    alert('Welcome ' + username.value + '. Tap ok to start.')
+    alert('Welcome ' + username.value + '. Tap ok to start.');
     window.location.replace('intro.html');
 }
 
@@ -39,8 +35,7 @@ $(window).on('pageshow', function() {
     // check this question has not already been answered //
     let thisquestion = document.title.substr(18,11);
 
-    let questionarray = [
-                        ['Question 1',  'answerFlag1', 'question-two.html'],
+    let questionarray = [['Question 1',  'answerFlag1', 'question-two.html'],
                         ['Question 2',  'answerFlag2', 'question-three.html'],
                         ['Question 3',  'answerFlag3', 'question-four.html'],
                         ['Question 4',  'answerFlag4', 'question-five.html'],
@@ -49,8 +44,7 @@ $(window).on('pageshow', function() {
                         ['Question 7',  'answerFlag7', 'question-eight.html'],
                         ['Question 8',  'answerFlag8', 'question-nine.html'],
                         ['Question 9',  'answerFlag9', 'question-ten.html'],
-                        ['Question 10',  'answerFlag10', 'test-summary.html']
-                        ];
+                        ['Question 10',  'answerFlag10', 'test-summary.html']];
 
     if (thisquestion == 'Test Summar') {
         populateSummary();
@@ -111,7 +105,7 @@ function sendEmail() {
     var service_id = "celtd";
     var template_id = "continuous_engagement_online_learning";
 
-    emailjs.send(service_id, template_id, template_params)
+    emailjs.send(service_id, template_id, template_params);
     
     alert('Email sent succesfully.');
 
@@ -164,7 +158,6 @@ function playVid() {
     let buttonText = $("#playbutton").text();
     let playText = $.trim(buttonText);
 
-
     switch(playText) {
         case "play":
             player.playVideo();
@@ -204,7 +197,7 @@ function prevImage() {
     populateImage();
 }
 
-//Function: set the image and text on value.html //
+//Function: set the image and text on value.html and waste.html //
 function populateImage() {
     let getpage = document.title;
 
@@ -239,23 +232,29 @@ function populateImage() {
         $("#imagetext").text(imageArray[imageCount][1]);
     }, 200);
 
+    let colorTagLeft;
+    let colorTagRight;
+
     switch(imageCount) {
         case 0:
-            $("#leftcarouselarrow").css('color', '#eeeeee');
+            colorTagLeft = '#eeeeee';
             break;
         case 1:
-            $("#leftcarouselarrow").css('color', '#657486');
+            colorTagLeft = '#657486';
             break;
         case 3:
-            $("#rightcarouselarrow").css('color', '#657486');
+            colorTagRight = '#657486';
             break;
         case 4:
-            $("#rightcarouselarrow").css('color', '#eeeeee');
+            colorTagRight = '#eeeeee';
             revealNext();
             break;
         default:
             break;
     }
+
+    $("#leftcarouselarrow").css('color', colorTagLeft);
+    $("#rightcarouselarrow").css('color', colorTagRight);
 }
 
 //Function: reveal the additional text on nonvalueadd.html //
@@ -308,14 +307,7 @@ function handleWaste(imagetag) {
 
     // confirm that all popups have been viewed before revealing next anchor //
     // as this is a product, clickCount is only 1 once all images are clicked //
-    let clickCount = (transportationFlag 
-                        * inventoryFlag 
-                        * motionFlag 
-                        * waitingFlag 
-                        * overproductionFlag 
-                        * overprocessingFlag 
-                        * defectsFlag 
-                        * skillsFlag);
+    let clickCount = (transportationFlag * inventoryFlag * motionFlag * waitingFlag * overproductionFlag * overprocessingFlag * defectsFlag * skillsFlag);
 
     if (clickCount == 1) {
     revealNext();
@@ -411,7 +403,6 @@ function exampleSelect() {
     exampleStepNo = $.trim($('#examplestep').text().substring(0, 1));
 
     let answerindex = examplearray[exampleStepNo - 1][1];
-
     let answertext = examplearray[exampleStepNo - 1][2];
 
     var exampleindex  = examplelist.selectedIndex; // Credit: https://www.codeproject.com/articles/656/using-javascript-to-handle-drop-down-list-selectio //

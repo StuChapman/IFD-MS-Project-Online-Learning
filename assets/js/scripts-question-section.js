@@ -1,3 +1,4 @@
+// jshint esversion: 6
 
 // ********************************** Question Functions ********************************** //
 
@@ -14,34 +15,31 @@ function checkQuestionRadio() {
 
     let thisquestion = document.title;
 
-    // answers to radio button style questions //
+    // answers to radio button style questions: one, three and eight //
     switch(thisquestion) {
         case 'Online Learning - Question 1':
             if (selectedValue == 'optionfour') {
                 answerFlag1 = 1;
-                localStorage.setItem('answerFlag1', answerFlag1);
             } else {
                 answerFlag1 = -1;
-                localStorage.setItem('answerFlag1', answerFlag1);
             }
+            localStorage.setItem('answerFlag1', answerFlag1);
             break;
         case 'Online Learning - Question 3':
             if (selectedValue == 'optiontwo') {
                 answerFlag3 = 1;
-                localStorage.setItem('answerFlag3', answerFlag3);
             } else {
                 answerFlag3 = -1;
-                localStorage.setItem('answerFlag3', answerFlag3);
             }
+            localStorage.setItem('answerFlag3', answerFlag3);
             break;
         case 'Online Learning - Question 8':
             if (selectedValue == 'optionthree') {
                 answerFlag8 = 1;
-                localStorage.setItem('answerFlag8', answerFlag8);
             } else {
                 answerFlag8 = -1;
-                localStorage.setItem('answerFlag8', answerFlag8);
             }
+            localStorage.setItem('answerFlag8', answerFlag8);
             break;
         default:
             break;
@@ -80,10 +78,7 @@ function populateMuda(letterpick) {
     let thisquestion = document.title;
 
     if (thisquestion == 'Online Learning - Question 2') {
-        if (($.trim($('#square-one').text()) == 'M') 
-            && ($.trim($('#square-two').text()) == 'U') 
-                && ($.trim($('#square-three').text()) == 'D') 
-                    && ($.trim($('#square-four').text()) == 'A')){
+        if (($.trim($('#square-one').text()) == 'M')  && ($.trim($('#square-two').text()) == 'U') && ($.trim($('#square-three').text()) == 'D') && ($.trim($('#square-four').text()) == 'A')){
                         answerFlag2 = 1;
                     } else {
                         answerFlag2 = -1;
@@ -94,10 +89,7 @@ function populateMuda(letterpick) {
 
     if (thisquestion == 'Online Learning - Question 6') {
         // allow 'directly' and 'contributes' be interchangeable on question-six.html - symantically the same sentence //
-        if ((($.trim($('#square-one').text()) == 'contributes') || ($.trim($('#square-one').text()) == 'directly'))
-            && (($.trim($('#square-two').text()) == 'directly') || ($.trim($('#square-two').text()) == 'contributes'))
-                && ($.trim($('#square-three').text()) == 'paying') 
-                    && ($.trim($('#square-four').text()) == 'for')){
+        if ((($.trim($('#square-one').text()) == 'contributes') || ($.trim($('#square-one').text()) == 'directly')) && (($.trim($('#square-two').text()) == 'directly') || ($.trim($('#square-two').text()) == 'contributes')) && ($.trim($('#square-three').text()) == 'paying') && ($.trim($('#square-four').text()) == 'for')){
                         answerFlag6 = 1;
                     } else {
                         answerFlag6 = -1;
@@ -131,10 +123,7 @@ function checkQuestionCheckbox() {
 
     switch(thisquestion) {
         case 'Online Learning - Question 4':
-            if (!$('#checkone').is(":checked") 
-                && $('#checktwo').is(":checked") 
-                    && !$('#checkthree').is(":checked") 
-                        && $('#checkfour').is(":checked")) {
+            if (!$('#checkone').is(":checked") && $('#checktwo').is(":checked") && !$('#checkthree').is(":checked") && $('#checkfour').is(":checked")) {
                 answerFlag4 = 1;
             } else {
                 answerFlag4 = -1;
@@ -142,10 +131,7 @@ function checkQuestionCheckbox() {
             localStorage.setItem('answerFlag4', answerFlag4);
             break;
         case 'Online Learning - Question 7':
-            if (!$('#checkone').is(":checked") 
-                && !$('#checktwo').is(":checked") 
-                    && $('#checkthree').is(":checked") 
-                        && $('#checkfour').is(":checked")) {
+            if (!$('#checkone').is(":checked") && !$('#checktwo').is(":checked") && $('#checkthree').is(":checked") && $('#checkfour').is(":checked")) {
                 answerFlag7 = 1;
             } else {
                 answerFlag7 = -1;
@@ -153,10 +139,7 @@ function checkQuestionCheckbox() {
             localStorage.setItem('answerFlag7', answerFlag7);
             break;
         case 'Online Learning - Question 10':
-            if ($('#checkone').is(":checked") 
-                && !$('#checktwo').is(":checked") 
-                    && !$('#checkthree').is(":checked") 
-                        && $('#checkfour').is(":checked")) {
+            if ($('#checkone').is(":checked") && !$('#checktwo').is(":checked") && !$('#checkthree').is(":checked") && $('#checkfour').is(":checked")) {
                 answerFlag10 = 1;
             } else {
                 answerFlag10 = -1;
@@ -297,14 +280,7 @@ function order(ev) {
 
 //Function: check order against desired on question-nine.html //
 function checkQuestionOrder() {
-if ( orderArray[0][1] == 'ordercard4'
-    && orderArray[1][1] == 'ordercard8'
-    && orderArray[2][1] == 'ordercard6'
-    && orderArray[3][1] == 'ordercard7'
-    && orderArray[4][1] == 'ordercard1'
-    && orderArray[5][1] == 'ordercard5'
-    && orderArray[6][1] == 'ordercard3'
-    && orderArray[7][1] == 'ordercard2') {
+if ( orderArray[0][1] == 'ordercard4'  && orderArray[1][1] == 'ordercard8' && orderArray[2][1] == 'ordercard6' && orderArray[3][1] == 'ordercard7' && orderArray[4][1] == 'ordercard1' && orderArray[5][1] == 'ordercard5' && orderArray[6][1] == 'ordercard3' && orderArray[7][1] == 'ordercard2') {
     answerFlag9 = 1;
     } else {
     answerFlag9 = -1; 
@@ -313,7 +289,6 @@ if ( orderArray[0][1] == 'ordercard4'
     localStorage.setItem('answerFlag9', answerFlag9);
 
 }
-
 
 //Function: confirm two checkboxes have been checked before revealing submit on question-ten.html //
 function checkTwo() {
