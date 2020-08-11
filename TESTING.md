@@ -167,3 +167,9 @@ function populateSummary() {
 }
 ```
 I used this method to replace duplicate code with a loop wherever possible.
+
+### Testing Matrix
+Bugs and issues found from testing.
+
+1. eightwastes.html pop-up - typo on the test 'years worth of'. Changed to 'year`s worth of'.
+2. question-nine.html Galaxy Fold device on Portrait view - 'mobving the work/customer around' test does not fit the card.

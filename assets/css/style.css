@@ -539,7 +539,6 @@ nav {
 }
 
 .orderbox, .ordercard {
-    font-size: 2vh;
     line-height: 2.2vh;
 }
 
@@ -632,7 +631,7 @@ nav {
     .orderbox, .ordercard {
         height: 5vh;
         margin-bottom: 2vw;
-        font-size: 2vh;
+        font-size: 1.8vh;
     }
 
     .wordsquarebox, .wordpickbox {
