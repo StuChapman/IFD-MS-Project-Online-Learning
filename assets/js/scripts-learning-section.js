@@ -330,7 +330,7 @@ function popupWaste(imagetag) {
                         'In a restaurant, this might be; carrying all the meat downstairs to the cellar, only to have to carry it all back upstairs again to cook it.', 
                             '...or a Customer being transferred from one department to another.'],
                     ['Inventory', 'Keeping excessive stocks of product.', 
-                        'In our restaurant, this might be filling the freezer with a years worth of sausages', 
+                        'In our restaurant, this might be filling the freezer with a year`s worth of sausages', 
                             '...or batching up change requests for approval.'],
                     ['Motion', 'Moving the worker around.', 
                         'The chef in our restaurant might have to walk to one cupboard to get the oil, then walk to the other side of the kitchen to get the salt.', 
