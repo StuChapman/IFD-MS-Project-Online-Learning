@@ -175,3 +175,10 @@ Bugs and issues found from testing.
 2. question-nine.html Galaxy Fold device on Portrait view - 'mobving the work/customer around' test does not fit the card.
 3. Whilst testing on Firefox, I noticed that the color of the up and down chevrons on nonvalueadd.html was wrong. I had missed this on all the other devices!
 
+## Jasmine Testing
+
+I had a number of attempts with Jasmine testing, but I found none of them to be useful. With the nature of the functions I have used; pulling details from the page the user is currently on, I couldn't find a way to pass those variables to the testscripts.
+
+I tried to 'force' this by hard-wiring the variables into the testscript, but that felt like I was crowbarring it in for the sake of it. To that end I removed the jasmine-testing.html and testscripts.js from my project.
+
+Earlier attempts can be found in my version history.
