@@ -329,11 +329,11 @@ Note. This is just an example - it is not part of the test.
 11. [validator.w3](https://validator.w3.org/nu/#textarea) - for html validation.
 
 ## Testing
-I created a separate [testing](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/ab32e502b57f769e7b35689c076457ba4118baa0/testing) folder to contain a TESTING.md file and the test matrix.
+I created a separate [testing](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/e970c186addbb53182cfe843d158522019bbea04/testing) folder to contain a testing markdown file and the test matrix.
 
 ### Solutions to User Stories
 
-[Screenshots](https://github.com/StuChapman/...tbc...) that address the different User Stories.
+[Screenshots](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/e970c186addbb53182cfe843d158522019bbea04/screenshots) that address the different User Stories.
 
 ## Deployment
 
