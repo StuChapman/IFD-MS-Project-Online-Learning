@@ -173,3 +173,5 @@ Bugs and issues found from testing.
 
 1. eightwastes.html pop-up - typo on the test 'years worth of'. Changed to 'year`s worth of'.
 2. question-nine.html Galaxy Fold device on Portrait view - 'mobving the work/customer around' test does not fit the card.
+3. Whilst testing on Firefox, I noticed that the color of the up and down chevrons on nonvalueadd.html was wrong. I had missed this on all the other devices!
+

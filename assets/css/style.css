@@ -424,6 +424,7 @@ nav {
 }
 
 #downarrow, #uparrow {
+    color: #657486;
     font-size: calc(5vh + (30 - 5) * ((100vw - 300px) / 1620));
 }
 
