@@ -91,7 +91,7 @@ As is now standard workflow for me; I produced detailed mockups for: phones, tab
 (links to .pdfs to be included)
 I used [figma](https://www.figma.com/) to produce the mockups. 
 
-[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/8405ec53ae4b9b496fdcb19522b0d6ad86559581/mockups)
+[mockups](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/ed1c942e9b9a4d1ec016730244095f6fb0c62908/mockups)
 
 
 ### Colour Schemes and Fonts
@@ -308,9 +308,8 @@ Note. This is just an example - it is not part of the test.
 
 ### Features Left to Implement
 
-1.	Completing the “contact us” form functionality to enable the user to submit specific information about business need.
-2.	Interactive learning that brings the methods further to life for the user (multi choice quiz etc.)
-3.  The ability to link from the photolinks or infographics on index.html directly to the expanded section on the services.html and methods.html pages respectively (I believe this will utilise JavaScript).
+1.	I would rather have a back end database that holds the answers to the questions, plus the arrays - to be able to alter and update them without hard-coding them in.
+2.  Better use of Jasmine-Testing to be able to test all the combinations of answers.
 
 ## Technologies Used
 
@@ -372,7 +371,8 @@ I deployed to Github Pages by the following steps:
 ### Media
 
 1.	Images were taken from [clipart-library](http://clipart-library.com).
-2.	The infographics and ‘brand image’ were designed and created by me
+2.	The ‘brand image’ was designed and created by me
+3.  Marc Onnetto video - [McKinsey & Company](https://www.mckinsey.com/), YouTube(https://www.youtube.com/)
 
 ### Acknowledgements
 
