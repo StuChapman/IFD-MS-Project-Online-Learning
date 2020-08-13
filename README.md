@@ -332,7 +332,7 @@ I created a separate [testing](https://github.com/StuChapman/IFD-MS-Project-Onli
 
 ### Solutions to User Stories
 
-[Screenshots](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/e970c186addbb53182cfe843d158522019bbea04/screenshots) that address the different User Stories.
+[Screenshots](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/682abe657e7ab830970d48746a604ce2ffada977/screenshots) that address the different User Stories.
 
 ## Deployment
 
@@ -378,6 +378,6 @@ I deployed to Github Pages by the following steps:
 
 I would like to thank the following people for thier support and input:
 
-1. My mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for his knowledge and clear direction (it was he who made it very clear that a detailed set of mockups were vital - this is knowledge I will keep with me for the rest of my career!)
+1. As always, my mentor, [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) who teaches me the details that stay with me, like - never work on your code on the morning of a live demo!!!
 2. My 3 daughters; Elena(14), Thalia(12) and Maia(11), for being my 'guinea pigs' for live testing. They scored 8/10 as a team!
 3. My friends [Scott](https://www.facebook.com/scott.mckellar.399) and [Magoo](https://www.facebook.com/carlos.fandango.56232), who I consulted before I started the FSD course, and gave me the confidence to go for it!
