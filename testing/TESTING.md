@@ -208,15 +208,67 @@ Earlier attempts can be found in my version history.
 ### As the Director of Continuous Engagement, I …
 
 1.	… want to create an online learning experience for my clients.
+
+**Solution:** I have tested the application with a number of live users (including my children!) I have given them no instruction, and asked them to work it through. Some have passed the test, some have failed.
+
 2.	… want the experience to be interactive as well as informative.
+
+Solution: I have deliberately built in features that encourage the user to step through interactive elements before progressing - a good demonstration of this is example.html.
+
+Screenshots:
+![example](m-example.png)
+![example](n-example.png)
+
 3.	… want the application to look professional.
+
+**Solution:** I followed the color scheme and layout of the [Continous Engagement Ltd](https://stuchapman.github.io/UCD-MS-Project-Continuous-Engagement/index.html) application.
+
 4.	… want the information contained to be industry standard.
+
+**Solution:** I ensured I used the most up-to-date terminology (e.g. The titles of the 8 wastes).
+
 5.	… want the user to be able to intuitively complete the learning and the test, with as little prompting as possible.
+
+**Solution:** I created the site to have a 'storyline' that had to be followed in a linear fashion. I tested this with live subjects.
+
+Screenshots:
+![value](h-value.png)
+![eightwastes](k-eightwastes.png)
+
 6.	… want the user to be guided through the material via guided navigation devices.
+
+**Solution:** The 'next>>' navigation is only visible once all of the content has been viewed.
+
+Screenshot:
+![eightwastes](ka-eightwastes.png)
+
 7.	… want the progress for the user to be stored locally so that if there was issue with their device (accidental refresh/loss of power etc) they could pick up where they left off.
+
+**Solution:** 'AnswerFlag's written to local storage and passed through to final result.
+
+Screenshot:
+![test-summary](z-test-summary.png)
+
 8.	… want the user to be able to ask questions via an email client, understanding that responses are not intended to be instant.
+
+**Solution:** help modal.
+
+Screenshot:
+![help](c-help.png)
+
 9.	… want there to be pass and fail criteria and the user to be informed via an online “certificate” of their result (preference is a printable .pdf format).
+
+**Solution:** test-certificate.html is formatted to A4, and can be printed to printer or pdf
+
+Screenshot:
+![test-certificate](za-test-certificate.png)
+
 10.	… want to use this site as a means to link my consultancy work with my programming work – ultimately adding Agile and Web Development to the showcase.
+
+**Solution:** Branding matched Continuous Engagement Ltd. website. Online Learning application will be accessed via Continuous Engagement Ltd. website. Ability to hyperlink from online Learning application to Continuous Engagement Ltd. website .
+
+Screenshot:
+![home](b-home.png)
 
 ### As the Client/Recruiter, I …
 
