@@ -8,24 +8,29 @@ function resetAnswerFlags() {
     for (i = 0; i < 11; i++) {
         localStorage.setItem('answerFlag' + i, 0);
         }
-
 }
 
 //Function: get the user's name and email to pass to the test pass certificate (validate at a later date) //
 function logIn() {
-    if (!(/\s/g.test(this.username.value))) {
-        alert('Please enter both first and last names, with a space between.');
-        this.sendername.value = "";
+    if (!/^[a-zA-Z]*$/g.test(this.usernamefirst.value) || this.usernamefirst.value == "") {
+        alert('Please enter your first name, with no spaces or numbers.');
+        this.usernamefirst.focus();
+        return;
+    }
+    if (!/^[a-zA-Z]*$/g.test(this.usernamelast.value) || this.usernamelast.value == "") {
+        alert('Please enter your last name, with no spaces or numbers.');
+        this.usernamelast.focus();
         return;
     }
     if (!(/^\S+@\S+\.\S+$/.test(this.useremail.value))) {
         alert('Please enter a valid email address.');
+        this.useremail.focus();
         return;
     }
-    localStorage.setItem('username', this.username.value);
+    localStorage.setItem('username', this.usernamefirst.value + " " + this.usernamelast.value);
     localStorage.setItem('useremail', this.useremail.value);
 
-    alert('Welcome ' + username.value + '. Tap ok to start.');
+    alert('Welcome ' + this.usernamefirst.value + " " + this.usernamelast.value + '. Tap ok to start.');
     window.location.replace('intro.html');
 }
 
@@ -72,7 +77,6 @@ $(window).on('pageshow', function() {
         let navflag = (questionarray[i][2]);
         window.location.replace(navflag);
     }
-
 });
 
 // Function: find index of multidimensional array //
@@ -389,8 +393,7 @@ function popupWaste(imagetag) {
     // 200ms delay to allow image to cache //
     setTimeout(function() {
         $('#wastepopup').css('visibility', 'visible');
-    }, 200);
-    
+    }, 200); 
 }
 
 //Function: hide the detailed description of each waste on eightwastes.html //
@@ -423,7 +426,6 @@ function exampleSelect() {
         $('#examplelist').css('visibility', 'hidden');
         $("#examplecarouselarrow").css('color', '#657486');
     }
-
 }
 
 //Function: navigate to the next step in example.html //

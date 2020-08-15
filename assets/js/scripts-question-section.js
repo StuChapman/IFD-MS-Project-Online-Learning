@@ -44,7 +44,6 @@ function checkQuestionRadio() {
         default:
             break;
     }
-
 }
 
 //Function: check the answer against desired for questions: two and six //
@@ -103,7 +102,6 @@ function populateMuda(letterpick) {
         revealNext();
         return;
     }
-
 }
 
 //Function: allow the user to reset if they want to change their answer on question: two and six //
@@ -147,7 +145,6 @@ function checkQuestionCheckbox() {
             localStorage.setItem('answerFlag10', answerFlag10);
             break;
     }
-
 }
 
 //Function: allow drag event on question-five.html //
@@ -309,7 +306,6 @@ function checkTwo() {
     if (checkCount > 1) {
         revealNext();
     }
-
 }
 
 //Function: populate test results on test-summary.html //
@@ -351,7 +347,6 @@ function populateSummary() {
     if (totalScore < 7) {
         $('#retestbutton').text('Retake Test');
     }
-
 }
 
 //Function: either return to start of test or print certificate on test-summary.html //
@@ -370,5 +365,4 @@ function resetPrint() {
             default: 
                 break;
         }
-
 }

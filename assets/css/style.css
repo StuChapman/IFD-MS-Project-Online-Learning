@@ -115,10 +115,6 @@ nav {
 
 /* ------------------- Text Section Styling */
 
-#textsection .login {
-    width: 50vw;
-}
-
 #textsection, #certsection {
     background-color: #ffffff;
     font-family: 'Cairo', sans-serif;
@@ -570,6 +566,10 @@ nav {
 
 @media screen and (orientation: portrait){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
 
+    #textsection .login {
+        width: 90vw;
+    }
+
     .extramarginbottom {
         margin-bottom: 1vh;
     }
@@ -653,6 +653,14 @@ nav {
 }
 
 @media screen and (orientation: landscape){ /* Credit: https://stackoverflow.com/questions/43589507/how-can-you-have-bootstrap-responsiveness-based-on-screen-ratio-instead-of-scree */
+
+    #textsection .login {
+        width: 50vw;
+    }
+
+    #textsection .loginput {
+        width: 25vw;
+    }
 
     .extramarginbottom {
         margin-bottom: 5vh;
