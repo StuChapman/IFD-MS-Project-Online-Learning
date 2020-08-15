@@ -14,7 +14,6 @@ The app should be designed ‘mobile first’, and should be equally as accessib
 
 User Stories have been grouped into 2: Director of Continuous Engagement (site owner) and Clients (user)
 
-
 ### User Stories 
 
 have been grouped into 2: Director of Continuous Engagement (site owner) and Clients/Recruiters (user)
@@ -328,11 +327,7 @@ Note. This is just an example - it is not part of the test.
 11. [validator.w3](https://validator.w3.org/nu/#textarea) - for html validation.
 
 ## Testing
-I created a separate [testing](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/e970c186addbb53182cfe843d158522019bbea04/testing) folder to contain a testing markdown file and the test matrix.
-
-### Solutions to User Stories
-
-[Screenshots](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/682abe657e7ab830970d48746a604ce2ffada977/screenshots) that address the different User Stories.
+I created a separate [testing](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/e970c186addbb53182cfe843d158522019bbea04/testing) folder to contain a testing [markdown](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/7cdabbe9dfc8cd5cdfb971dc57ab29e1e1bf3cc5/testing/TESTING.md) file and the test matrices.
 
 ## Deployment
 

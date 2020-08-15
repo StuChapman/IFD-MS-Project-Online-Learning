@@ -190,7 +190,7 @@ I used this method to replace duplicate code with a loop wherever possible.
 Bugs and issues found from testing.
 
 1. eightwastes.html pop-up - typo on the test 'years worth of'. Changed to 'year`s worth of'.
-2. question-nine.html Galaxy Fold device on Portrait view - 'moving the work/customer around' test does not fit the card.
+2. question-nine.html Galaxy Fold device on Portrait view - 'moving the work/customer around' text does not fit the card.
 3. Whilst testing on Firefox, I noticed that the color of the up and down chevrons on nonvalueadd.html was wrong. I had missed this on all the other devices!
 4. There was a rather interesting capability issue when using the browser 'inspect' function. The drag and drop functionality doesn't work in inspect mode. It only works in full view. I tested the functionality on *actual* devices (iPhone, iPad, Samsung, laptop) to ensure this was a bug with my browser, not my software.
 
@@ -201,3 +201,35 @@ I had a number of attempts with Jasmine testing, but I found none of them to be 
 I tried to 'force' this by hard-wiring the variables into the testscript, but that felt like I was crowbarring it in for the sake of it. To that end I removed the jasmine-testing.html and testscripts.js from my project.
 
 Earlier attempts can be found in my version history.
+
+
+## Solutions to User Stories
+
+### As the Director of Continuous Engagement, I …
+
+1.	… want to create an online learning experience for my clients.
+2.	… want the experience to be interactive as well as informative.
+3.	… want the application to look professional.
+4.	… want the information contained to be industry standard.
+5.	… want the user to be able to intuitively complete the learning and the test, with as little prompting as possible.
+6.	… want the user to be guided through the material via guided navigation devices.
+7.	… want the progress for the user to be stored locally so that if there was issue with their device (accidental refresh/loss of power etc) they could pick up where they left off.
+8.	… want the user to be able to ask questions via an email client, understanding that responses are not intended to be instant.
+9.	… want there to be pass and fail criteria and the user to be informed via an online “certificate” of their result (preference is a printable .pdf format).
+10.	… want to use this site as a means to link my consultancy work with my programming work – ultimately adding Agile and Web Development to the showcase.
+
+### As the Client/Recruiter, I …
+
+1.	… want to learn some of the basics of Operational Excellence.
+2.	… want to know that what I am being taught is industry standard.
+3.	… want to be able to roll the learning out to a large number of people.
+4.	… want the learning to be fun.
+5.	… want the learning to be interactive.
+6.	… want the learning to be intuitive.
+7.	… want the learning to contain a variety of visuals.
+8.	… want the test to be challenging, yet achievable.
+9.	… want to be able to move through the learning material at my own pace.
+10.	… want to be able to return to a previous section of the material to re-confirm my learning.
+11.	… want the material tested to be covered within the learning material – I don’t want to have to leave the app to find the answers.
+12.	… want to know if I have passed or failed the test.
+13.	… want to be able to resit the test if I have failed.
