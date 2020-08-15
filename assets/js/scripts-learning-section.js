@@ -58,6 +58,7 @@ $(window).on('pageshow', function() {
     if (thisquestion == 'Certificate') {
         $('#certName').text(localStorage.getItem('username'));
         $('#totalScore').text(localStorage.getItem('totalScore') + ' out of 10.');
+        alert('Here is your certificate. After printing, you can simply close your browser.');
     }
 
     let i = getIndexOfK(questionarray, thisquestion);
