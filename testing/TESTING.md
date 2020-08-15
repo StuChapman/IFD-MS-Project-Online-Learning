@@ -273,15 +273,74 @@ Screenshot:
 ### As the Client/Recruiter, I …
 
 1.	… want to learn some of the basics of Operational Excellence.
+
+**Solution:** Value, Waste, the 8 Wastes and Non-Value-Add are fundamentals of Operational Excellence.
+
 2.	… want to know that what I am being taught is industry standard.
+
+**Solution:** I ensured I used the most up-to-date terminology (e.g. The titles of the 8 wastes).
+
 3.	… want to be able to roll the learning out to a large number of people.
+
+**Solution:** Validation through index.html allows any number of users.
+
+Screenshot:
+![index](a-index.png)
+
 4.	… want the learning to be fun.
+
+**Solution:** A variety of different interactive methods; including some based on popular mobile phone games (e.g. Pictoword).
+
+Screenshot:
+![question-two](q-question-two.png)
+
 5.	… want the learning to be interactive.
+
+**Solution:** A variety of different interactive methods.
+
+Screenshot:
+![definition](g-definition.png)
+
 6.	… want the learning to be intuitive.
+
+**Solution:** The application has a 'storyline' that has to be followed in a linear fashion.
+
+Screenshots:
+![value](h-value.png)
+![eightwastes](k-eightwastes.png)
+
 7.	… want the learning to contain a variety of visuals.
+
+**Solution:** Images, clip-art, graphics and video are included.
+
+Screenshots:
+![looking](f-looking.png)
+
 8.	… want the test to be challenging, yet achievable.
+**Solution:** I have tested the application with a number of live users (including my children!) I have given them no instruction, and asked them to work it through. Some have passed the test, some have failed.
+
 9.	… want to be able to move through the learning material at my own pace.
+
+**Solution:** 'AnswerFlag's written to local storage allow the user to leave and return to the same point in the test.
+
 10.	… want to be able to return to a previous section of the material to re-confirm my learning.
+
+**Solution:** 'prev' navigation is always available.
+
 11.	… want the material tested to be covered within the learning material – I don’t want to have to leave the app to find the answers.
+
+**Solution:** I have tested the application with a number of live users (including my children!) I have given them no instruction, and asked them to work it through. Some have passed the test, some have failed.
+
 12.	… want to know if I have passed or failed the test.
+
+**Solution:** test-certificate.html is formatted to A4, and can be printed to printer or pdf
+
+Screenshot:
+![test-certificate](za-test-certificate.png)
+
 13.	… want to be able to resit the test if I have failed.
+
+**Solution:** test-summary details pass/fail and questions correct/incorrect, plus link to retake the test.
+
+Screenshot:
+![test-summary](zb-test-summary.png)
