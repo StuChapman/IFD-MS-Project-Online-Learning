@@ -1,4 +1,4 @@
-## Testing
+# Testing
 My approach to testing was to test each of the features for functionality (operation) and rendering (visuals) against a variety of media devices, in both portrait and landscape orientation, as well as the 4 main browsers.
 
 I created a matrix to complete methodically to ensure all functions operated and rendered correctly.
@@ -7,7 +7,9 @@ For testing mid-build, I often logged variables to the console. This helped me s
 
 I commented these in the scripts.js file with "// log to Console to test Functionality //" 
 
-### Validation via [w3 validator](https://validator.w3.org/)
+## Validation
+
+### html Validation using [w3 validator](https://validator.w3.org/)
 
 I received the following warning multiple times for every html file...
 
@@ -45,7 +47,23 @@ window.location.replace('https://stuchapman.github.io/UCD-MS-Project-Continuous-
 
 added in [scripts-global-variables.js](https://github.com/StuChapman/IFD-MS-Project-Online-Learning/blob/master/assets/js/scripts-global-variables.js).
 
-### Challenges, Bugs and Errors
+### javascript Validation using [jshint](https://jshint.com/)
+
+I received the following warning multiple times for every js file...
+
+*'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).*
+
+After some research; I found the following [teamtreehouse](https://teamtreehouse.com/community/why-does-jshint-give-me-these-warnings-about-es6) discussion, which presented a solution of placing the following comment.
+```javascript
+// jshint esversion: 6
+```
+At the start of each js file.
+
+### css Validation using [jigsaw](https://jigsaw.w3.org/css-validator/)
+
+css validation presented no errors.
+
+## Challenges, Bugs and Errors
 
 Whilst in build, the following: challenges, bugs and errors required solutions...
 
@@ -168,12 +186,13 @@ function populateSummary() {
 ```
 I used this method to replace duplicate code with a loop wherever possible.
 
-### Testing Matrix
+## Testing Matrix
 Bugs and issues found from testing.
 
 1. eightwastes.html pop-up - typo on the test 'years worth of'. Changed to 'year`s worth of'.
-2. question-nine.html Galaxy Fold device on Portrait view - 'mobving the work/customer around' test does not fit the card.
+2. question-nine.html Galaxy Fold device on Portrait view - 'moving the work/customer around' test does not fit the card.
 3. Whilst testing on Firefox, I noticed that the color of the up and down chevrons on nonvalueadd.html was wrong. I had missed this on all the other devices!
+4. There was a rather interesting capability issue when using the browser 'inspect' function. The drag and drop functionality doesn't work in inspect mode. It only works in full view. I tested the functionality on *actual* devices (iPhone, iPad, Samsung, laptop) to ensure this was a bug with my browser, not my software.
 
 ## Jasmine Testing
 
