@@ -98,7 +98,7 @@ function sendEmail() {
         return false;
     }
     
-    emailjs.init("user_NdBWu4MZZo0BRZ6hrAbQ3");
+    emailjs.init("user_37585cYmkMNZRiOobd27i");
     
     var thispage = document.title;
     var template_params = {
@@ -106,9 +106,9 @@ function sendEmail() {
     "from_email": localStorage.getItem('useremail'),
     "question": thispage + ": " + this.question.value
     };
-    
-    var service_id = "celtd";
-    var template_id = "continuous_engagement_online_learning";
+    console.log('template_params');
+    var service_id = "continuous_engagement";
+    var template_id = "template_6DMLrcJu";
 
     emailjs.send(service_id, template_id, template_params);
     
